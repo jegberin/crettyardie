@@ -180,15 +180,18 @@ const ALL_BUSINESSES: Business[] = [
     links: [],
   },
   {
-    name: 'Galtee Fuels',
-    tradingAs: 'Newtown Cross',
+    name: 'Crettyard Coal Yard',
+    tradingAs: 'Galtee Fuels Ltd · Newtown Cross',
     sector: 'Fuel Merchant',
     sectorColor: 'bg-blue-100 text-blue-800',
     description:
-      'Fuel merchant and coal supplier at Newtown Cross, serving local households and farms in the area.',
+      'Solid fuel depot open to the public at Newtown Cross. Supplying coal, briquettes, wood pellets, gas (FloGas), firelogs, water softener salt and fireside accessories — Mon–Fri 9am–5pm, Sat 9am–1pm.',
+    logo: '/logos/galtee.jpg',
+    logoFit: 'cover',
     initials: 'GF',
-    links: [],
-    note: 'Current trading status to be confirmed locally before launch.',
+    links: [
+      { label: 'Facebook', href: 'https://www.facebook.com/p/Crettyard-Coal-Yard-100054259100584/' },
+    ],
   },
   {
     name: 'Blue Equipment (Ireland) Ltd',
