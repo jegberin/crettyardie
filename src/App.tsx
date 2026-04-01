@@ -17,6 +17,7 @@ import PrivacyPage from './pages/PrivacyPage';
 import CookiePolicyPage from './pages/CookiePolicyPage';
 import TermsPage from './pages/TermsPage';
 import { CookieBanner } from './components/CookieBanner';
+import { GoogleAnalytics } from './components/GoogleAnalytics';
 import { AuthProvider } from './context/AuthContext';
 
 export default function App() {
@@ -37,6 +38,7 @@ export default function App() {
         </Routes>
         <Footer />
         <CookieBanner />
+        <GoogleAnalytics />
       </div>
     </AuthProvider>
   );

@@ -2,18 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Cookie, X, Settings } from 'lucide-react';
-
-const STORAGE_KEY = 'crettyard_cookie_consent';
-
-export type ConsentValue = 'all' | 'essential' | null;
-
-export function getConsent(): ConsentValue {
-  try {
-    const v = localStorage.getItem(STORAGE_KEY);
-    if (v === 'all' || v === 'essential') return v;
-  } catch { /* */ }
-  return null;
-}
+import { getConsent, STORAGE_KEY } from '../lib/consent';
 
 export function CookieBanner() {
   const [visible, setVisible] = useState(false);
@@ -29,6 +18,7 @@ export function CookieBanner() {
   const accept = (level: 'all' | 'essential') => {
     try { localStorage.setItem(STORAGE_KEY, level); } catch { /* */ }
     setVisible(false);
+    window.dispatchEvent(new Event('crettyard:consent-updated'));
   };
 
   return (
@@ -126,11 +116,8 @@ export function CookieBanner() {
 }
 
 export function CookieSettingsLink() {
-  const [, forceUpdate] = useState(0);
-
   const reset = () => {
     try { localStorage.removeItem(STORAGE_KEY); } catch { /* */ }
-    forceUpdate(n => n + 1);
     window.location.reload();
   };
 
