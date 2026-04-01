@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import {
   ArrowRight, ExternalLink, MapPin, GraduationCap,
-  Shield, Users, Activity, Landmark, Mountain, TreePine, Globe, Trophy, Flag,
+  Shield, Users, Activity, Landmark, Mountain, TreePine, Globe, Trophy, Flag, CircleDot,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -105,6 +105,23 @@ const SPORTS: Org[] = [
       { label: 'Website', href: 'https://stabbansac.ie' },
       { label: 'Facebook', href: 'https://www.facebook.com/StAbbans/' },
       { label: 'Google Maps', href: 'https://www.google.com/maps/search/?api=1&query=St.+Abbans+AC%2C+Monavea%2C+Crettyard%2C+Co.+Laois' },
+    ],
+  },
+  {
+    name: 'Crettyard United FC',
+    subtitle: 'Football Club',
+    icon: <CircleDot size={22} />,
+    iconBg: 'bg-green-100 text-green-700',
+    logo: '/logos/crettyard-utd.jpg',
+    logoFit: 'cover',
+    description:
+      'Crettyard United AFC is the area\'s football club, actively posting match results and fixtures on social media. The club runs a weekly "Split the Pot" fundraiser to support facility improvements and welcomes involvement from the wider community.',
+    location: 'Crettyard, Co. Laois',
+    links: [
+      { label: 'Facebook', href: 'https://www.facebook.com/crettyard.utd/' },
+      { label: 'Instagram', href: 'https://www.instagram.com/crettyard_utd/' },
+      { label: 'Fundraiser', href: 'https://onlinefundraiser.ie/crettyard-utd-fc/' },
+      { label: 'Google Maps', href: 'https://maps.app.goo.gl/XbbLzehVwJS5qoNw7' },
     ],
   },
 ];
@@ -344,11 +361,11 @@ export default function CommunityPage() {
             </div>
             <h2 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter mb-4">Sports Clubs</h2>
             <p className="text-on-surface-variant text-lg leading-relaxed max-w-2xl">
-              Sport is a big part of community life in Crettyard, with strong local involvement across GAA, ladies football, and athletics from youth to adult level.
+              Sport is a big part of community life in Crettyard, with strong local involvement across GAA, ladies football, soccer, and athletics from youth to adult level.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {SPORTS.map((org, idx) => (
               <OrgCard key={org.name} org={org} idx={idx} />
             ))}
