@@ -131,9 +131,11 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-sky-100 text-sky-800',
     description:
       'A local web design and digital services business providing website development, digital marketing and IT support for trades, retailers and small businesses in the Laois area.',
+    logo: '/logos/crettyarddigital.png',
     initials: 'CD',
     location: 'Crettyard, Co. Laois',
     links: [
+      { label: 'Website', href: 'https://digital.crettyard.ie' },
       { label: 'Facebook', href: 'https://www.facebook.com/crettyarddigital' },
       { label: 'Instagram', href: 'https://www.instagram.com/crettyarddigital' },
     ],

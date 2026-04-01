@@ -1,0 +1,133 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "Manrope",
+      "role": "body"
+    },
+    {
+      "family": "Inter",
+      "role": "heading"
+    }
+  ],
+  "colors": {
+    "primary": "#1DB48F",
+    "secondary": "#1877F2",
+    "accent": "#1DB48F",
+    "background": "#FFFFFF",
+    "textPrimary": "#002157",
+    "link": "#002157"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Manrope",
+      "heading": "Inter"
+    },
+    "fontStacks": {
+      "heading": [
+        "Manrope",
+        "sans-serif"
+      ],
+      "body": [
+        "Inter",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Inter",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "52px",
+      "h2": "36px",
+      "body": "18px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 8,
+    "borderRadius": "0px"
+  },
+  "components": {
+    "buttonPrimary": {
+      "background": "#1DB48F",
+      "textColor": "#FFFFFF",
+      "borderRadius": "33554400px",
+      "borderRadiusCorners": {
+        "topLeft": "33554400px",
+        "topRight": "33554400px",
+        "bottomRight": "33554400px",
+        "bottomLeft": "33554400px"
+      },
+      "shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, oklab(0.687678 -0.128201 0.0214749 / 0.2) 0px 10px 15px -3px, oklab(0.687678 -0.128201 0.0214749 / 0.2) 0px 4px 6px -4px"
+    },
+    "buttonSecondary": {
+      "background": "transparent",
+      "textColor": "#002157",
+      "borderColor": "#CCD3DD",
+      "borderRadius": "33554400px",
+      "borderRadiusCorners": {
+        "topLeft": "33554400px",
+        "topRight": "33554400px",
+        "bottomRight": "33554400px",
+        "bottomLeft": "33554400px"
+      },
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "http://digital.crettyard.ie/assets/crettyard-digital-logo-DjTs2S6D.png",
+    "favicon": "http://digital.crettyard.ie/favicon.png",
+    "ogImage": "https://digital.crettyard.ie/opengraph.jpg",
+    "logoHref": "File saved at: attached_assets/logoHref.html",
+    "logoAlt": "Crettyard Digital logo"
+  },
+  "__llm_logo_reasoning": {
+    "selectedIndex": 0,
+    "reasoning": "Selected #0 because it is visible, located in the header, links to the homepage, and the alt text matches the brand 'Crettyard Digital'.",
+    "confidence": 0.9,
+    "source": "llm"
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "Book a Free Consultation",
+      "reasoning": "Button #0 ('Book a Free Consultation') is the primary CTA due to its vibrant green color (#1DB48F), which is a brand color, and its action-oriented text encouraging user engagement."
+    },
+    "secondary": {
+      "index": 1,
+      "text": "Get a Quote →",
+      "reasoning": "Button #1 ('Get a Quote →') is selected as secondary because it has a transparent background, providing a clear contrast to the primary button's vibrant color, and it offers a secondary action for users."
+    },
+    "confidence": 0.95
+  },
+  "personality": {
+    "tone": "professional",
+    "energy": "medium",
+    "targetAudience": "small businesses looking for digital solutions"
+  },
+  "designSystem": {
+    "framework": "tailwind",
+    "componentLibrary": ""
+  },
+  "confidence": {
+    "buttons": 0.95,
+    "colors": 0.9,
+    "overall": 0.925
+  },
+  "__llm_metadata": {
+    "logoSelection": {
+      "llmCalled": true,
+      "llmSucceeded": true,
+      "finalSource": "llm",
+      "rawLogoSelection": {
+        "selectedLogoIndex": 0,
+        "selectedLogoReasoning": "Selected #0 because it is visible, located in the header, links to the homepage, and the alt text matches the brand 'Crettyard Digital'.",
+        "confidence": 0.9
+      }
+    },
+    "buttonClassification": {
+      "llmCalled": true,
+      "llmSucceeded": true
+    }
+  }
+}
