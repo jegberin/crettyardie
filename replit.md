@@ -58,9 +58,19 @@ A community portal website for the Crettyard area in County Laois, Ireland. It s
 ```
 
 ## Development
-- Run: `npm run dev` — starts **both** Vite (port 5000) **and** Express API server (port 8788) via concurrently
+
+### Primary dev workflow (Vite + Express)
+- `npm run dev` — starts **Vite** (port 5000) + **Express API server** (port 8788) via concurrently
+- Vite's `/api/*` proxy forwards to `localhost:8788` (Express)
+- Use this for rapid iteration — hot reload, no build step needed
+
+### Cloudflare Functions local dev workflow
+- `npm run dev:cf` — starts **Vite** (port 5000) + **Wrangler Pages dev** (port 8788, proxying Vite)
+  - Access the app at `http://localhost:8788` to test real Cloudflare Pages Functions
+  - Wrangler routes `/api/*` to the Pages Functions; all other requests proxy to Vite on 5000
+  - Requires local D1 and R2 bindings configured in `wrangler.toml` (use `--local` flag or `wrangler d1 create`)
+- `npm run dev:wrangler` — starts only the wrangler side (run `npm run dev:vite` separately first)
 - Build: `npm run build` — outputs to `dist/`
-- Vite proxies all `/api/*` requests to `localhost:8788`
 
 ## Notice Board Feature
 - **Route**: `/noticeboard`
