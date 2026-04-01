@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url';
 import { initDb } from './db.js';
 import { authRouter } from './routes/auth.js';
 import { postsRouter } from './routes/posts.js';
+import { contactRouter } from './routes/contact.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PORT = 8788;
@@ -16,6 +17,7 @@ app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')));
 
 app.use('/api/auth', authRouter);
 app.use('/api/posts', postsRouter);
+app.use('/api/contact', contactRouter);
 
 // Serve uploaded attachments at /api/uploads/:key (mirrors CF Pages Function)
 app.get('/api/uploads/:key', (req, res) => {

@@ -1,0 +1,74 @@
+2026-04-01T15:43:35.726Z	Initializing build environment...
+2026-04-01T15:43:38.959Z	Success: Finished initializing build environment
+2026-04-01T15:43:40.586Z	Cloning repository...
+2026-04-01T15:43:41.891Z	Restoring from dependencies cache
+2026-04-01T15:43:41.893Z	Restoring from build output cache
+2026-04-01T15:43:41.896Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2026-04-01T15:43:42.007Z	Installing project dependencies: npm clean-install --progress=false
+2026-04-01T15:43:44.915Z	npm warn deprecated prebuild-install@7.1.3: No longer maintained. Please contact the author of the relevant native addon; alternatives are available.
+2026-04-01T15:43:46.188Z	npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+2026-04-01T15:43:51.643Z	
+2026-04-01T15:43:51.643Z	added 324 packages, and audited 325 packages in 9s
+2026-04-01T15:43:51.643Z	
+2026-04-01T15:43:51.643Z	62 packages are looking for funding
+2026-04-01T15:43:51.643Z	  run `npm fund` for details
+2026-04-01T15:43:51.643Z	
+2026-04-01T15:43:51.643Z	found 0 vulnerabilities
+2026-04-01T15:43:51.894Z	Executing user build command: npm run build
+2026-04-01T15:43:52.162Z	
+2026-04-01T15:43:52.162Z	> react-example@0.0.0 build
+2026-04-01T15:43:52.163Z	> vite build
+2026-04-01T15:43:52.164Z	
+2026-04-01T15:43:52.592Z	vite v6.4.1 building for production...
+2026-04-01T15:43:52.688Z	transforming...
+2026-04-01T15:43:52.889Z	Found 1 warning while optimizing generated CSS:
+2026-04-01T15:43:52.889Z	
+2026-04-01T15:43:52.889Z	│ }
+2026-04-01T15:43:52.889Z	│ @layer base {
+2026-04-01T15:43:52.889Z	│   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap');
+2026-04-01T15:43:52.889Z	┆          ^-- Unknown at rule: @import
+2026-04-01T15:43:52.889Z	┆
+2026-04-01T15:43:52.889Z	│   body {
+2026-04-01T15:43:52.890Z	│     background-color: var(--color-surface);
+2026-04-01T15:43:52.890Z	
+2026-04-01T15:43:56.547Z	✓ 2103 modules transformed.
+2026-04-01T15:43:56.990Z	rendering chunks...
+2026-04-01T15:43:57.077Z	computing gzip size...
+2026-04-01T15:43:57.366Z	dist/index.html                                                                                            1.63 kB │ gzip:   0.66 kB
+2026-04-01T15:43:57.366Z	dist/assets/church-at-doonane_resize_1775041408616-BKa7PDDu.webp                                          16.06 kB
+2026-04-01T15:43:57.366Z	dist/assets/moscow-possible-airshaft-and-other-items-8_resize_1775041408617-D9B42y9G.webp                 32.02 kB
+2026-04-01T15:43:57.366Z	dist/assets/doonane-clonbrock-farm-1_resize_1775041408616-DaxqTAVb.webp                                   38.50 kB
+2026-04-01T15:43:57.366Z	dist/assets/clogh-brewery-2_resize_1775041408616-nnyLc_rc.webp                                            43.84 kB
+2026-04-01T15:43:57.367Z	dist/assets/newtown-8_resize_1775041408617-D0ya82hF.jpg                                                  343.90 kB
+2026-04-01T15:43:57.367Z	dist/assets/geneva-stores-crettyard-1_resize_1775041408615-Cvw8kT9w.jpg                                  348.10 kB
+2026-04-01T15:43:57.367Z	dist/assets/2ocqn930ubywvi8z0wl9dhefnm6z926_5wddflnjf0mkqqjwk0ftsksxmfre13_1775041408616-BjdoZw7e.png    383.85 kB
+2026-04-01T15:43:57.367Z	dist/assets/moscow-possible-airshaft-and-other-items-4_resize_1775041408617-D8gADn8x.jpg                 672.37 kB
+2026-04-01T15:43:57.367Z	dist/assets/Crettyard__County_Kilkenny_-_geograph.org.uk_-_1783304_1775041408617-xHKwx-p8.jpg          2,422.09 kB
+2026-04-01T15:43:57.367Z	dist/assets/index-Cm2lD01H.css                                                                            47.87 kB │ gzip:   8.73 kB
+2026-04-01T15:43:57.367Z	dist/assets/index-1q41RHIQ.js                                                                            484.47 kB │ gzip: 144.86 kB
+2026-04-01T15:43:57.368Z	✓ built in 4.72s
+2026-04-01T15:43:57.482Z	Success: Build command completed
+2026-04-01T15:43:57.663Z	Executing user deploy command: npx wrangler pages project create crettyardie --production-branch=main || true && npx wrangler pages deploy dist
+2026-04-01T15:43:59.375Z	
+2026-04-01T15:43:59.375Z	 ⛅️ wrangler 4.79.0
+2026-04-01T15:43:59.376Z	───────────────────
+2026-04-01T15:44:02.238Z	✨ Successfully created the 'crettyardie' project. It will be available at https://crettyardie.pages.dev/ once you create your first deployment.
+2026-04-01T15:44:02.239Z	To deploy a folder of assets, run 'wrangler pages deploy [directory]'.
+2026-04-01T15:44:03.721Z	
+2026-04-01T15:44:03.721Z	 ⛅️ wrangler 4.79.0
+2026-04-01T15:44:03.721Z	───────────────────
+2026-04-01T15:44:04.744Z	✨ Compiled Worker successfully
+2026-04-01T15:44:07.144Z	Uploading... (0/33)
+2026-04-01T15:44:08.940Z	Uploading... (11/33)
+2026-04-01T15:44:09.050Z	Uploading... (22/33)
+2026-04-01T15:44:10.069Z	Uploading... (33/33)
+2026-04-01T15:44:10.071Z	✨ Success! Uploaded 33 files (3.75 sec)
+2026-04-01T15:44:10.071Z	
+2026-04-01T15:44:10.493Z	✨ Uploading Functions bundle
+2026-04-01T15:44:12.488Z	🌎 Deploying...
+2026-04-01T15:44:16.798Z	✨ Deployment complete! Take a peek over at https://7fef3382.crettyardie.pages.dev
+2026-04-01T15:44:16.887Z	Success: Deploy command completed
+2026-04-01T15:44:16.889Z	Uploading to dependency cache
+2026-04-01T15:44:16.892Z	Skipping build output cache as it's not supported for your project
+2026-04-01T15:44:20.595Z	Success: Dependencies uploaded to build cache.
+2026-04-01T15:44:20.777Z	✨ Success! Build completed.

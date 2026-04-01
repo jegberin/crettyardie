@@ -1,0 +1,405 @@
+Yes — the best contact page for crettyard.ie is a guided enquiry funnel, not a single generic form. That fits the site plan already mapped for “Contact / Contribute,” including business submissions, events, photos, history, and corrections, and it supports the directory and community-content sections you are building.
+
+Page goal
+The page should begin with one clear prompt: “What would you like to contact us about?” and then reveal only the questions relevant to that choice. This will reduce friction, improve submission quality, and make it easier to triage requests inside Replit or a Cloudflare-backed workflow.
+
+Use a first step with selectable cards:
+
+Advertise on crettyard.ie
+
+Add my business to the directory
+
+Correct, change or remove a directory listing
+
+Share photos
+
+Share a story or local history
+
+Suggest a text correction or amendment
+
+Submit an event
+
+General enquiry
+
+Funnel structure
+Below is a clean flow you can give directly to Replit.
+
+1. Entry step
+Heading: Contact & Contribute
+Intro copy: “Choose the reason for your enquiry and we’ll ask the right questions.”
+
+Step 1 fields
+
+Enquiry type, required, card selector or large radio buttons
+
+Are you contacting as, optional, resident / business owner / organisation / visitor / family historian / other
+
+Consent checkbox, required, “I understand my submission may be reviewed before publication”
+
+After selection, show a tailored form path.
+
+Flows by enquiry type
+A. Advertise on crettyard.ie
+This route is for businesses or organisations that want promotion, featured placement, sponsored content, or campaign visibility. The site already has a local business and services focus, so this category is commercially useful.
+
+Follow-up questions
+
+Business or organisation name, required
+
+Contact person, required
+
+Email, required
+
+Phone, optional
+
+Website or social link, optional
+
+What would you like to promote?, required, business / event / offer / service / seasonal campaign / other
+
+Preferred advertising type, required, featured directory listing / homepage feature / sponsored article / social promotion / not sure
+
+Target timing, optional, ASAP / this month / seasonal / specific date
+
+Estimated budget, optional, under €100 / €100–€250 / €250–€500 / €500+ / not sure
+
+Short description of what you want advertised, required
+
+Upload logo or images, optional
+
+Anything else we should know?, optional
+
+Submission tag
+
+Category: Advertising
+
+Priority: Commercial lead
+
+Auto-confirmation message
+
+“Thanks. We’ve received your advertising enquiry and will review the best fit for crettyard.ie.”
+
+B. Add my business to the directory
+This is important because the site already has a planned business directory and ongoing expansion of local entries.
+
+Follow-up questions
+
+Business name, required
+
+Contact person, required
+
+Email, required
+
+Phone, optional
+
+Business address or townland, required
+
+Is the business based in Crettyard or serving the wider Crettyard area?, required, based here / serves area / both
+
+Business category, required, retail / food / trades / agriculture / health / sport / childcare / services / tourism / other
+
+Short business description, required, 30–120 words
+
+Website, optional
+
+Facebook, optional
+
+Instagram, optional
+
+Other link, optional
+
+Opening hours, optional
+
+Do you want to include your phone/email publicly?, required, yes / no / only one of them
+
+Upload logo or photos, optional
+
+Is this a new listing or an update to an existing one?, required, new / update / not sure
+
+Source or proof of business presence, optional, CRO / website / social page / signage / local reference
+
+Consent checkbox, required, “I confirm I have the right to submit this business information.”
+
+Useful admin logic
+
+If “update” is selected, ask for current listing URL or listing name.
+
+If no website/socials are provided, still allow submission but flag for manual verification. That fits the project’s existing pattern of locally verified entries.
+
+C. Correct, change or remove a directory listing
+This needs to separate simple edits from legal or owner-led deletion requests.
+
+Follow-up questions
+
+Listing name, required
+
+Listing URL, optional
+
+What do you need to do?, required, correct details / update details / mark as closed / remove listing
+
+Are you the owner or authorised representative?, required, yes / no
+
+Your name, required
+
+Email, required
+
+Phone, optional
+
+What information is wrong?, required
+
+What should it say instead?, optional unless correction/update selected
+
+Reason for removal, required if remove listing selected
+
+Evidence or reference link, optional
+
+Upload supporting file or screenshot, optional
+
+Conditional logic
+
+If “remove listing” and “not owner,” show message: “We may need extra verification before removing a listing.”
+
+If “mark as closed,” ask “temporary or permanent?”
+
+Admin tags
+
+Correction
+
+Update
+
+Removal request
+
+Verification needed
+
+D. Share photos
+The sitemap already anticipates media galleries and historic or present-day imagery, so this deserves its own route.
+
+Follow-up questions
+
+Your name, required
+
+Email, required
+
+Phone, optional
+
+What kind of photos are you sharing?, required, old/historic / recent village photos / event photos / landscape / business / sports / school / other
+
+Approximate date of photo, optional
+
+Location shown, optional
+
+Who took the photo?, optional
+
+Do you own the photo or have permission to share it?, required, yes / no
+
+Can we publish it on crettyard.ie?, required, yes / yes with credit / please ask first
+
+Preferred credit line, optional
+
+Tell us what the photo shows, required
+
+Upload photos, required
+
+Any background story connected to the image?, optional
+
+Important UX note
+
+If user selects “historic,” add a box: “Do you know any names, places, or dates shown in the image?”
+
+E. Share a story or local history
+This supports the “Voices of Crettyard,” oral history, and heritage sections already planned.
+
+Follow-up questions
+
+Your name, required
+
+Email, required
+
+Are you the author or family representative?, optional
+
+Topic of your story, required
+
+Story type, required, local memory / family history / mining history / school memories / sports history / parish life / business history / other
+
+Time period, optional
+
+Place connected to the story, optional
+
+Tell us the story, required, large textarea
+
+Can we edit for clarity or length before publishing?, required, yes / no
+
+Can we publish your name?, required, full name / first name only / anonymous
+
+Upload supporting photos or documents, optional
+
+Source notes or references, optional
+
+Conditional logic
+
+If “anonymous” is selected, still collect name privately for admin records.
+
+If “mining history” or “family history,” optionally ask whether the contributor is open to follow-up questions.
+
+F. Suggest a text correction or amendment
+This is for website copy, history pages, factual text, captions, and local descriptions.
+
+Follow-up questions
+
+Your name, required
+
+Email, required
+
+Which page needs correction?, required, page URL or page title
+
+What type of amendment is this?, required, typo / factual correction / wording improvement / outdated information / missing detail
+
+What text is currently there?, optional
+
+What should it say instead?, required
+
+Why should it be changed?, optional
+
+Source or evidence, optional but strongly encouraged
+
+Is this urgent?, optional, yes / no
+
+Best practice
+
+Keep this route very light so people actually use it.
+
+G. Submit an event
+The sitemap includes an events section and community calendar, so this should be a direct path rather than hidden in general contact.
+
+Follow-up questions
+
+Event name, required
+
+Organiser name, required
+
+Email, required
+
+Phone, optional
+
+Event date, required
+
+Event time, optional
+
+Venue or location, required
+
+Event category, required, sport / school / parish / fundraiser / social / heritage / family / other
+
+Short description, required
+
+Ticket or booking link, optional
+
+Is the event free?, optional, yes / no / donation
+
+Upload poster or image, optional
+
+Deadline for publishing, optional
+
+H. General enquiry
+Keep this simple.
+
+Follow-up questions
+
+Your name, required
+
+Email, required
+
+Phone, optional
+
+Subject, required
+
+Message, required
+
+Shared contact fields
+Every funnel should end with the same final section so the structure stays consistent.
+
+Final step
+
+Name, required unless already captured
+
+Email, required
+
+Phone, optional
+
+Preferred contact method, email / phone
+
+Best time to contact, optional
+
+GDPR/privacy consent, required
+
+Optional anti-spam checkbox or honeypot field
+
+Recommended UX for Replit
+Build it as a multi-step conditional form on one page rather than sending users to separate pages. That will suit a static site or lightweight app workflow on Replit, and later you can connect submissions to Cloudflare Pages/Workers, email routing, or a simple database-backed admin inbox.
+
+Ask Replit to implement:
+
+Step cards on page load
+
+Conditional question sets based on selected enquiry type
+
+Progress indicator, for example “Step 1 of 3”
+
+Save selected enquiry type in state
+
+File upload support for images and documents
+
+Validation with clear inline errors
+
+Final success screen with submission reference
+
+Spam protection, honeypot plus Turnstile if using Cloudflare
+
+Submission routing by enquiry type, so each type can go to a different email, Worker, or Airtable/DB table
+
+Data model
+Give Replit this structure for each submission:
+
+Field	Notes
+submissionId	Auto-generated unique ID
+enquiryType	Advertising, directory-add, directory-edit, photo, history, text-amendment, event, general
+name	Main contact name
+email	Required for most paths
+phone	Optional
+organisation	Business or group name where relevant
+pageUrlOrListing	For corrections or directory edits
+details	Main message body
+structuredAnswers	JSON object of path-specific answers
+uploads	File URLs or attachment refs
+consent	Boolean
+status	New / in review / approved / published / needs follow-up
+createdAt	Timestamp
+Replit task brief
+Use this exact brief:
+
+Create a “Contact & Contribute” page for crettyard.ie as a multi-step funnel form.
+
+First screen should ask “What would you like to enquire about?” with large selectable cards for: advertise, add business, correct/change/delete business listing, share photos, share stories/history, suggest text amendments, submit event, general enquiry.
+
+After a card is selected, show only the relevant follow-up questions for that path.
+
+All paths must end with contact details and consent fields.
+
+Support file uploads for photos, posters, screenshots, and supporting documents where relevant.
+
+Add form validation, anti-spam protection, success state, and admin-friendly submission tagging.
+
+Store structured answers so submissions can be filtered by enquiry type.
+
+Design the page for non-technical local users, mobile first, with plain language and minimal friction.
+
+Include a short note explaining that submissions may be reviewed before publication.
+
+Prepare the code so it can later connect to Cloudflare Turnstile plus a Cloudflare Worker or email endpoint.
+
+Suggested page copy
+Page title: Contact & Contribute
+
+Intro: Help us improve crettyard.ie. You can submit a business, suggest a correction, share local photos or history, advertise, or send a general enquiry.
+
+Trust note: We review submissions before publishing to help keep information accurate and useful.
+
+A strong CTA label for the first step is: Choose your enquiry type.

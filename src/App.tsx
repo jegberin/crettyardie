@@ -12,6 +12,7 @@ import HistoryPage from './pages/HistoryPage';
 import BusinessesPage from './pages/BusinessesPage';
 import CommunityPage from './pages/CommunityPage';
 import NoticeboardPage from './pages/NoticeboardPage';
+import ContactPage from './pages/ContactPage';
 import { AuthProvider } from './context/AuthContext';
 
 export default function App() {
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/businesses" element={<BusinessesPage />} />
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/noticeboard" element={<NoticeboardPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
         <Footer />
       </div>

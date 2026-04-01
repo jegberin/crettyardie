@@ -1,0 +1,169 @@
+Cookie Policy
+You can publish the following as your website Cookie Policy.
+
+Cookie Policy for crettyard.ie
+Effective date: 1 April 2026
+
+At crettyard.ie, we use cookies and similar technologies to help the website work properly, understand how people use the site, and improve content and features over time. Google states that Google Analytics mainly uses first-party cookies and related identifiers to measure visitor interactions, and Irish GDPR guidance notes that analytics cookies are not strictly necessary and should not be set before consent where consent is required.
+
+What are cookies?
+Cookies are small text files placed on your device when you visit a website. They can help a site remember your preferences, support core functions, and collect information about how the site is used.
+
+How we use cookies
+We may use the following categories of cookies on crettyard.ie:
+
+Strictly necessary cookies: These are needed for the website to function properly, such as security, form handling, or session-related features. Irish GDPR guidance notes that strictly necessary cookies are the narrow exception to the consent requirement.
+
+Analytics cookies: These help us understand how visitors use the site, such as which pages are visited, how long users stay, and which devices or browsers are used. Google states that Analytics collects first-party cookies, device/browser data, on-site activity data, and related identifiers for reporting and measurement.
+
+Preference cookies: These may remember choices such as cookie settings or display preferences if implemented on the site. Preference-type cookies are generally distinct from strictly necessary cookies and should be assessed carefully before use.
+
+Google Analytics
+We use Google Analytics to collect aggregated information about website traffic and usage. Google explains that Analytics may collect first-party cookies, device and browser information, approximate location derived from IP-related processing, and on-site interaction data, and Google says site operators must disclose this use and inform users about the information stored and the opportunity to grant or deny consent.
+
+We intend to configure Google Analytics in a privacy-conscious way, including avoiding the transmission of personally identifiable information to Google Analytics. Google’s terms prohibit customers from sending personally identifiable information to Analytics.
+
+Where required by law, analytics cookies will only be used after you have given consent through our cookie banner or consent tool. Irish guidance states that Google Analytics cookies are not strictly necessary and should not load before consent.
+
+Cloudflare-related technologies
+We may use Cloudflare services to host or support parts of the site and to store notice board data and website submissions. Cloudflare’s public privacy materials explain that it processes service-related data and customer logs in connection with its hosted and infrastructure services.
+
+If security or platform-level cookies are used by Cloudflare or site infrastructure to protect the website, prevent abuse, or support functionality, those cookies may be treated as necessary where they are genuinely required for the service requested by the user. That classification should depend on the specific service and implementation.
+
+Managing cookies
+You can manage cookies through:
+
+Our cookie consent banner or settings tool, if available.
+
+Your browser settings, which allow you to block or delete cookies.
+
+Google’s browser add-on for opting out of Google Analytics, which Google says disables Analytics measurement for visited sites when installed and enabled.
+
+Please note that blocking some cookies may affect how parts of the website function.
+
+Changes to this policy
+We may update this Cookie Policy from time to time to reflect changes in the website, legal requirements, or the services we use, including changes to analytics or notice board features.
+
+Contact
+If you have questions about this Cookie Policy, contact us through the contact page on crettyard.ie.
+
+Privacy Policy
+Below is a draft Privacy Policy suitable for your current setup.
+
+Privacy Policy for crettyard.ie
+Effective date: 1 April 2026
+
+crettyard.ie is a community-focused website about Crettyard, including local information, directory content, and a notice board. This Privacy Policy explains what personal data we may collect, how we use it, and the choices available to users. The site plan already includes contact, contribution, directory updates, events, photos, stories, and corrections, so this policy should cover both visitor analytics and user-submitted content.
+
+Who we are
+crettyard.ie is a local website providing information about Crettyard, its community, history, businesses, events, and local submissions. The website also includes or plans to include user contribution features such as directory updates, contact forms, event submissions, and notice board content.
+
+Personal data we may collect
+Depending on how you use the site, we may collect:
+
+Contact details you submit, such as your name, email address, phone number, or organisation name.
+
+Content you choose to send us, such as business details, event information, stories, corrections, photos, or notice board submissions. The planned site structure explicitly includes submissions for businesses, events, photos, history, and corrections.
+
+Technical and usage data, such as browser type, device information, approximate location, referring pages, and website interaction data collected through Google Analytics. Google states that Analytics may collect cookies, device/browser-related data, and on-site activity information for measurement.
+
+Security and platform data that may be processed through infrastructure providers such as Cloudflare in connection with hosting, logs, or submission handling. Cloudflare’s privacy materials describe processing related to customer account information and logs in connection with its services.
+
+How we use personal data
+We may use personal data to:
+
+Respond to enquiries sent through the contact page.
+
+Review and publish submissions to the directory, notice board, events listings, or other parts of the site.
+
+Verify corrections, edits, or removal requests related to listings or published content.
+
+Improve website performance, usability, and content through analytics reporting.
+
+Protect the site from spam, abuse, or misuse.
+
+Maintain records of submissions and editorial decisions for website administration. These uses align with the planned contribution and correction flows already identified for the site.
+
+Legal bases
+Where GDPR applies, we may rely on one or more of the following legal bases:
+
+Consent, for example where you submit information voluntarily or accept analytics cookies.
+
+Legitimate interests, for example to operate, secure, improve, and manage the website and its local information features.
+
+Legal obligations, where we are required to keep or disclose information under applicable law. Google states that site operators need to inform users and offer a chance to grant or deny consent where cookies and related identifiers are used under applicable privacy laws.
+
+Google Analytics
+We use Google Analytics to understand how visitors use crettyard.ie and to improve the site. Google explains that Analytics uses first-party cookies and may collect device/browser data, usage activity, and IP-related information used for security and approximate geographic reporting, while also stating that customers must not send personally identifiable information to Google Analytics.
+
+We will aim to use Google Analytics in a privacy-conscious manner, and where required by law, analytics tracking will only be activated after consent. Irish GDPR guidance states that Google Analytics cookies are not strictly necessary and should not be loaded before the user consents.
+
+Google also states that it acts as a data processor for Google Analytics, while site owners remain controllers over the collection, access, retention, and deletion of their analytics data.
+
+Notice board and Cloudflare database
+Notice board submissions and related user-generated content may be stored using Cloudflare-hosted services, including a Cloudflare database. Cloudflare’s public privacy documentation states that it processes service-related data and logs in connection with its products and hosted services.
+
+If you post to the notice board or submit content for publication, we may store the information you provide, including your contact details, message content, and any related metadata needed to manage, moderate, or display the submission. Because the site is intended to accept community submissions and corrections, this storage is part of operating the feature requested by the user.
+
+User submissions
+If you submit a business, event, correction, photo, story, history note, or notice board item, we may review, edit for clarity, verify, publish, decline, or remove the submission in line with our editorial or moderation process. The planned site structure specifically includes submission routes for businesses, events, photos, history, and corrections.
+
+Please do not submit sensitive personal data or personal data about other people unless you have a lawful basis and permission to do so. Google also prohibits customers from sending personally identifiable information into Google Analytics, so any site configuration should be designed to avoid that.
+
+Sharing of data
+We do not sell personal data. We may share data only where necessary with service providers who support the operation of the website, such as analytics, hosting, database, security, or email/form handling providers. Google states that Analytics data is not shared without customer authorisation except in limited circumstances such as where required by law.
+
+Depending on your configuration, service providers may process data outside Ireland or the European Economic Area. Irish guidance notes that Google Analytics may involve transfers to Google servers and refers to the EU-US Data Privacy Framework as part of the current transfer landscape.
+
+Data retention
+We will keep personal data only for as long as reasonably necessary for the purpose for which it was collected, including managing enquiries, reviewing submissions, maintaining notice board content, handling corrections, and meeting legal or administrative requirements. Google Analytics also provides retention controls for user-level and event-level data stored on Google’s servers.
+
+A practical site rule would be:
+
+Contact enquiries: retain for up to 12 months.
+
+Directory and notice board submissions: retain while active and for an administrative period afterward.
+
+Analytics data: retain according to the shortest useful Google Analytics retention setting you choose to implement. Google advises customers to review and set retention controls appropriately.
+
+Your rights
+Depending on applicable law, you may have rights to:
+
+Request access to your personal data.
+
+Request correction of inaccurate data.
+
+Request deletion of data in certain circumstances.
+
+Object to certain processing.
+
+Withdraw consent where processing is based on consent.
+
+Lodge a complaint with a supervisory authority, including the Irish Data Protection Commission. These rights arise under GDPR and related privacy laws referenced by Google’s Analytics privacy materials.
+
+Security
+We take reasonable steps to protect data submitted through the website, including use of reputable service providers and access controls appropriate to the scale of the project. Google describes security controls around Analytics data, and Cloudflare describes privacy and security commitments in connection with its services.
+
+No method of transmission or storage is completely secure, so we cannot guarantee absolute security.
+
+Children
+If the site allows public submissions, parents or guardians should take care when sharing information connected to children, including names, photos, school details, or event participation. This is especially relevant because the site plan includes schools, childcare, sports, events, and photo sharing sections.
+
+Third-party links
+The website may link to external websites, social media pages, business listings, or partner services. The site research already includes business and organisation listings with websites and social links, so users may leave crettyard.ie to visit third-party services.
+
+We are not responsible for the privacy practices of those third-party sites.
+
+Changes to this policy
+We may update this Privacy Policy from time to time to reflect changes to the website, legal requirements, analytics setup, notice board features, or service providers.
+
+Contact
+For privacy-related questions or requests, please contact us through the contact page on crettyard.ie.
+
+Implementation notes
+For an Irish site using Google Analytics, your cookie banner should block Google Analytics until the user accepts analytics cookies, because Irish guidance says Google Analytics cookies are not strictly necessary. Your Privacy Policy and Cookie Policy should also be linked in the footer and near the cookie banner, and your contact and notice board forms should include a short privacy notice at the point of collection.
+
+Recommended short form notice
+You can place this under forms:
+
+“Any information you submit through this form will be used to review your enquiry or submission and to manage content on crettyard.ie. Analytics cookies are only used where consent is given.”

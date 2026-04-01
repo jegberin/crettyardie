@@ -38,3 +38,14 @@ CREATE TABLE IF NOT EXISTS attachments (
   size         INTEGER NOT NULL,
   FOREIGN KEY (post_id) REFERENCES posts(id) ON DELETE CASCADE
 );
+
+CREATE TABLE IF NOT EXISTS contact_submissions (
+  id              TEXT PRIMARY KEY,
+  enquiry_type    TEXT NOT NULL,
+  name            TEXT NOT NULL,
+  email           TEXT NOT NULL,
+  structured_data TEXT NOT NULL DEFAULT '{}',
+  uploads         TEXT NOT NULL DEFAULT '[]',
+  status          TEXT NOT NULL DEFAULT 'new',
+  created_at      TEXT NOT NULL DEFAULT (datetime('now'))
+);
