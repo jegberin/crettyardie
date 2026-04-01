@@ -17,6 +17,7 @@ interface Business {
   sectorColor: string;
   description: string;
   logo?: string;
+  logoFit?: 'contain' | 'cover';
   initials: string;
   location?: string;
   links: BizLink[];
@@ -146,9 +147,12 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-teal-100 text-teal-800',
     description:
       'Serving members in the Mayo and Doonane area of County Laois, providing savings, loans and financial services to the local rural community.',
+    logo: '/logos/mayodoonane-cu.jpg',
     initials: 'MDCU',
     location: 'Doonane, Crettyard',
-    links: [],
+    links: [
+      { label: 'Mayo News article', href: 'https://www.mayonews.ie/news/home/1420927/mayo-credit-union-to-expand-with-new-merger.html' },
+    ],
   },
   {
     name: 'Clonbrock Heritage Centre',
@@ -156,6 +160,8 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-amber-100 text-amber-800',
     description:
       'Listed as a local heritage attraction by Laois Tourism, preserving and sharing the story of the Clonbrock estate and its place in the wider local history of the Crettyard area.',
+    logo: '/logos/clonbrock.jpg',
+    logoFit: 'cover',
     initials: 'CHC',
     location: 'Clonbrock, Crettyard',
     links: [
@@ -278,16 +284,19 @@ const ALL_BUSINESSES: Business[] = [
 
 // ─── Logo with initials fallback ─────────────────────────────────────────────
 
-function BusinessLogo({ logo, initials, name }: { logo?: string; initials: string; name: string }) {
+function BusinessLogo({ logo, logoFit = 'contain', initials, name }: { logo?: string; logoFit?: 'contain' | 'cover'; initials: string; name: string }) {
   const [failed, setFailed] = useState(false);
 
   if (logo && !failed) {
+    const imgClass = logoFit === 'cover'
+      ? 'w-full h-full object-cover'
+      : 'w-full h-full object-contain p-1';
     return (
       <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center overflow-hidden shadow-sm border border-outline-variant/10 shrink-0">
         <img
           src={logo}
           alt={`${name} logo`}
-          className="w-full h-full object-contain p-1"
+          className={imgClass}
           onError={() => setFailed(true)}
         />
       </div>
@@ -314,7 +323,7 @@ function BusinessCard({ biz, idx }: { biz: Business; idx: number }) {
     >
       {/* Header: logo + name */}
       <div className="flex items-start gap-5 mb-5">
-        <BusinessLogo logo={biz.logo} initials={biz.initials} name={biz.name} />
+        <BusinessLogo logo={biz.logo} logoFit={biz.logoFit} initials={biz.initials} name={biz.name} />
         <div className="flex-1 min-w-0 pt-1">
           <h3 className="font-headline text-xl font-bold leading-tight">{biz.name}</h3>
           {biz.tradingAs && (
