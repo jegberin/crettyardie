@@ -3,6 +3,17 @@ import { motion } from 'motion/react';
 import { ArrowRight, BookOpen, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+// Local images — real photographs of the Crettyard area
+import imgCrettyardJunction from '@assets/Crettyard,_County_Kilkenny_-_geograph.org.uk_-_1783304_1775041408617.jpg';
+import imgCoalMiningHistorical from '@assets/2ocqn930ubywvi8z0wl9dhefnm6z926$5wddflnjf0mkqqjwk0ftsksxmfre13_1775041408616.png';
+import imgChurchDoonane from '@assets/church-at-doonane_resize_1775041408616.webp';
+import imgNewtownFlemings from '@assets/newtown-8_resize_1775041408617.jpg';
+import imgMoscowChimneyStack from '@assets/moscow-possible-airshaft-and-other-items-8_resize_1775041408617.webp';
+import imgMoscowAirshaft from '@assets/moscow-possible-airshaft-and-other-items-4_resize_1775041408617.jpg';
+import imgDoonaneClonbrockFarm from '@assets/doonane-clonbrock-farm-1_resize_1775041408616.webp';
+import imgGenevaStores from '@assets/geneva-stores-crettyard-1_resize_1775041408615.jpg';
+import imgCloghRuins from '@assets/clogh-brewery-2_resize_1775041408616.webp';
+
 const sections = [
   { id: 'origins', label: 'Origins' },
   { id: 'coal', label: 'Coal & Industry' },
@@ -31,10 +42,17 @@ const sources = [
   { label: 'Wikipedia — Crettyard overview', href: 'https://en.wikipedia.org/wiki/Crettyard' },
 ];
 
+// Gallery of additional local photographs
+const gallery = [
+  { src: imgGenevaStores, alt: 'Geneva Stores, Crettyard — shop and petrol station at the crossroads', caption: 'Geneva Stores, Crettyard junction' },
+  { src: imgDoonaneClonbrockFarm, alt: 'Doonane Clonbrock Farm with ornate white iron gates', caption: 'Doonane — Clonbrock Farm' },
+  { src: imgCloghRuins, alt: 'Old stone ruins and dry stone wall near Clogh in the Crettyard area', caption: 'Stone heritage — Clogh area' },
+];
+
 export default function HistoryPage() {
   return (
     <main>
-      {/* Hero */}
+      {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative pt-40 pb-24 px-6 md:px-12 overflow-hidden bg-surface-container-low">
         <div className="max-w-screen-2xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
@@ -81,14 +99,13 @@ export default function HistoryPage() {
             >
               <img
                 className="absolute inset-0 w-full h-full object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7ijjBJvGKl5oGiue-1xgESQ-9D9FvQowd7RucJV22kNZb-lYrHJrBknTnnzdono1HV2aytGvPnAVVQ-m3QyOhtDEuaIwuAG4on4073CTyhmCdXqW_COMuGUN4tq1n1RCfJakRjOjFXF2vig_FH8ZfADBbhBtv4AxveMfbzyjqPMHyXy9H-sbCS_vb6Cp-X53jmYNQnh3I_aYcFLD66J7m7hrNkiqut-TQ4riIZRl5Ee4y-KNykTAlcbduk1QIIeBnHFAmAtl5mY7L"
-                alt="Crettyard heritage landscape on the Castlecomer Plateau"
-                referrerPolicy="no-referrer"
+                src={imgCrettyardJunction}
+                alt="Crettyard village junction on the N78, County Laois"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
               <div className="absolute bottom-6 left-6 right-6">
                 <span className="inline-block bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-xs font-bold text-primary uppercase tracking-widest">
-                  Castlecomer Plateau, Co. Laois
+                  Crettyard junction, Co. Laois
                 </span>
               </div>
             </motion.div>
@@ -96,14 +113,13 @@ export default function HistoryPage() {
         </div>
       </section>
 
-      {/* Intro */}
+      {/* ── Intro ────────────────────────────────────────────────────────── */}
       <section className="py-20 px-6 md:px-12 bg-surface">
         <div className="max-w-3xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="prose-lg"
           >
             <p className="text-xl md:text-2xl text-on-surface-variant leading-[1.8] font-medium mb-6">
               Crettyard, or <em className="text-on-surface not-italic font-semibold">Crochta Ard</em>, is a historic townland in the civil parish of Killabban, barony of Slievemargy, County Laois. The townland sits close to the Laois-Kilkenny border and is part of a wider district that includes places such as Newtown, Doonane, Monavea and Mayo.
@@ -115,14 +131,14 @@ export default function HistoryPage() {
         </div>
       </section>
 
-      {/* Origins */}
+      {/* ── Origins ──────────────────────────────────────────────────────── */}
       <section id="origins" className="py-24 px-6 md:px-12 bg-surface-container-low">
         <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-6 lg:col-start-1"
+            className="lg:col-span-6"
           >
             <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Origins</span>
             <h2 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-8">Origins in the parish landscape</h2>
@@ -140,20 +156,27 @@ export default function HistoryPage() {
           >
             <div className="rounded-3xl overflow-hidden shadow-2xl -rotate-1 hover:rotate-0 transition-transform duration-700">
               <img
-                className="w-full h-[400px] object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMNXg9zTrydQ4lAjWvf70NckFZYNTgpVl04ao3ZhSD_MzPl9RXYV9lMowvwdlMXBh1m3hHGCv2Uabfsn6elk2VMfuq75m3NP8KnOmp9VQU9a9wn4GJn0-tbl1PB_smYKKOIbIHFFF_na-8kXx72vSTdmTxxzKD_iJh2TeVisGNvW1PiMdO113bOExNOt3q1hvmWLJPUDgO9pVfwPA0Gl4aPHOMrPlhvNCjMh-sMGkDbCkm1hAVZ0PfZ3-xro5UOw997RL8exldKc3U"
-                alt="Crettyard village approach in County Laois"
-                referrerPolicy="no-referrer"
+                className="w-full h-[420px] object-cover"
+                src={imgChurchDoonane}
+                alt="Church at Doonane, in the Crettyard parish area of County Laois"
               />
+              <div className="bg-surface-container px-6 py-4">
+                <p className="text-xs font-semibold text-on-surface-variant uppercase tracking-widest">Church at Doonane — parish heritage</p>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Coal & Industry */}
+      {/* ── Coal & Industry ──────────────────────────────────────────────── */}
       <section id="coal" className="py-24 px-6 md:px-12 bg-surface">
-        <div className="max-w-3xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+        <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-6 lg:col-start-7 lg:row-start-1"
+          >
             <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Coal & Industry</span>
             <h2 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-8">The coal beneath Crettyard</h2>
             <div className="space-y-6 text-on-surface-variant text-lg leading-relaxed">
@@ -163,6 +186,24 @@ export default function HistoryPage() {
               <p>Later development pushed the mines deeper. The Jarrow Seam became one of the better known workings of the district, and pit names such as Rock Bog and Vera remained part of local memory long after the peak years of extraction had passed.</p>
             </div>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-5 lg:row-start-1"
+          >
+            <div className="rounded-3xl overflow-hidden shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-700 bg-stone-900">
+              <img
+                className="w-full h-[420px] object-cover opacity-90 sepia-[0.2]"
+                src={imgCoalMiningHistorical}
+                alt="Historical photograph of coal mining operations on the Castlecomer Plateau, County Laois"
+              />
+              <div className="bg-stone-800 px-6 py-4">
+                <p className="text-xs font-semibold text-stone-400 uppercase tracking-widest">Coal workings, Castlecomer Plateau — historical photograph</p>
+              </div>
+            </div>
+          </motion.div>
         </div>
 
         {/* Pull quote */}
@@ -170,7 +211,7 @@ export default function HistoryPage() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto mt-16"
+          className="max-w-4xl mx-auto mt-20"
         >
           <blockquote className="border-l-4 border-primary pl-8 py-4">
             <p className="font-headline text-2xl md:text-3xl font-extrabold text-on-surface italic leading-snug">
@@ -180,45 +221,88 @@ export default function HistoryPage() {
         </motion.div>
       </section>
 
-      {/* Newtown, Moscow & Geneva */}
+      {/* ── Newtown, Moscow & Geneva ─────────────────────────────────────── */}
       <section id="newtown" className="py-24 px-6 md:px-12 bg-surface-container-low">
+        <div className="max-w-screen-2xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-6"
+            >
+              <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Newtown, Moscow & Geneva</span>
+              <h2 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-8">Newtown, Moscow and Geneva</h2>
+              <div className="space-y-6 text-on-surface-variant text-lg leading-relaxed">
+                <p>One of the most striking stories in the Crettyard area comes from nearby Newtown. In the early nineteenth century, the Grand Canal Company became involved in the local coalfield and established a planned settlement for colliers.</p>
+                <p>This industrial ambition left behind one of the great place-name curiosities in Irish local history. Historical writing on the area describes Newtown as lying <em className="text-on-surface font-semibold not-italic">"south of Moscow and north of Geneva"</em>, preserving a remarkable cluster of names in the Laois borderlands.</p>
+                <p>These names still give the area a distinct personality. They suggest a district that once thought big, worked hard and connected local industry to wider transport dreams, even when some of those ambitions proved difficult to complete.</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-5 lg:col-start-8"
+            >
+              <div className="rounded-3xl overflow-hidden shadow-2xl -rotate-1 hover:rotate-0 transition-transform duration-700">
+                <img
+                  className="w-full h-[380px] object-cover"
+                  src={imgNewtownFlemings}
+                  alt="Flemings pub and off-licence at the Newtown crossroads on the N78 towards Kilkenny"
+                />
+                <div className="bg-surface-container px-6 py-4">
+                  <p className="text-xs font-semibold text-on-surface-variant uppercase tracking-widest">Flemings, Newtown — N78 crossroads</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Mining chimney — a physical remnant of that era */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-4"
+            >
+              <div className="rounded-3xl overflow-hidden shadow-2xl">
+                <img
+                  className="w-full h-[500px] object-cover object-top"
+                  src={imgMoscowChimneyStack}
+                  alt="Tall stone mining chimney stack near Moscow, a surviving landmark from the Castlecomer coalfield"
+                />
+                <div className="bg-surface-container px-6 py-4">
+                  <p className="text-xs font-semibold text-on-surface-variant uppercase tracking-widest">Mining chimney stack at Moscow</p>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-7 lg:col-start-6"
+            >
+              <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Surviving landmarks</p>
+              <h3 className="font-headline text-3xl font-extrabold tracking-tight mb-6">Remnants of the industrial age</h3>
+              <p className="text-on-surface-variant text-lg leading-relaxed">
+                The tall stone chimney stack at Moscow is one of the most striking physical reminders of the coalfield era still standing in the landscape. Once part of a pumping or winding engine house, it marks the scale of industry that once operated across this plateau — an industry that shaped not just the economy but the identity of the entire district. These landmarks root the place-names of Moscow and Geneva in something concrete and real.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Migration ────────────────────────────────────────────────────── */}
+      <section id="diaspora" className="py-24 px-6 md:px-12 bg-surface">
         <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="lg:col-span-5"
-          >
-            <div className="rounded-3xl overflow-hidden shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-700 bg-surface-container-high">
-              <img
-                className="w-full h-[420px] object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEeQirM9xql3kf8ra2kwsDE2zOaV21-fYAzhRW8RA8KGG3TB4lwt1Imt31fg5l-s_Qoez0_2rpdCVCgsa5d5lWf4A2dVMQzaWoPNiNaYp_74pe200rx1jUMfFDj7okKb25eMKaDpJzPc4zUZ7f85jSvUJ4WT8mCrGlqCdl-Hzc6jH6U9TDEo4RjX_VbUiS0Aj1ixUFxWLJgffQU6hhA7b1s4fCTXL6vw65C_0-RJ_wOoSLJrEoJcPNJkd0CWpqk5kjNar6AAyZ1Cq_"
-                alt="Crettyard heritage landscape"
-                referrerPolicy="no-referrer"
-              />
-            </div>
-          </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-6 lg:col-start-7"
+            className="lg:col-span-6"
           >
-            <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Newtown, Moscow & Geneva</span>
-            <h2 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-8">Newtown, Moscow and Geneva</h2>
-            <div className="space-y-6 text-on-surface-variant text-lg leading-relaxed">
-              <p>One of the most striking stories in the Crettyard area comes from nearby Newtown. In the early nineteenth century, the Grand Canal Company became involved in the local coalfield and established a planned settlement for colliers.</p>
-              <p>This industrial ambition left behind one of the great place-name curiosities in Irish local history. Historical writing on the area describes Newtown as lying <em className="text-on-surface font-semibold not-italic">"south of Moscow and north of Geneva"</em>, preserving a remarkable cluster of names in the Laois borderlands.</p>
-              <p>These names still give the area a distinct personality. They suggest a district that once thought big, worked hard and connected local industry to wider transport dreams, even when some of those ambitions proved difficult to complete.</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Migration */}
-      <section id="diaspora" className="py-24 px-6 md:px-12 bg-surface">
-        <div className="max-w-3xl mx-auto">
-          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <span className="inline-block text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Migration</span>
             <h2 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-8">Hard work, hardship and migration</h2>
             <div className="space-y-6 text-on-surface-variant text-lg leading-relaxed">
@@ -226,30 +310,43 @@ export default function HistoryPage() {
               <p>In the nineteenth century, migration became part of the story. Research gathered for this project traces strong links between the Leinster coalfield and Pennsylvania, where families from Crettyard and neighbouring places joined mining communities that became known as the "Irish Valley".</p>
               <p>That migration story gives Crettyard a wider horizon. The area is local and rural, but its history reaches across the Atlantic through surnames, descendants and family memory.</p>
             </div>
+
+            {/* Callout cards */}
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {[
+                { label: 'Pennsylvania', desc: 'Primary destination for Crettyard mining families in the 19th century' },
+                { label: 'Irish Valley', desc: 'Name given to communities shaped by Leinster coalfield emigrants' },
+                { label: 'Killabban parish', desc: 'Parish network linking Crettyard to its diaspora through surname and record' },
+              ].map((item) => (
+                <div key={item.label} className="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/10">
+                  <p className="font-headline text-lg font-extrabold text-primary mb-2">{item.label}</p>
+                  <p className="text-xs text-on-surface-variant leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
 
-          {/* Stat callouts */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6"
+            className="lg:col-span-5 lg:col-start-8"
           >
-            {[
-              { label: 'Pennsylvania', desc: 'Primary migration destination for Crettyard mining families in the 19th century' },
-              { label: 'Irish Valley', desc: 'Name given to communities across the Atlantic shaped by Leinster coalfield emigrants' },
-              { label: 'Killabban parish', desc: 'The wider parish network linking Crettyard to its diaspora through surname and record' },
-            ].map((item) => (
-              <div key={item.label} className="p-8 rounded-3xl bg-surface-container-low border border-outline-variant/10">
-                <p className="font-headline text-xl font-extrabold text-primary mb-3">{item.label}</p>
-                <p className="text-sm text-on-surface-variant leading-relaxed">{item.desc}</p>
+            <div className="rounded-3xl overflow-hidden shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-700">
+              <img
+                className="w-full h-[460px] object-cover"
+                src={imgDoonaneClonbrockFarm}
+                alt="Doonane Clonbrock Farm with ornate white iron gates — a historic property in the Crettyard area"
+              />
+              <div className="bg-surface-container px-6 py-4">
+                <p className="text-xs font-semibold text-on-surface-variant uppercase tracking-widest">Doonane — Clonbrock Farm</p>
               </div>
-            ))}
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Legacy */}
+      {/* ── Legacy ───────────────────────────────────────────────────────── */}
       <section id="legacy" className="py-24 px-6 md:px-12 bg-surface-container-low">
         <div className="max-w-screen-2xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           <motion.div
@@ -274,17 +371,19 @@ export default function HistoryPage() {
           >
             <div className="rounded-3xl overflow-hidden shadow-2xl">
               <img
-                className="w-full h-[450px] object-cover"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDomtkaPHGu_j9Dpzzdf7m12M6uTeG6wQbP75UnJhjn0iryeQbGUhIi_GqhbSxf1B48iguaTjvJWueOMt5BUJDs_zZHUR4mI2yAhXpATFgzeXUAf5OZEsgfycz68fklfHLGk326aH_QluhkK3dJ5Ak6Wp2gmlkH2Ac1gcv36fzaDzjAY_wY8unAJv_YEtcbM0Wvn6b5cXtQyK3uNHkavCf10MBmStJ2BvbU5-2656okPYYi9JwqMcWCmXoEhA5WGhAwBnLoG4FSnYEB"
-                alt="Crettyard heritage landscape on the Castlecomer Plateau"
-                referrerPolicy="no-referrer"
+                className="w-full h-[460px] object-cover"
+                src={imgMoscowAirshaft}
+                alt="Possible airshaft structure at Moscow near Crettyard — gothic arched openings overgrown with vegetation"
               />
+              <div className="bg-surface-container px-6 py-4">
+                <p className="text-xs font-semibold text-on-surface-variant uppercase tracking-widest">Moscow — possible airshaft structure</p>
+              </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Timeline */}
+      {/* ── Timeline ─────────────────────────────────────────────────────── */}
       <section className="py-24 px-6 md:px-12 bg-surface">
         <div className="max-w-4xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-16">
@@ -312,8 +411,40 @@ export default function HistoryPage() {
         </div>
       </section>
 
-      {/* Sources */}
-      <section id="sources" className="py-24 px-6 md:px-12 bg-surface-container-low">
+      {/* ── Photo gallery strip ───────────────────────────────────────────── */}
+      <section className="py-16 px-6 md:px-12 bg-surface-container-low">
+        <div className="max-w-7xl mx-auto">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mb-10">
+            <h2 className="font-headline text-3xl font-extrabold tracking-tight">More from the area</h2>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {gallery.map((photo, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all"
+              >
+                <div className="h-56 overflow-hidden bg-surface-container">
+                  <img
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    src={photo.src}
+                    alt={photo.alt}
+                  />
+                </div>
+                <div className="bg-surface-container px-5 py-4">
+                  <p className="text-xs font-semibold text-on-surface-variant uppercase tracking-widest">{photo.caption}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Sources ──────────────────────────────────────────────────────── */}
+      <section id="sources" className="py-24 px-6 md:px-12 bg-surface">
         <div className="max-w-3xl mx-auto">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <div className="flex items-center gap-4 mb-4">
@@ -335,7 +466,7 @@ export default function HistoryPage() {
                     href={src.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-start gap-4 p-5 rounded-2xl bg-surface border border-outline-variant/10 hover:border-primary/30 hover:shadow-lg transition-all"
+                    className="group flex items-start gap-4 p-5 rounded-2xl bg-surface-container-low border border-outline-variant/10 hover:border-primary/30 hover:shadow-lg transition-all"
                   >
                     <ExternalLink size={18} className="text-primary mt-0.5 shrink-0 group-hover:scale-110 transition-transform" />
                     <span className="text-on-surface-variant group-hover:text-primary transition-colors font-medium leading-relaxed">{src.label}</span>
@@ -347,7 +478,7 @@ export default function HistoryPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/* ── CTA ──────────────────────────────────────────────────────────── */}
       <section className="py-24 px-6 md:px-12">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
