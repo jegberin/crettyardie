@@ -1,0 +1,306 @@
+This version is written as a standalone page section you can drop into a Replit project and style later with plain CSS, Tailwind, or component classes. The references section is included on-page so readers can verify the history for themselves.
+
+xml
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Crettyard History | Coal Mining, Killabban & Local Heritage</title>
+  <meta
+    name="description"
+    content="Explore the history of Crettyard, County Laois, from Killabban parish and early Christian roots to coal mining, Newtown, and the story of Moscow and Geneva."
+  />
+  <link rel="canonical" href="https://crettyard.ie/history-heritage" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Crettyard History | Coal Mining, Killabban & Local Heritage" />
+  <meta
+    property="og:description"
+    content="Discover the story of Crettyard through parish history, coal mining, migration, and the unusual local place-names of Moscow and Geneva."
+  />
+  <meta property="og:url" content="https://crettyard.ie/history-heritage" />
+  <meta property="og:site_name" content="Crettyard.ie" />
+  <meta property="og:locale" content="en_IE" />
+  <meta property="og:image" content="https://commons.wikimedia.org/wiki/Category:Crettyard" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Crettyard History | Coal Mining, Killabban & Local Heritage" />
+  <meta
+    name="twitter:description"
+    content="Explore the deep history of Crettyard, from the parish landscape of Killabban to the mines of the Castlecomer Plateau."
+  />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://crettyard.ie/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "History & Heritage",
+            "item": "https://crettyard.ie/history-heritage"
+          }
+        ]
+      },
+      {
+        "@type": "Article",
+        "headline": "History of Crettyard",
+        "description": "A history of Crettyard in County Laois, including Killabban parish, the Castlecomer Plateau coalfield, Newtown, migration, and local heritage.",
+        "author": {
+          "@type": "Organization",
+          "name": "Crettyard.ie"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Crettyard.ie"
+        },
+        "mainEntityOfPage": "https://crettyard.ie/history-heritage",
+        "inLanguage": "en-IE",
+        "about": [
+          "Crettyard",
+          "Killabban",
+          "Castlecomer Plateau",
+          "Coal mining in County Laois",
+          "Newtown, Doonane and Monavea"
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <main id="main-content">
+    <article class="history-page">
+      <header class="page-hero">
+        <div class="container">
+          <p class="eyebrow">Crettyard, County Laois</p>
+          <h1>History of Crettyard</h1>
+          <p class="lead">
+            Crettyard is a small place with a surprisingly deep story. Its history stretches from
+            the old parish landscape of Killabban to the coal seams of the Castlecomer Plateau,
+            and from roadside settlement to migration, memory and local identity.
+          </p>
+
+          <nav class="section-nav" aria-label="History page sections">
+            <a href="#origins">Origins</a>
+            <a href="#coal">Coal & Industry</a>
+            <a href="#newtown">Newtown, Moscow & Geneva</a>
+            <a href="#diaspora">Migration</a>
+            <a href="#legacy">Legacy</a>
+            <a href="#sources">Sources</a>
+          </nav>
+        </div>
+      </header>
+
+      <section class="history-intro">
+        <div class="container">
+          <p>
+            Crettyard, or <em>Crochta Ard</em>, is a historic townland in the civil parish of
+            Killabban, barony of Slievemargy, County Laois. The townland sits close to the
+            Laois-Kilkenny border and is part of a wider district that includes places such as
+            Newtown, Doonane, Monavea and Mayo.
+          </p>
+          <p>
+            That wider landscape matters. The story of Crettyard is not only the story of one
+            junction or one village cluster, but of a parish, a plateau and a working countryside
+            shaped over centuries by religion, transport, mining and community life.
+          </p>
+        </div>
+      </section>
+
+      <section id="origins" class="history-section">
+        <div class="container">
+          <h2>Origins in the parish landscape</h2>
+          <p>
+            Long before modern traffic passed through Crettyard, the area belonged to the older
+            world of Killabban. Local historical research connects the district with an ancient
+            ecclesiastical landscape associated with St. Abban, and with a parish structure that
+            developed over many centuries.
+          </p>
+          <p>
+            This older layer still survives in the surrounding geography. Nearby churches, burial
+            grounds and holy wells help explain why Crettyard feels rooted in more than one place
+            at once: the settlement may be modest in size, but its historical setting is broad and
+            unusually rich.
+          </p>
+          <p>
+            For visitors, this is an important way to read the map. Crettyard makes most sense not
+            as an isolated dot on a road, but as the centre of a local heritage landscape linking
+            Killabban, Newtown, Mayo, Doonane and Monavea.
+          </p>
+        </div>
+      </section>
+
+      <section id="coal" class="history-section">
+        <div class="container">
+          <h2>The coal beneath Crettyard</h2>
+          <p>
+            If one force shaped Crettyard more than any other, it was the geology of the
+            Castlecomer Plateau. Unlike much of the limestone midlands, this upland district was
+            defined by coal measures, and those seams changed the local economy for generations.
+          </p>
+          <p>
+            Historical sources on the Castlecomer coalfield note that the Three Foot Seam extended
+            from Coolbawn to Crettyard and was worked from around the seventeenth century. What
+            sounds like a small rural place today was once part of a much larger industrial story
+            involving pits, shafts, tramways, labour and extraction.
+          </p>
+          <p>
+            Mining did not simply provide employment. It altered the landscape itself. Early
+            descriptions of the district speak of ground broken by openings, spoil and workings,
+            showing how deeply the coal industry marked daily life in this part of Laois.
+          </p>
+          <p>
+            Later development pushed the mines deeper. The Jarrow Seam became one of the better
+            known workings of the district, and pit names such as Rock Bog and Vera remained part
+            of local memory long after the peak years of extraction had passed.
+          </p>
+        </div>
+      </section>
+
+      <section id="newtown" class="history-section">
+        <div class="container">
+          <h2>Newtown, Moscow and Geneva</h2>
+          <p>
+            One of the most striking stories in the Crettyard area comes from nearby Newtown. In
+            the early nineteenth century, the Grand Canal Company became involved in the local
+            coalfield and established a planned settlement for colliers.
+          </p>
+          <p>
+            This industrial ambition left behind one of the great place-name curiosities in Irish
+            local history. Historical writing on the area describes Newtown as lying “south of
+            Moscow and north of Geneva”, preserving a remarkable cluster of names in the Laois
+            borderlands.
+          </p>
+          <p>
+            These names still give the area a distinct personality. They suggest a district that
+            once thought big, worked hard and connected local industry to wider transport dreams,
+            even when some of those ambitions proved difficult to complete.
+          </p>
+        </div>
+      </section>
+
+      <section id="diaspora" class="history-section">
+        <div class="container">
+          <h2>Hard work, hardship and migration</h2>
+          <p>
+            Coal brought wages, but it also brought danger, uncertainty and physically demanding
+            work. Families in the wider Crettyard district lived with the boom-and-bust rhythms of
+            an extractive industry, and those pressures shaped local life deeply.
+          </p>
+          <p>
+            In the nineteenth century, migration became part of the story. Research gathered for
+            this project traces strong links between the Leinster coalfield and Pennsylvania, where
+            families from Crettyard and neighbouring places joined mining communities that became
+            known as the “Irish Valley”.
+          </p>
+          <p>
+            That migration story gives Crettyard a wider horizon. The area is local and rural, but
+            its history reaches across the Atlantic through surnames, descendants and family memory.
+          </p>
+        </div>
+      </section>
+
+      <section id="legacy" class="history-section">
+        <div class="container">
+          <h2>The past in the present</h2>
+          <p>
+            Modern Crettyard is not a museum piece, and that is part of its appeal. The roads are
+            modern, the community is active, and the area continues to evolve, yet the older
+            layers remain visible in its townlands, graveyards, sporting grounds, field patterns
+            and local stories.
+          </p>
+          <p>
+            What makes Crettyard’s history memorable is that it is both intimate and wide-ranging.
+            It is the story of a parish landscape, a coal district, a transport corridor and a
+            community that has endured through change.
+          </p>
+          <p>
+            Stand here long enough and the place begins to read differently. Beneath the everyday
+            landscape lies an older world of worship, work, extraction, travel and resilience.
+          </p>
+        </div>
+      </section>
+
+      <section class="history-timeline">
+        <div class="container">
+          <h2>Historic outline</h2>
+          <ol>
+            <li>Early Christian and parish roots in the wider Killabban area.</li>
+            <li>Medieval development of the parish landscape.</li>
+            <li>Seventeenth-century exploitation of local coal seams.</li>
+            <li>Eighteenth- and nineteenth-century expansion of mining on the Castlecomer Plateau.</li>
+            <li>Early nineteenth-century Newtown development linked to canal and coal ambitions.</li>
+            <li>Nineteenth-century migration from the coalfield to Pennsylvania.</li>
+            <li>Twentieth-century decline of mining and survival of place-memory in the landscape.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="sources" class="history-sources">
+        <div class="container">
+          <h2>Sources and references</h2>
+          <p>
+            Readers can confirm the history on this page using the sources below.
+          </p>
+          <ul>
+            <li>
+              <a href="https://www.townlands.ie/laois/slievemargy/killabban/newtown/crettyard/" rel="noopener noreferrer" target="_blank">
+                Townlands.ie — Crettyard townland profile
+              </a>
+            </li>
+            <li>
+              <a href="https://www.askaboutireland.ie/reading-room/environment-geography/physical-landscape/castlecomer-plateau/coalmining-in-castlecomer/coal-seams/" rel="noopener noreferrer" target="_blank">
+                Ask About Ireland — Coal Seams of the Castlecomer Plateau
+              </a>
+            </li>
+            <li>
+              <a href="https://irishwaterwayshistory.com/abandoned-or-little-used-irish-waterways/the-grand-canal/south-of-moscow-north-of-geneva/" rel="noopener noreferrer" target="_blank">
+                Irish Waterways History — South of Moscow, north of Geneva
+              </a>
+            </li>
+            <li>
+              <a href="https://laois.ie/sites/default/files/2024-10/LBGS_LR_Vol2-min_0.pdf" rel="noopener noreferrer" target="_blank">
+                Laois Burial Grounds Survey — Volume 2
+              </a>
+            </li>
+            <li>
+              <a href="https://commons.wikimedia.org/wiki/Category:Crettyard" rel="noopener noreferrer" target="_blank">
+                Wikimedia Commons — Crettyard images
+              </a>
+            </li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/Crettyard" rel="noopener noreferrer" target="_blank">
+                Wikipedia — Crettyard overview
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </article>
+  </main>
+</body>
+</html>
+Artwork links
+These are the safest image-source pages to use as artwork starting points for the History page, because they are already tied to the historical themes we have used on the page.
+
+Wikimedia Commons Crettyard category: https://commons.wikimedia.org/wiki/Category:Crettyard
+
+Irish Waterways History, “South of Moscow, north of Geneva”: https://irishwaterwayshistory.com/abandoned-or-little-used-irish-waterways/the-grand-canal/south-of-moscow-north-of-geneva/
+
+Ask About Ireland, Coal Seams: https://www.askaboutireland.ie/reading-room/environment-geography/physical-landscape/castlecomer-plateau/coalmining-in-castlecomer/coal-seams/
+
+Townlands.ie Crettyard profile and map context: https://www.townlands.ie/laois/slievemargy/killabban/newtown/crettyard/
+
+For best results on the live page, I would use one wide hero image, one old-map or mining-context image mid-page, and one landscape image near the “legacy” section, because that gives the history page visual rhythm without turning it into a gallery.
