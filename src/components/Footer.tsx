@@ -15,6 +15,12 @@ export const Footer = () => (
           <p className="text-sm leading-relaxed text-on-surface-variant max-w-xs">
             History, community and local life in the heart of County Laois.
           </p>
+          <Link
+            to="/contact?category=advertise"
+            className="inline-block mt-5 px-5 py-2.5 rounded-full signature-gradient text-white font-bold text-xs uppercase tracking-widest hover:brightness-110 transition-all shadow-md shadow-primary/20"
+          >
+            Advertise on this site?
+          </Link>
         </div>
 
         {/* Explore */}
