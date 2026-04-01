@@ -1,4 +1,5 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import {
   Megaphone, Store, Edit3, Camera, BookOpen, FileText,
@@ -410,6 +411,7 @@ const Progress: React.FC<{ step: number; total: number }> = ({ step, total }) =>
 type Step = 'select' | 'details' | 'contact' | 'success';
 
 export default function ContactPage() {
+  const [searchParams] = useSearchParams();
   const [step, setStep] = useState<Step>('select');
   const [categoryId, setCategoryId] = useState('');
   const [formData, setFormData] = useState<Record<string, string>>({});
@@ -418,6 +420,14 @@ export default function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
   const [apiError, setApiError] = useState('');
   const [submissionId, setSubmissionId] = useState('');
+
+  useEffect(() => {
+    const cat = searchParams.get('category');
+    if (cat && CATEGORIES.find(c => c.id === cat)) {
+      setCategoryId(cat);
+      setStep('details');
+    }
+  }, [searchParams]);
 
   const category = CATEGORIES.find(c => c.id === categoryId);
   const showUploads = FILE_CATEGORIES.includes(categoryId);

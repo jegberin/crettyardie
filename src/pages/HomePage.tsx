@@ -189,9 +189,17 @@ const FeaturedBusinesses = () => {
             <h2 className="font-headline text-4xl font-extrabold mb-4 tracking-tight">Local Businesses</h2>
             <p className="text-on-surface-variant text-lg">Crettyard has a diverse rural economy, with practical local services at the junction and a wider network of businesses across the surrounding area. From farm supply and natural stone to wildflower production and digital services, local enterprise remains a major part of the area's identity today.</p>
           </div>
-          <Link to="/businesses" className="px-8 py-3 rounded-full border-2 border-primary text-primary font-bold text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all whitespace-nowrap">
-            Browse the directory
-          </Link>
+          <div className="flex flex-col items-stretch md:items-end gap-3">
+            <Link
+              to="/contact?category=advertise"
+              className="px-8 py-3 rounded-full signature-gradient text-white font-bold text-sm uppercase tracking-widest hover:brightness-110 transition-all whitespace-nowrap text-center shadow-lg shadow-primary/20"
+            >
+              Feature my business here
+            </Link>
+            <Link to="/businesses" className="px-8 py-3 rounded-full border-2 border-primary text-primary font-bold text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all whitespace-nowrap text-center">
+              Browse the directory
+            </Link>
+          </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {businesses.map((biz, idx) => (
