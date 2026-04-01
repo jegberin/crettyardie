@@ -215,66 +215,6 @@ const ALL_BUSINESSES: Business[] = [
     ],
   },
   {
-    name: 'Leinster Retrofit Ltd',
-    sector: 'Retrofit & Installation',
-    sectorColor: 'bg-lime-100 text-lime-800',
-    description:
-      'Retrofit and energy installation services, registered with a Crettyard address.',
-    initials: 'LR',
-    links: [],
-    note: 'No public website confirmed.',
-  },
-  {
-    name: 'D&B Civil Engineering Ltd',
-    sector: 'Civil Engineering',
-    sectorColor: 'bg-orange-100 text-orange-800',
-    description:
-      'Civil engineering contractor with a Crettyard address in company registration records.',
-    initials: 'DB',
-    links: [],
-    note: 'No public website confirmed.',
-  },
-  {
-    name: 'K1-A Project Management Ltd',
-    sector: 'Project Management',
-    sectorColor: 'bg-violet-100 text-violet-800',
-    description:
-      'Project management and construction services, linked to the Crettyard area in company records.',
-    initials: 'K1A',
-    links: [],
-    note: 'No public website confirmed.',
-  },
-  {
-    name: 'Problast Ltd',
-    sector: 'Surface Preparation',
-    sectorColor: 'bg-zinc-100 text-zinc-700',
-    description:
-      'Surface preparation and industrial blasting, listed with a Crettyard-area address.',
-    initials: 'PB',
-    links: [],
-    note: 'No public website confirmed.',
-  },
-  {
-    name: 'Under a Cover Ltd',
-    sector: 'Construction & Coverings',
-    sectorColor: 'bg-cyan-100 text-cyan-800',
-    description:
-      'Construction and coverings contractor included in company registration records for the area.',
-    initials: 'UAC',
-    links: [],
-    note: 'No public website confirmed.',
-  },
-  {
-    name: 'Farnans Pigs Ltd',
-    sector: 'Agriculture',
-    sectorColor: 'bg-pink-100 text-pink-800',
-    description:
-      'An active agricultural business in the Crettyard area, specialising in pig farming.',
-    initials: 'FP',
-    links: [],
-    note: 'No public website confirmed.',
-  },
-  {
     name: 'Holistic Hair & Beauty',
     sector: 'Health & Beauty',
     sectorColor: 'bg-rose-100 text-rose-800',
