@@ -65,9 +65,9 @@ A community portal website for the Crettyard area in County Laois, Ireland. It s
 ## Notice Board Feature
 - **Route**: `/noticeboard`
 - **Auth flow**: register (username + email + password) → email verification via Resend → login → JWT in localStorage
-- **Password hashing**: PBKDF2 via Web Crypto API (compatible with CF Workers)
+- **Password hashing**: PBKDF2 via Web Crypto API (compatible with CF Workers). bcrypt is intentionally NOT used — it requires native Node.js bindings that are incompatible with the CF Workers V8 isolate runtime.
 - **JWT**: signed with HS256 using `jose` (compatible with CF Workers)
-- **File attachments**: up to 5 MB, stored locally (dev) or in R2 `posts/{postId}/{filename}` (production)
+- **File attachments**: up to 5 MB, stored locally as `uploads/{postId}_{filename}` (dev) or in R2 with key `{postId}_{sanitizedFilename}` (production). Flat key format (no slashes) avoids CF Pages catch-all route issues.
 - **Attachment URLs**: `/api/uploads/:key` — Express static (dev) or R2 proxy CF Function (production)
 - **Production CF env vars required**: `JWT_SECRET`, `SITE_URL`, `RESEND_API_KEY`, D1 binding `DB`, R2 binding `R2`
 

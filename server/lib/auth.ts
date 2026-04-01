@@ -25,7 +25,13 @@ export async function verifyToken(token: string): Promise<TokenPayload> {
   return payload as TokenPayload;
 }
 
-// ── Password (PBKDF2 via Web Crypto) ─────────────────────────────────────────
+// ── Password hashing (PBKDF2 via Web Crypto) ─────────────────────────────────
+// NOTE: bcrypt is NOT used because it requires native Node.js bindings that are
+// incompatible with the Cloudflare Workers runtime (V8 isolates, no native modules).
+// PBKDF2 via the standard Web Crypto API works identically in both Node.js ≥18
+// and Cloudflare Workers, ensuring dev/production parity.  100 000 iterations of
+// SHA-256 with a 16-byte random salt provides sufficient work factor for user
+// passwords at this scale.
 
 export async function hashPassword(password: string): Promise<string> {
   const enc = new TextEncoder();

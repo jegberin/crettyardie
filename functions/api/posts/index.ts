@@ -43,7 +43,8 @@ export async function onRequestPost(ctx: Ctx): Promise<Response> {
 
     const file = formData.get('file') as File | null;
     if (file && file.size > 0) {
-      const storageKey = `posts/${postId}/${file.name}`;
+      const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_');
+      const storageKey = `${postId}_${safeName}`;
       await R2.put(storageKey, await file.arrayBuffer(), {
         httpMetadata: { contentType: file.type || 'application/octet-stream' },
       });

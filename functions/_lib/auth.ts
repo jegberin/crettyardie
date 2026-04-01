@@ -21,6 +21,11 @@ export async function verifyToken(secret: string, token: string): Promise<TokenP
   return payload as TokenPayload;
 }
 
+// Password hashing uses PBKDF2 via the Web Crypto API (not bcrypt).
+// Reason: bcrypt requires native Node.js bindings incompatible with the
+// Cloudflare Workers V8 isolate runtime.  PBKDF2 is a standard Web Crypto
+// primitive that works in both Node ≥18 and CF Workers without polyfills,
+// ensuring identical behaviour in dev and production.
 export async function hashPassword(password: string): Promise<string> {
   const enc = new TextEncoder();
   const salt = crypto.getRandomValues(new Uint8Array(16));
