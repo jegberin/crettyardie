@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import {
   ArrowRight, ExternalLink, MapPin, GraduationCap,
-  Shield, Users, Activity, Landmark, Mountain, TreePine, Globe, Trophy,
+  Shield, Users, Activity, Landmark, Mountain, TreePine, Globe, Trophy, Flag,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -130,14 +130,25 @@ const HERITAGE_POINTS = [
 
 const TRAILS = [
   {
-    name: 'Cullahill Mountain',
+    name: 'Rossmore Gravel Walk',
     icon: <Mountain size={22} />,
     iconBg: 'bg-stone-100 text-stone-700',
-    distance: '~10 km',
+    distance: 'Local walk',
     description:
-      'A scenic walking route beginning at Cullahill village, passing through field paths, forest tracks, lanes, and minor roads. Cullahill Mountain is designated a Special Area of Conservation, adding ecological interest alongside the walking value.',
+      'A local gravel walking path in the Rossmore area, ideal for a quiet, accessible stroll close to home. A straightforward route on a well-surfaced path suited to all fitness levels and ages.',
     links: [
-      { label: 'Wikipedia overview', href: 'https://en.wikipedia.org/wiki/Cullahill_Mountain' },
+      { label: 'Google Maps', href: 'https://maps.app.goo.gl/mDiQhXYnK8ucF4SM9' },
+    ],
+  },
+  {
+    name: 'Community Sports Field Walk',
+    icon: <Flag size={22} />,
+    iconBg: 'bg-amber-100 text-amber-700',
+    distance: 'Loop walk',
+    description:
+      'A walking trail around the old GAA pitch, laid with a hardcore road surface and fitted with street lighting — making it a practical option even on dark winter evenings. A community asset for anyone looking to stay active year-round.',
+    links: [
+      { label: 'Google Maps', href: 'https://maps.app.goo.gl/s2Ju6iobQGJXj3WR9' },
     ],
   },
   {
@@ -146,7 +157,7 @@ const TRAILS = [
     iconBg: 'bg-green-100 text-green-700',
     distance: '1.6 – 6 km loops',
     description:
-      'A short drive from Crettyard, Castlecomer Discovery Park offers three permanent woodland orienteering trails across 80 acres of forest, as well as easy family loop walks described by Trail Kilkenny. A popular day-trip destination for families and groups.',
+      'A short drive from Crettyard, Castlecomer Discovery Park offers three permanent woodland orienteering trails across 80 acres of forest, as well as easy family loop walks. A popular day-trip destination for families and groups.',
     links: [
       { label: 'Discovery Park', href: 'https://www.discoverypark.ie/adventure-activities/orienteering-walking-trails-castlecomer/' },
       { label: 'Trail Kilkenny', href: 'https://www.trailkilkenny.ie/activity-trail/walking-trails/castlecomer-loop/' },
@@ -420,7 +431,7 @@ export default function CommunityPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {TRAILS.map((trail, idx) => (
               <TrailCard key={trail.name} trail={trail} idx={idx} />
             ))}
