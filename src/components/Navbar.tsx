@@ -9,8 +9,6 @@ const navLinks = [
   { name: 'Businesses', href: '/businesses' },
   { name: 'Community', href: '/community' },
   { name: 'Notice Board', href: '/noticeboard' },
-  { name: "What's On", href: '/events' },
-  { name: 'Visit', href: '/visit' },
 ];
 
 export const Navbar = () => {
