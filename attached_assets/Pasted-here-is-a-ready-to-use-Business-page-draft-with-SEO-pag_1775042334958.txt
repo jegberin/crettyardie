@@ -1,0 +1,131 @@
+here is a ready-to-use Business page draft with SEO, page copy, and a practical directory that excludes schools, clubs, and BM Custom Furniture. The directory below focuses on businesses in Crettyard and its immediate townlands, and I’ve separated stronger online listings from entries that appear valid locally but have limited public web presence or need a local confirmation check before launch.
+
+SEO setup
+SEO title: Crettyard Businesses | Local Services, Trades, Shops & Enterprise
+
+Meta description: Explore local businesses in Crettyard, County Laois, from shops, fuel and farm supplies to engineering, stone, digital services, heritage and specialist rural enterprise.
+
+URL slug: /businesses
+
+H1: Crettyard Businesses
+
+Primary keyword: Crettyard businesses
+
+Secondary keywords: businesses in Crettyard, Crettyard services, Crettyard local directory, Crettyard shops, Crettyard trades
+
+Page copy
+H1: Crettyard Businesses
+Crettyard and its surrounding townlands support a varied local economy shaped by farming, practical services, skilled trades, specialist manufacturing, and small independent enterprise. The area is not defined by one single main street alone; it works more as a rural network of junction services, workshops, suppliers, growers, contractors and specialist businesses serving local people and customers further afield.
+
+Introduction
+This page brings together local businesses based in Crettyard and the immediate area, including retail, fuel, agricultural supply, building trades, engineering, stone, digital services, gardening, heritage and specialist support services. It is designed to help residents, visitors, and people with family or business links to the area find trusted local names in one place.
+
+Supporting local enterprise
+One of Crettyard’s strengths is the range of enterprise packed into a small rural area. Alongside practical day-to-day services, the locality also includes businesses in wildflower production, agricultural engineering, stone supply, machinery, retrofit, web services and heritage tourism, which gives the area a broader economic story than many people might expect.
+
+Directory intro
+The first table lists businesses with a clear website, social page, or strong public-facing online presence. The second table includes locally identified businesses with limited online visibility, where a phone number, fresh social link, or preferred trading description should ideally be confirmed before the page goes live.
+
+Directory
+Public web presence
+Business	Sector	Website / links	Notes
+Geneva Stores / Inver Geneva Stores 
+Fuel, convenience and service station 
+Website 
+ · Facebook 
+High-confidence local listing in the Crettyard area. 
+Tirlán FarmLife Crettyard 
+Agricultural supply and hardware 
+Store finder 
+Identified in the research as a key farm and rural supply point at the Crettyard junction. 
+Crettyard Stone 
+Stone supplier 
+Website 
+ · Facebook 
+High-confidence listing; also confirmed in the research as a local supplier of sandstone, granite, paving and walling products. 
+Wilson Engineering 
+Agricultural engineering 
+Website 
+ · Facebook 
+ · Wilson Super Move 
+Listed as a Crettyard-based engineering firm with agricultural machinery specialism. 
+Crettyard Digital 
+Web design and IT services 
+Website 
+ · Facebook 
+ · Instagram 
+High-confidence local digital business serving trades and local enterprise. 
+Master My Garden 
+Gardening, media and education 
+Website 
+ · Podcast 
+ · Facebook 
+ · Instagram 
+The project research identifies this as a Crettyard-based gardening and media business linked to John Jones. 
+Design By Nature / Wildflowers.ie 
+Wildflower seed production and ecological horticulture 
+Website 
+The research describes Design By Nature in Monavea, Crettyard as a major local biodiversity and seed business. 
+Mpowered Performance and Rehabilitation 
+Sports rehab and therapy 
+Instagram 
+ · LinkedIn 
+High-confidence local practice, though no standalone website was found in the current research. 
+Mayo-Doonane Credit Union branch 
+Financial services 
+Website 
+Included in the business research as local financial service infrastructure for the area. 
+Clonbrock Heritage Centre / Museum 
+Heritage attraction and visitor interest 
+Laois Tourism listing 
+ · Instagram reel 
+ · TikTok 
+Listed by Laois Tourism as a Crettyard heritage attraction at Clonbrock. 
+Local businesses with limited web presence
+Business	Sector	Website / links	Notes
+Behan’s Pub 
+Pub and social venue 
+No dedicated website found. 
+Included in the research as a local country pub near Newtown/Turra Hill serving the Crettyard area. 
+Galtee Fuels, Newtown Cross 
+Fuel merchant / coal 
+No current standalone website confirmed. 
+Included in local listings, but the research notes that current trading status should be confirmed locally before launch. 
+Blue Equipment (Ireland) Limited 
+Machinery and plant 
+Corporate site noted in the research: Blue Group 
+Listed with a Crettyard-linked address in Fairymount in the research and CSV. 
+McDonald Concrete Flooring Limited 
+Concrete flooring and construction 
+No public standalone website confirmed. 
+High-confidence company listing with a Crettyard address in the research. 
+Leinster Retrofit Limited 
+Retrofit and construction installation 
+No public standalone website confirmed. 
+High-confidence CRO-backed local business entry. 
+D&B Civil Engineering Limited 
+Civil engineering 
+No public standalone website confirmed. 
+Included in the research as a Crettyard-address company suitable for the business directory. 
+K1-A Project Management Limited 
+Project management and construction services 
+No public standalone website confirmed. 
+Included in the CRO-linked local business research. 
+Problast Limited 
+Surface preparation / blasting 
+No public standalone website confirmed. 
+Listed in the research with a Crettyard-area address. 
+Under a Cover Limited 
+Construction / coverings 
+No public standalone website confirmed. 
+Included in the CRO-backed local business list for the area. 
+Farnans Pigs Limited 
+Agriculture / pig enterprise 
+No public standalone website confirmed. 
+Included in the research as an active Crettyard-area agricultural business. 
+Holistic Hair & Beauty 
+Hair and beauty 
+No verified website or social page confirmed. 
+The CSV marks this as low-confidence and the wider research says the exact local web presence needs confirmation before publication. 
+Publishing notes
+I would keep Irish Horse Sales out of the main directory for now, because the research says its official base appears to be in County Tipperary and only a local presence or signage in the Crettyard area is suggested. I would also add a small note on the live page inviting business owners to submit corrections, updated links, logos and opening details, because several local firms clearly exist but do not yet have a strong public web footprint.

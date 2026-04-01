@@ -9,6 +9,7 @@ import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import HomePage from './pages/HomePage';
 import HistoryPage from './pages/HistoryPage';
+import BusinessesPage from './pages/BusinessesPage';
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/history-heritage" element={<HistoryPage />} />
+        <Route path="/businesses" element={<BusinessesPage />} />
       </Routes>
       <Footer />
     </div>
