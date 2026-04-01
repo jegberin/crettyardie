@@ -308,7 +308,7 @@ export default function CommunityPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {SCHOOLS.map((org, idx) => (
               <OrgCard key={org.name} org={org} idx={idx} />
             ))}
