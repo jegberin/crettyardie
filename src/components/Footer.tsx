@@ -22,8 +22,7 @@ export const Footer = () => (
           <ul className="space-y-4">
             <li><Link to="/history-heritage" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">History &amp; Heritage</Link></li>
             <li><Link to="/businesses" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Business Directory</Link></li>
-            <li><Link to="/community" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Schools &amp; Childcare</Link></li>
-            <li><Link to="/community" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Sport &amp; Clubs</Link></li>
+            <li><Link to="/community" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Community</Link></li>
             <li><Link to="/noticeboard" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Notice Board</Link></li>
           </ul>
         </div>
@@ -50,7 +49,7 @@ export const Footer = () => (
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors"
         >
-          <img src="/favicon.svg" alt="" className="w-4 h-4 rounded-sm" aria-hidden="true" />
+          <img src="http://digital.crettyard.ie/favicon.png" alt="" className="w-4 h-4 rounded-sm" aria-hidden="true" />
           Web design by <span className="font-semibold">Crettyard Digital</span>
         </a>
       </div>
