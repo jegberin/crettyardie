@@ -26,8 +26,8 @@ interface Org {
 
 const SCHOOLS: Org[] = [
   {
-    name: 'Scoil Naomh Abban',
-    subtitle: 'Newtown National School',
+    name: 'Newtown National School',
+    subtitle: 'Scoil Naomh Abban',
     icon: <GraduationCap size={22} />,
     iconBg: 'bg-emerald-100 text-emerald-700',
     description:
@@ -36,7 +36,7 @@ const SCHOOLS: Org[] = [
     links: [
       { label: 'Website', href: 'http://scoilnaomhabban.weebly.com' },
       { label: 'Facebook', href: 'https://www.facebook.com/p/Newtown-NS-100057254186155/' },
-      { label: 'Google Maps', href: 'https://www.google.com/maps/search/?api=1&query=Scoil+Naomh+Abban%2C+Newtown%2C+Crettyard%2C+Co.+Laois' },
+      { label: 'Google Maps', href: 'https://maps.app.goo.gl/y87HgVXTVo82kkv47' },
     ],
   },
   {
