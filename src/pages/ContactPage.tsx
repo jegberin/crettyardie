@@ -49,8 +49,6 @@ const CATEGORIES: Category[] = [
         options: ['Featured directory listing', 'Homepage feature', 'Sponsored article', 'Social promotion', 'Not sure yet'] },
       { name: 'target_timing', label: 'Target timing', type: 'radio',
         options: ['As soon as possible', 'This month', 'Seasonal', 'Specific date'] },
-      { name: 'estimated_budget', label: 'Estimated budget', type: 'radio',
-        options: ['Under €100', '€100–€250', '€250–€500', '€500+', 'Not sure yet'] },
       { name: 'description', label: 'Short description of what you want advertised', type: 'textarea', required: true, rows: 4 },
       { name: 'anything_else', label: 'Anything else we should know?', type: 'textarea', rows: 3 },
     ],
