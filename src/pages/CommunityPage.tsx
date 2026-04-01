@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import {
   ArrowRight, ExternalLink, MapPin, GraduationCap,
-  Shield, Users, Activity, Landmark, Mountain, TreePine, Globe,
+  Shield, Users, Activity, Landmark, Mountain, TreePine, Globe, Trophy,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -327,7 +327,7 @@ export default function CommunityPage() {
           >
             <div className="flex items-center gap-4 mb-4">
               <div className="w-10 h-10 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center">
-                <Shield size={20} />
+                <Trophy size={20} />
               </div>
               <p className="font-bold text-primary tracking-[0.2em] uppercase text-xs">Sport & Recreation</p>
             </div>
