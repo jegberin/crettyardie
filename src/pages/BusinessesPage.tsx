@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, ExternalLink, MapPin, Send, Globe } from 'lucide-react';
+import { ArrowRight, ExternalLink, MapPin, Navigation, Send, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -367,6 +367,42 @@ export default function BusinessesPage() {
             {ALL_BUSINESSES.map((biz, idx) => (
               <BusinessCard key={biz.name} biz={biz} idx={idx} />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Business Map ─────────────────────────────────────────────────── */}
+      <section className="py-24 bg-surface-container">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          <div className="lg:col-span-5">
+            <p className="font-bold text-primary tracking-[0.2em] uppercase text-xs mb-4">Directory Map</p>
+            <h2 className="font-headline text-4xl font-extrabold mb-8 tracking-tight">Find Crettyard Businesses</h2>
+            <p className="text-on-surface-variant text-lg leading-relaxed mb-4">
+              All businesses in this directory are mapped across the Crettyard area — from the junction at Newtown Cross to the surrounding townlands of Doonane, Clonbrock, Moscow and Fairymount.
+            </p>
+            <p className="text-on-surface-variant text-base leading-relaxed mb-10">
+              Click any marker to see the business name and location. Use the full-screen button to explore on Google Maps.
+            </p>
+            <a
+              href="https://www.google.com/maps/d/viewer?mid=1_VP3c3y1gOZLY5MN9X5ywH5gtkpirXM"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 rounded-full signature-gradient text-on-primary font-bold text-sm uppercase tracking-widest inline-flex items-center gap-3 shadow-xl shadow-primary/20 hover:scale-105 transition-transform"
+            >
+              <Navigation size={20} /> Open full map
+            </a>
+          </div>
+          <div className="lg:col-span-7 h-[480px] rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 relative border border-outline-variant/10">
+            <iframe
+              title="Crettyard Businesses Map"
+              src="https://www.google.com/maps/d/embed?mid=1_VP3c3y1gOZLY5MN9X5ywH5gtkpirXM&ehbc=2E312F"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>
