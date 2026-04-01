@@ -15,6 +15,8 @@ interface Org {
   subtitle?: string;
   icon: React.ReactNode;
   iconBg: string;
+  logo?: string;
+  logoFit?: 'contain' | 'cover';
   description: string;
   location?: string;
   links: OrgLink[];
@@ -73,13 +75,15 @@ const SPORTS: Org[] = [
     subtitle: 'GAA Club',
     icon: <Shield size={22} />,
     iconBg: 'bg-amber-100 text-amber-700',
+    logo: '/logos/crettyardclg.jpg',
+    logoFit: 'contain',
     description:
       'The local GAA club, based in Newtown, Crettyard, with an active online presence and a dedicated club website. Crettyard CLG brings together hurling and football for all ages across the wider community.',
     location: 'Newtown, Crettyard, Co. Laois',
     links: [
       { label: 'Website', href: 'http://www.crettyardgaa.com' },
       { label: 'Facebook', href: 'https://www.facebook.com/crettyard/' },
-      { label: 'Google Maps', href: 'https://www.google.com/maps/search/?api=1&query=Crettyard+CLG%2C+Newtown%2C+Crettyard%2C+Co.+Laois' },
+      { label: 'Google Maps', href: 'https://maps.app.goo.gl/9LoNz6eedvXFSuQa7' },
     ],
   },
   {
@@ -87,13 +91,14 @@ const SPORTS: Org[] = [
     subtitle: "Ladies Gaelic Football Club",
     icon: <Users size={22} />,
     iconBg: 'bg-violet-100 text-violet-700',
+    logo: '/logos/crettyardladies.jpg',
+    logoFit: 'contain',
     description:
       'Crettyard Ladies GFC caters for players from U6s right through to adult level, providing an active and welcoming club for women and girls in the community. The club has a strong social media presence across both Facebook and Instagram.',
     location: 'Crettyard, Co. Laois',
     links: [
       { label: 'Instagram', href: 'https://www.instagram.com/crettyard_ladies_gfc/' },
       { label: 'Facebook', href: 'https://www.facebook.com/p/Crettyard-Ladies-Gaelic-Football-Club-100070748090565/' },
-      { label: 'Google Maps', href: 'https://www.google.com/maps/search/?api=1&query=Crettyard+Ladies+GFC%2C+Crettyard%2C+Co.+Laois' },
     ],
   },
   {
@@ -101,6 +106,8 @@ const SPORTS: Org[] = [
     subtitle: 'Athletics Club',
     icon: <Activity size={22} />,
     iconBg: 'bg-sky-100 text-sky-700',
+    logo: '/logos/stabbansac.jpg',
+    logoFit: 'contain',
     description:
       "Based in Monavea, Crettyard, St. Abban's AC is a long-established athletics club with a strong emphasis on coaching, inclusion, and community participation. The club has produced athletes at national level and remains active across all age groups.",
     location: 'Monavea, Crettyard, Co. Laois',
@@ -160,6 +167,8 @@ const TRAILS = [
 // ─── Sub-components ───────────────────────────────────────────────────────────
 
 function OrgCard({ org, idx }: { org: Org; idx: number }) {
+  const [logoFailed, setLogoFailed] = React.useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -169,9 +178,20 @@ function OrgCard({ org, idx }: { org: Org; idx: number }) {
       className="bg-surface-container-lowest rounded-3xl border border-outline-variant/10 p-8 flex flex-col h-full hover:shadow-2xl hover:shadow-primary/5 transition-all"
     >
       <div className="flex items-start gap-5 mb-5">
-        <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 ${org.iconBg}`}>
-          {org.icon}
-        </div>
+        {org.logo && !logoFailed ? (
+          <div className="w-14 h-14 rounded-2xl bg-white overflow-hidden border border-outline-variant/10 shadow-sm shrink-0 flex items-center justify-center">
+            <img
+              src={org.logo}
+              alt={`${org.name} logo`}
+              className={`w-full h-full ${org.logoFit === 'cover' ? 'object-cover' : 'object-contain p-1'}`}
+              onError={() => setLogoFailed(true)}
+            />
+          </div>
+        ) : (
+          <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 ${org.iconBg}`}>
+            {org.icon}
+          </div>
+        )}
         <div className="flex-1 min-w-0 pt-1">
           <h3 className="font-headline text-xl font-bold leading-tight">{org.name}</h3>
           {org.subtitle && (
