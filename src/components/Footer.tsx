@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { CookieSettingsLink } from './CookieBanner';
 
 export const Footer = () => (
   <footer className="bg-surface-container-lowest w-full py-20 border-t border-outline-variant/20">
@@ -33,6 +34,8 @@ export const Footer = () => (
           <ul className="space-y-4">
             <li><Link to="/contact" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Contact Us</Link></li>
             <li><Link to="/privacy" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Privacy Policy</Link></li>
+            <li><Link to="/cookies" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Cookie Policy</Link></li>
+            <li><CookieSettingsLink /></li>
           </ul>
         </div>
 

@@ -13,6 +13,9 @@ import BusinessesPage from './pages/BusinessesPage';
 import CommunityPage from './pages/CommunityPage';
 import NoticeboardPage from './pages/NoticeboardPage';
 import ContactPage from './pages/ContactPage';
+import PrivacyPage from './pages/PrivacyPage';
+import CookiePolicyPage from './pages/CookiePolicyPage';
+import { CookieBanner } from './components/CookieBanner';
 import { AuthProvider } from './context/AuthContext';
 
 export default function App() {
@@ -27,8 +30,11 @@ export default function App() {
           <Route path="/community" element={<CommunityPage />} />
           <Route path="/noticeboard" element={<NoticeboardPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/cookies" element={<CookiePolicyPage />} />
         </Routes>
         <Footer />
+        <CookieBanner />
       </div>
     </AuthProvider>
   );
