@@ -15,6 +15,7 @@ import NoticeboardPage from './pages/NoticeboardPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPage from './pages/PrivacyPage';
 import CookiePolicyPage from './pages/CookiePolicyPage';
+import TermsPage from './pages/TermsPage';
 import { CookieBanner } from './components/CookieBanner';
 import { AuthProvider } from './context/AuthContext';
 
@@ -32,6 +33,7 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/cookies" element={<CookiePolicyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
         </Routes>
         <Footer />
         <CookieBanner />

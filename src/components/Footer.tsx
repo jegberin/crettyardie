@@ -35,6 +35,7 @@ export const Footer = () => (
             <li><Link to="/contact" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Contact Us</Link></li>
             <li><Link to="/privacy" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Privacy Policy</Link></li>
             <li><Link to="/cookies" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Cookie Policy</Link></li>
+            <li><Link to="/terms" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Terms of Service</Link></li>
             <li><CookieSettingsLink /></li>
           </ul>
         </div>
