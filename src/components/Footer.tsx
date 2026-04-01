@@ -27,6 +27,7 @@ export const Footer = () => (
         <div>
           <h4 className="font-bold text-primary mb-6 text-xs uppercase tracking-[0.2em]">Explore</h4>
           <ul className="space-y-4">
+            <li><Link to="/" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Home</Link></li>
             <li><Link to="/history-heritage" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">History &amp; Heritage</Link></li>
             <li><Link to="/businesses" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Business Directory</Link></li>
             <li><Link to="/community" className="text-on-surface-variant hover:text-primary transition-colors text-sm font-medium">Community</Link></li>
