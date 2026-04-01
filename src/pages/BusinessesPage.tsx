@@ -364,7 +364,7 @@ export default function BusinessesPage() {
       <section className="py-24 px-6 md:px-12 bg-surface">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {ALL_BUSINESSES.map((biz, idx) => (
+            {[...ALL_BUSINESSES].sort((a, b) => a.name.localeCompare(b.name)).map((biz, idx) => (
               <BusinessCard key={biz.name} biz={biz} idx={idx} />
             ))}
           </div>
