@@ -373,10 +373,10 @@ export default function HistoryPage() {
               <img
                 className="w-full h-[460px] object-cover"
                 src={imgMoscowAirshaft}
-                alt="Possible airshaft structure at Moscow near Crettyard — gothic arched openings overgrown with vegetation"
+                alt="19th-century place of prayer at Moscow near Crettyard — gothic arched openings overgrown with vegetation"
               />
               <div className="bg-surface-container px-6 py-4">
-                <p className="text-xs font-semibold text-on-surface-variant uppercase tracking-widest">Moscow — possible airshaft structure</p>
+                <p className="text-xs font-semibold text-on-surface-variant uppercase tracking-widest">Moscow — 19th-century place of prayer</p>
               </div>
             </div>
           </motion.div>
