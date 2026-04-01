@@ -9,6 +9,12 @@ import { verifyToken, randomId } from '../lib/auth.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const UPLOADS_DIR = path.join(__dirname, '..', '..', 'uploads');
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+const ALLOWED_MIME_TYPES = new Set([
+  'image/jpeg', 'image/png', 'image/gif', 'image/webp',
+  'application/pdf', 'text/plain',
+  'application/msword',
+  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+]);
 
 export const postsRouter = Router();
 
@@ -107,6 +113,10 @@ postsRouter.post('/', async (req, res) => {
     const fileArr = files.file;
     if (fileArr && fileArr.length > 0) {
       const f = fileArr[0];
+      const mimeType = f.mimetype ?? 'application/octet-stream';
+      if (!ALLOWED_MIME_TYPES.has(mimeType)) {
+        return res.status(400).json({ error: 'File type not allowed. Accepted: images, PDF, Word documents, plain text.' });
+      }
       const originalName = f.originalFilename ?? 'upload';
       const safeName = originalName.replace(/[^a-zA-Z0-9._-]/g, '_');
       const storageKey = `${postId}_${safeName}`;

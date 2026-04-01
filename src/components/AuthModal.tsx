@@ -19,6 +19,7 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'login', verif
   const [showPwd, setShowPwd] = useState(false);
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState<{ type: 'success' | 'error'; msg: string } | null>(null);
+  const [showResend, setShowResend] = useState(false);
 
   const [form, setForm] = useState({ username: '', email: '', password: '', confirmPassword: '', newPassword: '' });
 
@@ -28,6 +29,7 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'login', verif
   useEffect(() => {
     if (!isOpen) return;
     setToast(null);
+    setShowResend(false);
     setForm({ username: '', email: '', password: '', confirmPassword: '', newPassword: '' });
   }, [isOpen, tab]);
 
@@ -85,6 +87,7 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'login', verif
     e.preventDefault();
     setLoading(true);
     setToast(null);
+    setShowResend(false);
     try {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
@@ -96,8 +99,31 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'login', verif
         login({ token: data.token, username: data.username, email: data.email });
         onClose();
       } else {
-        setToast({ type: 'error', msg: data.error ?? 'Login failed' });
+        const msg = data.error ?? 'Login failed';
+        setToast({ type: 'error', msg });
+        if (res.status === 403 && msg.toLowerCase().includes('verify')) {
+          setShowResend(true);
+        }
       }
+    } catch {
+      setToast({ type: 'error', msg: 'Network error. Please try again.' });
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  async function handleResendVerification() {
+    setLoading(true);
+    setToast(null);
+    try {
+      const res = await fetch('/api/auth/resend-verification', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: form.email }),
+      });
+      const data = await res.json() as { message?: string; error?: string };
+      setToast({ type: res.ok ? 'success' : 'error', msg: data.message ?? data.error ?? 'Request failed' });
+      setShowResend(false);
     } catch {
       setToast({ type: 'error', msg: 'Network error. Please try again.' });
     } finally {
@@ -282,6 +308,12 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'login', verif
                     {loading && <Loader2 size={16} className="animate-spin" />}
                     Log In
                   </button>
+                  {showResend && (
+                    <button type="button" onClick={handleResendVerification} disabled={loading}
+                      className="w-full text-center text-sm text-primary font-semibold hover:underline disabled:opacity-50">
+                      Resend verification email
+                    </button>
+                  )}
                 </form>
               )}
 

@@ -108,6 +108,31 @@ authRouter.post('/forgot-password', async (req, res) => {
   }
 });
 
+// POST /api/auth/resend-verification
+authRouter.post('/resend-verification', async (req, res) => {
+  try {
+    const { email } = req.body as { email: string };
+    if (!email) return res.status(400).json({ error: 'Email required' });
+    const db = getDb();
+    const user = db.prepare(
+      'SELECT id, email_verified FROM users WHERE email = ?'
+    ).get(email.toLowerCase()) as { id: string; email_verified: number } | undefined;
+    const msg = 'If that email is registered and unverified, a new link has been sent.';
+    if (!user || user.email_verified) return res.json({ message: msg });
+    db.prepare("DELETE FROM email_tokens WHERE user_id = ? AND type = 'verify'").run(user.id);
+    const token = randomToken();
+    const expires = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString();
+    db.prepare('INSERT INTO email_tokens (id, user_id, token, type, expires_at) VALUES (?, ?, ?, ?, ?)').run(
+      randomId(), user.id, token, 'verify', expires
+    );
+    await sendVerificationEmail(email.toLowerCase(), token);
+    return res.json({ message: msg });
+  } catch (err) {
+    console.error('[auth/resend-verification]', err);
+    return res.status(500).json({ error: 'Request failed' });
+  }
+});
+
 // POST /api/auth/reset-password
 authRouter.post('/reset-password', async (req, res) => {
   try {
