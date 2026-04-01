@@ -150,7 +150,9 @@ const ALL_BUSINESSES: Business[] = [
     logo: '/logos/mayodoonane-cu.jpg',
     initials: 'MDCU',
     location: 'Doonane, Crettyard',
-    links: [],
+    links: [
+      { label: 'Google Maps', href: 'https://maps.app.goo.gl/SaKPFbcUH2Qdy8kF7' },
+    ],
   },
   {
     name: 'Clonbrock Heritage Centre',
@@ -175,7 +177,9 @@ const ALL_BUSINESSES: Business[] = [
     logo: '/logos/behans.jpg',
     logoFit: 'cover',
     initials: 'BP',
-    links: [],
+    links: [
+      { label: 'Google Maps', href: 'https://maps.app.goo.gl/DXjN62zhVZRFZfaN7' },
+    ],
   },
   {
     name: 'Crettyard Coal Yard',
