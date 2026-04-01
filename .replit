@@ -41,3 +41,14 @@ externalPort = 5000
 deploymentTarget = "static"
 build = ["npm", "run", "build"]
 publicDir = "dist"
+
+[userenv]
+
+[userenv.shared]
+RESEND_FROM_EMAIL = "noreply@digital.crettyard.ie"
+RESEND_REPLY_TO = "info@crettyard.ie"
+R2_ACCOUNT_ID = "08696d58f3debf289379db745274f8f9"
+R2_BUCKET = "crettyardie"
+R2_S3_ENDPOINT = "https://08696d58f3debf289379db745274f8f9.r2.cloudflarestorage.com/crettyardie"
+D1_DATABASE_NAME = "crettyardie"
+D1_DATABASE_ID = "6d498931-3903-4685-bfc7-c79504161f5f"

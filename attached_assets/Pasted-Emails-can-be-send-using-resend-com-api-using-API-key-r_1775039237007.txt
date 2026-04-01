@@ -1,0 +1,86 @@
+Emails can be send using resend.com api using API key : re_6Sf9Po9c_Dy32MXJyQtoZ3W2ZUcBED3aQ 
+Emails are always send as: noreply@digital.crettyard.ie and reply to: info@crettyard.ie
+
+Cloudflare R2 Oject Storage bucket: crettyardie
+Account ID: 08696d58f3debf289379db745274f8f9
+S3 API: https://08696d58f3debf289379db745274f8f9.r2.cloudflarestorage.com/crettyardie
+"R2_ACCESS_KEY": "11e1754c471cd886597115b1be5d799b",
+"R2_ACCOUNT_ID": "08696d58f3debf289379db745274f8f9",
+"R2_BUCKET": "crettyardie",
+"R2_SECRET_KEY": "8d98682b490074cb191cb514754dfb8c977e9ac34baefa6b7faac1ad9e8d1680"
+
+Cloudflare D1 Database
+"d1_databases": [{
+    "binding": "DB",
+    "database_name": "crettyardie",
+    "database_id": "6d498931-3903-4685-bfc7-c79504161f5f"
+ }]
+"secrets_store_secrets": [  
+  {  
+    "store_id": "<e390340543c346d1b84d6d4b18d84065>",  
+    "binding": "SECRET",  
+    "secret_name": "<crettyardie>"
+  }  
+]
+
+Deploy your Worker
+If you used the Deploy to Cloudflare workflow then changes made to your Github repository will automatically trigger a new build and deploy. You can find the deployed URL in your Workers dashboard.
+
+For users who download the code and deploy it from their machines you can use the below command to complete this step.
+
+npm run cf-typegen && npm run deploy  
+The output will provide you a URL that your Worker is now deployed to, and the HTTP interface which will make your D1 accessible.
+
+Get Table Rows
+With the combination of your Worker URL on hand and the Secret Store value we saved, we can now make a cURL request to fetch data from your tables. Replace the values in the cURL statement below and paste it into your command line.
+
+curl \ 
+--location 'https://{YOUR-WORKER-URL}/rest/{YOUR-TABLE-NAME}' \ 
+--header 'Authorization: Bearer {YOUR-SECRET-VALUE}'
+If successful, you should see a response of rows from the provided table name and additional metadata about the request.
+
+Supported Routes
+This project gives you a CRUD REST API for all of your database tables but it also allows you to execute SQL statements against your database as well.
+
+Execute SQL
+curl \
+--location 'https://{YOUR-WORKER-URL}/rest/{YOUR-TABLE-NAME}' \
+--header 'Authorization: Bearer {YOUR-SECRET-VALUE}' \
+--header 'Content-Type: application/json' \
+--data '{ "query": "SELECT * FROM tableName LIMIT ?;", "params": [5] }'
+List records
+# Basic listing
+GET /rest/{table}
+
+# With filtering
+GET /rest/{table}?column_name=value
+GET /rest/{table}?age=25&status=active
+
+# With sorting
+GET /rest/{table}?sort_by=column_name&order=asc
+GET /rest/{table}?sort_by=name&order=desc
+
+# With pagination
+GET /rest/{table}?limit=10&offset=20
+
+# Combined example
+GET /rest/{table}?age=25&sort_by=name&order=desc&limit=10&offset=20
+Get Single Record
+GET /rest/{table}/{id}
+Create Record
+POST /rest/{table}
+Content-Type: application/json
+
+{
+    "column1": "value1",
+    "column2": "value2"
+}
+Update Record
+PATCH /rest/{table}/{id}
+Content-Type: application/json
+
+{
+    "column1": "new_value"
+}
+Delete Record
+DELETE /rest/{table}/{id}
