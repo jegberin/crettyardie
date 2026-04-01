@@ -27,6 +27,8 @@ interface Props {
 }
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
+const ALLOWED_TYPES = new Set(['image/jpeg', 'image/png', 'application/pdf']);
+const ALLOWED_LABEL = 'JPG, PNG or PDF';
 
 export default function NewPostModal({ isOpen, onClose, onCreated }: Props) {
   const { authHeader } = useAuth();
@@ -48,8 +50,14 @@ export default function NewPostModal({ isOpen, onClose, onCreated }: Props) {
   function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0];
     if (!f) return;
+    if (!ALLOWED_TYPES.has(f.type)) {
+      setToast({ type: 'error', msg: `Only ${ALLOWED_LABEL} files are allowed` });
+      if (fileRef.current) fileRef.current.value = '';
+      return;
+    }
     if (f.size > MAX_FILE_SIZE) {
       setToast({ type: 'error', msg: 'File must be under 5 MB' });
+      if (fileRef.current) fileRef.current.value = '';
       return;
     }
     setFile(f);
@@ -146,7 +154,7 @@ export default function NewPostModal({ isOpen, onClose, onCreated }: Props) {
               {/* File attachment */}
               <div>
                 <label className="block text-xs font-semibold text-on-surface-variant uppercase tracking-widest mb-1.5">
-                  Attachment <span className="normal-case font-normal">(optional, max 5 MB)</span>
+                  Attachment <span className="normal-case font-normal">(optional · JPG, PNG or PDF · max 5 MB)</span>
                 </label>
                 {file ? (
                   <div className="flex items-center gap-3 px-4 py-3 rounded-xl border border-primary/20 bg-primary/5">
@@ -165,7 +173,7 @@ export default function NewPostModal({ isOpen, onClose, onCreated }: Props) {
                   </button>
                 )}
                 <input ref={fileRef} type="file" className="hidden" onChange={handleFile}
-                  accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.txt" />
+                  accept="image/jpeg,image/png,application/pdf,.jpg,.jpeg,.png,.pdf" />
               </div>
 
               <button type="submit" disabled={loading}

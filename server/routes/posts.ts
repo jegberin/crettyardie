@@ -9,12 +9,7 @@ import { verifyToken, randomId } from '../lib/auth.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const UPLOADS_DIR = path.join(__dirname, '..', '..', 'uploads');
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
-const ALLOWED_MIME_TYPES = new Set([
-  'image/jpeg', 'image/png', 'image/gif', 'image/webp',
-  'application/pdf', 'text/plain',
-  'application/msword',
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-]);
+const ALLOWED_MIME_TYPES = new Set(['image/jpeg', 'image/png', 'application/pdf']);
 
 export const postsRouter = Router();
 

@@ -3,8 +3,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useSearchParams } from 'react-router-dom';
 import {
   PenLine, User, Clock, Paperclip, Trash2, LogIn, LogOut,
-  MessageSquare, FileText, Image as ImageIcon, AlertCircle, Loader2,
-  ChevronDown, ChevronUp,
+  MessageSquare, FileText, AlertCircle, Loader2,
+  ChevronDown, ChevronUp, Download, X, ZoomIn,
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import AuthModal from '../components/AuthModal';
@@ -48,23 +48,124 @@ function formatBytes(n: number): string {
   return `${(n / (1024 * 1024)).toFixed(1)} MB`;
 }
 
-// ─── Sub-components ───────────────────────────────────────────────────────────
+function isImage(a: Attachment) {
+  return a.content_type === 'image/jpeg' || a.content_type === 'image/png';
+}
 
-function AttachmentChip({ a }: { a: Attachment }) {
-  const isImage = a.content_type.startsWith('image/');
+function isPdf(a: Attachment) {
+  return a.content_type === 'application/pdf';
+}
+
+// ─── Lightbox ─────────────────────────────────────────────────────────────────
+
+function Lightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') onClose(); }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [onClose]);
+
   return (
-    <a
-      href={`/api/uploads/${a.storage_key}`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/8 hover:bg-primary/15 border border-primary/15 text-primary text-xs font-medium transition-colors"
-    >
-      {isImage ? <ImageIcon size={12} /> : <FileText size={12} />}
-      <span className="truncate max-w-[160px]">{a.filename}</span>
-      <span className="text-on-surface-variant">({formatBytes(a.size)})</span>
-    </a>
+    <AnimatePresence>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+        onClick={onClose}
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+        >
+          <X size={20} />
+        </button>
+        <motion.img
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.9 }}
+          transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+          src={src}
+          alt={alt}
+          className="max-w-full max-h-[90vh] rounded-2xl object-contain shadow-2xl"
+          onClick={e => e.stopPropagation()}
+        />
+      </motion.div>
+    </AnimatePresence>
   );
 }
+
+// ─── Attachment display ────────────────────────────────────────────────────────
+
+function AttachmentBlock({ attachments }: { attachments: Attachment[] }) {
+  const [lightbox, setLightbox] = useState<Attachment | null>(null);
+
+  const images = attachments.filter(isImage);
+  const pdfs = attachments.filter(isPdf);
+
+  return (
+    <>
+      {/* Image thumbnails */}
+      {images.length > 0 && (
+        <div className={`mt-4 grid gap-2 ${images.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
+          {images.map(a => (
+            <button
+              key={a.id}
+              type="button"
+              onClick={() => setLightbox(a)}
+              className="relative group rounded-2xl overflow-hidden bg-surface-container aspect-video focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            >
+              <img
+                src={`/api/uploads/${a.storage_key}`}
+                alt={a.filename}
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                <div className="w-9 h-9 rounded-full bg-white/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-md">
+                  <ZoomIn size={16} className="text-on-surface" />
+                </div>
+              </div>
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* PDF download links */}
+      {pdfs.length > 0 && (
+        <div className="mt-3 flex flex-col gap-2">
+          {pdfs.map(a => (
+            <a
+              key={a.id}
+              href={`/api/uploads/${a.storage_key}`}
+              download={a.filename}
+              className="inline-flex items-center gap-3 px-4 py-3 rounded-2xl bg-red-50 hover:bg-red-100 border border-red-200/60 text-red-800 transition-colors group"
+            >
+              <div className="w-8 h-8 rounded-xl bg-red-100 group-hover:bg-red-200 flex items-center justify-center shrink-0 transition-colors">
+                <FileText size={16} className="text-red-700" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-semibold truncate">{a.filename}</p>
+                <p className="text-xs text-red-600/70">{formatBytes(a.size)} · PDF</p>
+              </div>
+              <Download size={15} className="shrink-0 text-red-600/60 group-hover:text-red-700 transition-colors" />
+            </a>
+          ))}
+        </div>
+      )}
+
+      {/* Lightbox */}
+      {lightbox && (
+        <Lightbox
+          src={`/api/uploads/${lightbox.storage_key}`}
+          alt={lightbox.filename}
+          onClose={() => setLightbox(null)}
+        />
+      )}
+    </>
+  );
+}
+
+// ─── PostCard ─────────────────────────────────────────────────────────────────
 
 function PostCard({ post, currentUsername, onDelete }: { post: Post; currentUsername?: string; onDelete: (id: string) => void }) {
   const [expanded, setExpanded] = useState(false);
@@ -113,9 +214,7 @@ function PostCard({ post, currentUsername, onDelete }: { post: Post; currentUser
       )}
 
       {post.attachments.length > 0 && (
-        <div className="mt-4 flex flex-wrap gap-2">
-          {post.attachments.map(a => <AttachmentChip key={a.id} a={a} />)}
-        </div>
+        <AttachmentBlock attachments={post.attachments} />
       )}
 
       <div className="mt-5 pt-4 border-t border-outline-variant/10 flex items-center gap-4 text-xs text-on-surface-variant">
