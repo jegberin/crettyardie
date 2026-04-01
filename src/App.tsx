@@ -34,10 +34,10 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Home', href: '#' },
-    { name: 'About', href: '#' },
     { name: 'History', href: '#' },
     { name: 'Businesses', href: '#' },
     { name: 'Community', href: '#' },
+    { name: 'What\'s On', href: '#' },
     { name: 'Visit', href: '#' },
   ];
 
@@ -113,7 +113,7 @@ const Hero = () => (
           Welcome to <span className="text-primary italic">Crettyard</span>
         </h1>
         <p className="text-lg md:text-xl text-on-surface-variant leading-relaxed mb-10 max-w-xl">
-          Crettyard is a place of strong community spirit, located in the lush rolling hills of County Laois. Discover a heritage shaped by landscape and character.
+          Crettyard is a place of strong community spirit on the eastern edge of the Castlecomer Plateau, where the Laois countryside meets the routes and traditions of nearby Kilkenny and Carlow. Set around the N78 and R431 junction, it is an area shaped by generations of farming, mining heritage, local enterprise, schools, sport and parish life.
         </p>
         <div className="flex flex-wrap gap-4">
           <button className="px-8 py-4 rounded-full signature-gradient text-on-primary font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-xl shadow-primary/20">
@@ -126,7 +126,7 @@ const Hero = () => (
         <div className="mt-10 flex gap-8 text-sm font-semibold text-secondary">
           <a href="#" className="flex items-center gap-2 hover:text-primary transition-colors group">
             <CalendarDays size={18} className="text-primary group-hover:scale-110 transition-transform" /> 
-            What’s On
+            What's On
           </a>
           <a href="#" className="flex items-center gap-2 hover:text-primary transition-colors group">
             <Compass size={18} className="text-primary group-hover:scale-110 transition-transform" /> 
@@ -143,7 +143,7 @@ const Hero = () => (
         <img 
           className="absolute inset-0 w-full h-full object-cover" 
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7ijjBJvGKl5oGiue-1xgESQ-9D9FvQowd7RucJV22kNZb-lYrHJrBknTnnzdono1HV2aytGvPnAVVQ-m3QyOhtDEuaIwuAG4on4073CTyhmCdXqW_COMuGUN4tq1n1RCfJakRjOjFXF2vig_FH8ZfADBbhBtv4AxveMfbzyjqPMHyXy9H-sbCS_vb6Cp-X53jmYNQnh3I_aYcFLD66J7m7hrNkiqut-TQ4riIZRl5Ee4y-KNykTAlcbduk1QIIeBnHFAmAtl5mY7L" 
-          alt="Crettyard landscape"
+          alt="Crettyard heritage landscape on the Castlecomer Plateau"
           referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
@@ -170,7 +170,7 @@ const Intro = () => (
         transition={{ delay: 0.2 }}
         className="text-xl md:text-2xl text-on-surface-variant leading-[1.8] font-medium"
       >
-        Crettyard is more than a point on the map. It is a living rural community with deep roots in the old Killabban parish, bridging the borders of Laois and Kilkenny. From its coal mining heritage to its thriving modern sports clubs, every field and stone here tells a story of resilience and warmth.
+        Crettyard is more than a point on the map. It is a living rural community with deep roots in the old Killabban parish, a proud connection to the Castlecomer coalfield story, and a modern identity built around family life, local clubs, small businesses, and a strong sense of place. Whether you live nearby, have family connections here, or are passing through the area, this website is designed to help you explore what makes Crettyard special.
       </motion.p>
     </div>
   </section>
@@ -178,16 +178,54 @@ const Intro = () => (
 
 const ExploreGrid = () => {
   const items = [
-    { title: 'History & Heritage', icon: History, desc: 'Discover the story of early settlement, the industrial coal mining era, and the resilient families of Killabban.', link: 'Read More' },
-    { title: 'Businesses & Services', icon: Store, desc: 'Find local shops, fuel services, and the skilled tradespeople who keep our community moving every day.', link: 'Directory' },
-    { title: 'Schools & Childcare', icon: School, desc: 'Learn about the local schools fostering the next generation and childcare facilities supporting families.', link: 'Education' },
-    { title: 'Sport & Clubs', icon: Trophy, desc: 'Explore the GAA clubs, soccer teams, and active social groups that form the heartbeat of Crettyard.', link: 'Join a Club' },
-    { title: 'Events & What’s On', icon: Calendar, desc: 'Keep up with local races, community fundraisers, markets, and seasonal celebrations throughout the year.', link: 'Calendar' },
-    { title: 'Visit Crettyard', icon: MapIcon, desc: 'Plan a stop in Crettyard. Find directions, local scenery, and quiet spots to appreciate the Laois landscape.', link: 'Plan Trip' },
+    { 
+      title: 'History & Heritage', 
+      icon: History, 
+      desc: 'Discover the story of early settlement, parish life, coal mining, Newtown and Doonane, holy wells, churches, bridges and the wider heritage of the Crettyard area.', 
+      link: 'Read More' 
+    },
+    { 
+      title: 'Businesses & Services', 
+      icon: Store, 
+      desc: 'Find local shops, fuel, farm supplies, trades, engineering, stone, digital services, hospitality and other businesses serving Crettyard and the surrounding townlands.', 
+      link: 'Directory' 
+    },
+    { 
+      title: 'Schools & Childcare', 
+      icon: School, 
+      desc: 'Learn about the local schools and childcare services that support everyday family life in the area.', 
+      link: 'Education' 
+    },
+    { 
+      title: 'Sport & Clubs', 
+      icon: Trophy, 
+      desc: 'Explore the clubs and facilities that give Crettyard its strong sporting identity, from athletics and Gaelic games to soccer and community events.', 
+      link: 'Join a Club' 
+    },
+    { 
+      title: 'Events & What\'s On', 
+      icon: Calendar, 
+      desc: 'Keep up with local races, club fixtures, school events, seasonal activities and community happenings across the year.', 
+      link: 'Calendar' 
+    },
+    { 
+      title: 'Visit Crettyard', 
+      icon: MapIcon, 
+      desc: 'Plan a stop in Crettyard and use it as a base to explore heritage, nearby villages, local businesses and the wider Laois, Kilkenny and Carlow border area.', 
+      link: 'Plan Trip' 
+    },
   ];
 
   return (
     <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        className="mb-16"
+      >
+        <h2 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Explore the Area</h2>
+      </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {items.map((item, idx) => (
           <motion.div 
@@ -213,10 +251,26 @@ const ExploreGrid = () => {
 
 const FeaturedBusinesses = () => {
   const businesses = [
-    { name: 'Design By Nature', desc: 'Sustainable wild-flower seeds and ecological landscape specialists.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCEeQirM9xql3kf8ra2kwsDE2zOaV21-fYAzhRW8RA8KGG3TB4lwt1Imt31fg5l-s_Qoez0_2rpdCVCgsa5d5lWf4A2dVMQzaWoPNiNaYp_74pe200rx1jUMfFDj7okKb25eMKaDpJzPc4zUZ7f85jSvUJ4WT8mCrGlqCdl-Hzc6jH6U9TDEo4RjX_VbUiS0Aj1ixUFxWLJgffQU6hhA7b1s4fCTXL6vw65C_0-RJ_wOoSLJrEoJcPNJkd0CWpqk5kjNar6AAyZ1Cq_' },
-    { name: 'Crettyard Stone', desc: 'High-quality native limestone and artisanal stonemasonry services.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDomtkaPHGu_j9Dpzzdf7m12M6uTeG6wQbP75UnJhjn0iryeQbGUhIi_GqhbSxf1B48iguaTjvJWueOMt5BUJDs_zZHUR4mI2yAhXpATFgzeXUAf5OZEsgfycz68fklfHLGk326aH_QluhkK3dJ5Ak6Wp2gmlkH2Ac1gcv36fzaDzjAY_wY8unAJv_YEtcbM0Wvn6b5cXtQyK3uNHkavCf10MBmStJ2BvbU5-2656okPYYi9JwqMcWCmXoEhA5WGhAwBnLoG4FSnYEB' },
-    { name: 'Tirlán FarmLife', desc: 'The hub for agricultural supplies, animal feed, and rural hardware.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDmAvjawbhmi7RpGEUbZtsxZweuzdy1IMP5HMWZXFuwavRPUKYHS8ue2CCt-YEMRbXARsDMfQLZ4IrYFhLS-AAWzZ5wtts0kTWFWitKTRibsXnJ24kGzTXiNPG2ll9AlezQEZseoFKYLov7vGwJXvlfNa82A7AuyJICkVu7G-ReKDQMAwPGRNXeg0AzipeyWX32v6FazS8iSOL_HrdC66BPEKz8c2XbbMNWw-PwgW1f5BkuSZ88J2FkG12eGHH_20dYHHSeins54cH1' },
-    { name: 'Crettyard Digital', desc: 'Local digital marketing and web services for modern rural enterprises.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAB9L8FEMHhsvhKdvlvaASuYxwNN41-q_MgGdF3B853ClZxqgGKzJuBOX0oz9HVJ92aI3zZ4DEbQpgMA1ywgbqmtPmbQiGqO_2JMVNQNbKXFXKnhkdHeqm-uMVn5YhMdURSu363NU-Vq_vPx5yst997ibW3ZHAYvr5rspWvCpYzbmEvZ8S9BPZOQP7MT4mXH5VsOf9LoURGHqLq5WaO7uvw_wEHy0BXSZKTI2b3Ick-tZd87ShGSGkBuTu7vX5y9yOIyaKn-U0O77nV' },
+    { 
+      name: 'Design By Nature', 
+      desc: 'Based in Monavea, this specialist business has become known for native Irish wildflower seeds and biodiversity-focused growing.', 
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCEeQirM9xql3kf8ra2kwsDE2zOaV21-fYAzhRW8RA8KGG3TB4lwt1Imt31fg5l-s_Qoez0_2rpdCVCgsa5d5lWf4A2dVMQzaWoPNiNaYp_74pe200rx1jUMfFDj7okKb25eMKaDpJzPc4zUZ7f85jSvUJ4WT8mCrGlqCdl-Hzc6jH6U9TDEo4RjX_VbUiS0Aj1ixUFxWLJgffQU6hhA7b1s4fCTXL6vw65C_0-RJ_wOoSLJrEoJcPNJkd0CWpqk5kjNar6AAyZ1Cq_' 
+    },
+    { 
+      name: 'Crettyard Stone', 
+      desc: 'Crettyard Stone supplies natural building materials including sandstone, granite, paving and walling products.', 
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDomtkaPHGu_j9Dpzzdf7m12M6uTeG6wQbP75UnJhjn0iryeQbGUhIi_GqhbSxf1B48iguaTjvJWueOMt5BUJDs_zZHUR4mI2yAhXpATFgzeXUAf5OZEsgfycz68fklfHLGk326aH_QluhkK3dJ5Ak6Wp2gmlkH2Ac1gcv36fzaDzjAY_wY8unAJv_YEtcbM0Wvn6b5cXtQyK3uNHkavCf10MBmStJ2BvbU5-2656okPYYi9JwqMcWCmXoEhA5WGhAwBnLoG4FSnYEB' 
+    },
+    { 
+      name: 'Tirlán FarmLife Crettyard', 
+      desc: 'The local branch at the Crettyard junction supports farming life with essential agricultural supplies and hardware.', 
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDmAvjawbhmi7RpGEUbZtsxZweuzdy1IMP5HMWZXFuwavRPUKYHS8ue2CCt-YEMRbXARsDMfQLZ4IrYFhLS-AAWzZ5wtts0kTWFWitKTRibsXnJ24kGzTXiNPG2ll9AlezQEZseoFKYLov7vGwJXvlfNa82A7AuyJICkVu7G-ReKDQMAwPGRNXeg0AzipeyWX32v6FazS8iSOL_HrdC66BPEKz8c2XbbMNWw-PwgW1f5BkuSZ88J2FkG12eGHH_20dYHHSeins54cH1' 
+    },
+    { 
+      name: 'Crettyard Digital', 
+      desc: 'The area is also home to digital and web services that help local businesses compete online.', 
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAB9L8FEMHhsvhKdvlvaASuYxwNN41-q_MgGdF3B853ClZxqgGKzJuBOX0oz9HVJ92aI3zZ4DEbQpgMA1ywgbqmtPmbQiGqO_2JMVNQNbKXFXKnhkdHeqm-uMVn5YhMdURSu363NU-Vq_vPx5yst997ibW3ZHAYvr5rspWvCpYzbmEvZ8S9BPZOQP7MT4mXH5VsOf9LoURGHqLq5WaO7uvw_wEHy0BXSZKTI2b3Ick-tZd87ShGSGkBuTu7vX5y9yOIyaKn-U0O77nV' 
+    },
   ];
 
   return (
@@ -224,10 +278,10 @@ const FeaturedBusinesses = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
-            <h2 className="font-headline text-4xl font-extrabold mb-4 tracking-tight">Local Enterprises</h2>
-            <p className="text-on-surface-variant text-lg">Support the local economy by visiting these featured Crettyard businesses.</p>
+            <h2 className="font-headline text-4xl font-extrabold mb-4 tracking-tight">Local Businesses</h2>
+            <p className="text-on-surface-variant text-lg">Crettyard has a diverse rural economy, with practical local services at the junction and a wider network of businesses across the surrounding area. From farm supply and natural stone to wildflower production and digital services, local enterprise remains a major part of the area's identity today.</p>
           </div>
-          <a href="#" className="px-8 py-3 rounded-full border-2 border-primary text-primary font-bold text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all">
+          <a href="#" className="px-8 py-3 rounded-full border-2 border-primary text-primary font-bold text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all whitespace-nowrap">
             Browse the business directory
           </a>
         </div>
@@ -275,7 +329,7 @@ const CommunityEvents = () => (
             <img 
               className="w-full h-[500px] md:h-[700px] object-cover" 
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMNXg9zTrydQ4lAjWvf70NckFZYNTgpVl04ao3ZhSD_MzPl9RXYV9lMowvwdlMXBh1m3hHGCv2Uabfsn6elk2VMfuq75m3NP8KnOmp9VQU9a9wn4GJn0-tbl1PB_smYKKOIbIHFFF_na-8kXx72vSTdmTxxzKD_iJh2TeVisGNvW1PiMdO113bOExNOt3q1hvmWLJPUDgO9pVfwPA0Gl4aPHOMrPlhvNCjMh-sMGkDbCkm1hAVZ0PfZ3-xro5UOw997RL8exldKc3U" 
-              alt="Community gathering"
+              alt="Local sports grounds in Crettyard area"
               referrerPolicy="no-referrer"
             />
           </div>
@@ -287,7 +341,7 @@ const CommunityEvents = () => (
             viewport={{ once: true }}
           >
             <h2 className="font-headline text-4xl md:text-5xl font-extrabold mb-8 tracking-tight">Community Life</h2>
-            <p className="text-on-surface-variant text-lg md:text-xl leading-relaxed">From the active Senior Citizens club to the vibrant Women’s Institute, community life in Crettyard is built on connection and shared support. Discover our social hubs and how you can get involved.</p>
+            <p className="text-on-surface-variant text-lg md:text-xl leading-relaxed">Community life in Crettyard is supported by schools, childcare, parish connections, local volunteers and a remarkably strong sporting culture. Newtown National School, Mayo National School, local childcare provision, Crettyard GAA, Crettyard United and St. Abban's Athletic Club all help make the area active, connected and family-focused.</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -295,8 +349,8 @@ const CommunityEvents = () => (
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h2 className="font-headline text-4xl md:text-5xl font-extrabold mb-8 tracking-tight">Upcoming Events</h2>
-            <p className="text-on-surface-variant text-lg md:text-xl leading-relaxed">Never miss a moment. Whether it's a charity walk, a club final, or a parish fair, our events calendar keeps the pulse of the community beating strong.</p>
+            <h2 className="font-headline text-4xl md:text-5xl font-extrabold mb-8 tracking-tight">What's On</h2>
+            <p className="text-on-surface-variant text-lg md:text-xl leading-relaxed">Throughout the year, the Crettyard area hosts and supports a range of events linked to athletics, club life, schools, parish activities and seasonal gatherings. From open sports and local fixtures to jiving nights, school events and community celebrations, there is always something happening in and around the area.</p>
             <button className="mt-10 text-primary font-black uppercase text-sm tracking-[0.2em] underline underline-offset-[12px] decoration-2 decoration-primary/30 hover:decoration-primary transition-all">
               View full calendar
             </button>
@@ -311,9 +365,9 @@ const FindUs = () => (
   <section className="py-24 bg-surface-container">
     <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
       <div className="lg:col-span-5">
-        <h2 className="font-headline text-4xl font-extrabold mb-8 tracking-tight">Find Us</h2>
+        <h2 className="font-headline text-4xl font-extrabold mb-8 tracking-tight">Find Crettyard</h2>
         <p className="text-on-surface-variant text-lg leading-relaxed mb-10">
-          Nestled along the N80, Crettyard is a gateway between the heritage of County Laois and the bustling energy of Carlow and Kilkenny. Stop by to experience rural Ireland at its most authentic.
+          Crettyard sits at the junction of the N78 and R431, giving it direct road links and practical access to nearby towns including Kilkenny, Carlow and Athy. That location has long made it an important local meeting point and service centre for the surrounding rural area.
         </p>
         <button className="px-8 py-4 rounded-full signature-gradient text-on-primary font-bold text-sm uppercase tracking-widest flex items-center gap-3 shadow-xl shadow-primary/20 hover:scale-105 transition-transform">
           <Navigation size={20} /> View map and directions
@@ -355,7 +409,15 @@ const LatestUpdates = () => {
 
   return (
     <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <h2 className="font-headline text-3xl md:text-4xl font-extrabold mb-16 text-center tracking-tight">Latest Updates</h2>
+      <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div>
+          <h2 className="font-headline text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Latest Updates</h2>
+          <p className="text-on-surface-variant text-lg max-w-xl">Follow local news, event announcements, new business additions, heritage stories and community updates from across the Crettyard area.</p>
+        </div>
+        <a href="#" className="px-8 py-3 rounded-full border-2 border-primary text-primary font-bold text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all whitespace-nowrap">
+          Read the latest news
+        </a>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
         {updates.map((upd, idx) => (
           <motion.div 
@@ -395,7 +457,7 @@ const CTA = () => (
       <div className="relative z-10">
         <h2 className="font-headline text-4xl md:text-7xl font-extrabold mb-8 tracking-tighter">Be Part of the Story</h2>
         <p className="text-lg md:text-2xl opacity-90 max-w-3xl mx-auto mb-16 leading-relaxed">
-          This website is here to celebrate Crettyard’s past and present. Whether you’re a local resident, a returning visitor, or a local business, we want to hear from you.
+          This website is here to celebrate Crettyard's past and present, and to help share its stories with residents, visitors, families and the wider diaspora. Explore the area, support local businesses, and help us build a stronger picture of Crettyard by sharing events, photos, memories and updates.
         </p>
         <div className="flex flex-wrap justify-center gap-6">
           <button className="px-10 py-5 rounded-full bg-white text-primary font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-2xl">
@@ -417,32 +479,34 @@ const Footer = () => (
         <div className="col-span-1 md:col-span-1">
           <div className="text-2xl font-black text-primary mb-8 font-headline tracking-tighter">Crettyard.ie</div>
           <p className="text-sm leading-relaxed text-on-surface-variant max-w-xs">
-            Rooted in Heritage, Focused on Future. Our community portal for all things Crettyard.
+            History, community and local life in the heart of County Laois.
           </p>
         </div>
         <div>
           <h4 className="font-bold text-primary mb-8 text-xs uppercase tracking-[0.2em]">Explore</h4>
           <ul className="space-y-5">
-            <li><a href="#" className="text-on-surface-variant hover:text-primary transition-all text-sm font-medium">About Us</a></li>
-            <li><a href="#" className="text-on-surface-variant hover:text-primary transition-all text-sm font-medium">Local History</a></li>
+            <li><a href="#" className="text-on-surface-variant hover:text-primary transition-all text-sm font-medium">History & Heritage</a></li>
             <li><a href="#" className="text-on-surface-variant hover:text-primary transition-all text-sm font-medium">Business Directory</a></li>
+            <li><a href="#" className="text-on-surface-variant hover:text-primary transition-all text-sm font-medium">Schools & Childcare</a></li>
+            <li><a href="#" className="text-on-surface-variant hover:text-primary transition-all text-sm font-medium">Sport & Clubs</a></li>
           </ul>
         </div>
         <div>
           <h4 className="font-bold text-primary mb-8 text-xs uppercase tracking-[0.2em]">Connect</h4>
           <ul className="space-y-5">
-            <li><a href="#" className="text-on-surface-variant hover:text-primary transition-all text-sm font-medium">Community News</a></li>
+            <li><a href="#" className="text-on-surface-variant hover:text-primary transition-all text-sm font-medium">What's On</a></li>
+            <li><a href="#" className="text-on-surface-variant hover:text-primary transition-all text-sm font-medium">Visit Crettyard</a></li>
             <li><a href="#" className="text-on-surface-variant hover:text-primary transition-all text-sm font-medium">Contact Us</a></li>
             <li><a href="#" className="text-on-surface-variant hover:text-primary transition-all text-sm font-medium">Privacy Policy</a></li>
           </ul>
         </div>
         <div>
           <h4 className="font-bold text-primary mb-8 text-xs uppercase tracking-[0.2em]">Newsletter</h4>
-          <p className="text-on-surface-variant text-sm mb-6">Stay updated with local news.</p>
+          <p className="text-on-surface-variant text-sm mb-6">Stay updated with local news and events from across the area.</p>
           <div className="flex group">
             <input 
               type="email" 
-              placeholder="Email" 
+              placeholder="Your email" 
               className="bg-surface-container border-none rounded-l-2xl px-5 py-3 text-sm w-full focus:ring-2 focus:ring-primary/20 outline-none"
             />
             <button className="bg-primary text-white px-5 py-3 rounded-r-2xl hover:bg-primary-container transition-colors">
@@ -452,7 +516,7 @@ const Footer = () => (
         </div>
       </div>
       <div className="pt-12 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center gap-8">
-        <p className="text-sm text-on-surface-variant font-medium">© 2024 Crettyard.ie. Rooted in Heritage, Focused on Future.</p>
+        <p className="text-sm text-on-surface-variant font-medium">© 2025 Crettyard.ie. History, community and local life.</p>
         <div className="flex gap-8">
           <a href="#" className="text-on-surface-variant hover:text-primary transition-colors"><Trophy size={20} /></a>
           <a href="#" className="text-on-surface-variant hover:text-primary transition-colors"><Send size={20} /></a>

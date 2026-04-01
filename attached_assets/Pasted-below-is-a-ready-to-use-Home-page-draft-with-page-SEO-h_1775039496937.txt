@@ -1,0 +1,122 @@
+below is a ready-to-use Home page draft with page SEO, heading structure, and full homepage copy. It follows the planned homepage sections of hero, intro, quick links, featured businesses, updates, and map preview, while highlighting Crettyard’s location, heritage, community life, businesses, schools, sport, and visitor appeal.
+
+SEO setup
+Use these homepage SEO settings to target local search terms around Crettyard, County Laois, local history, businesses, and visitor intent.
+
+SEO title: Crettyard, Co Laois – History, Community, Businesses & Visitor Guide
+
+Meta description: Discover Crettyard in County Laois, a village on the Castlecomer Plateau with rich mining heritage, strong community life, local businesses, sport, schools, events and nearby places to explore.
+
+Canonical URL: https://crettyard.ie/
+
+H1: Welcome to Crettyard
+
+Primary keyword: Crettyard
+
+Secondary keywords: Crettyard Co Laois, Crettyard history, Crettyard businesses, visit Crettyard, Crettyard community
+
+Suggested H2s: Discover Crettyard; Explore the Area; Local Businesses; Community Life; What’s On; Find Crettyard
+
+Home page copy
+This version is written in a clear local tone and is ready to paste into the homepage design. The section order matches the site structure already planned for the project.
+
+Hero eyebrow: County Laois | History, community and local life
+
+Hero headline: Welcome to Crettyard
+
+Hero text: Crettyard is a place of strong community spirit on the eastern edge of the Castlecomer Plateau, where the Laois countryside meets the routes and traditions of nearby Kilkenny and Carlow. Set around the N78 and R431 junction, it is an area shaped by generations of farming, mining heritage, local enterprise, schools, sport and parish life.
+
+Hero buttons: Explore History | Local Businesses | What’s On | Plan Your Visit
+
+Intro heading: Discover Crettyard
+
+Intro text: Crettyard is more than a point on the map. It is a living rural community with deep roots in the old Killabban parish, a proud connection to the Castlecomer coalfield story, and a modern identity built around family life, local clubs, small businesses, and a strong sense of place. Whether you live nearby, have family connections here, or are passing through the area, this website is designed to help you explore what makes Crettyard special.
+
+Explore heading: Explore the Area
+
+Card 1 title: History & Heritage
+
+Card 1 text: Discover the story of early settlement, parish life, coal mining, Newtown and Doonane, holy wells, churches, bridges and the wider heritage of the Crettyard area.
+
+Card 2 title: Businesses & Services
+
+Card 2 text: Find local shops, fuel, farm supplies, trades, engineering, stone, digital services, hospitality and other businesses serving Crettyard and the surrounding townlands.
+
+Card 3 title: Schools & Childcare
+
+Card 3 text: Learn about the local schools and childcare services that support everyday family life in the area.
+
+Card 4 title: Sport & Clubs
+
+Card 4 text: Explore the clubs and facilities that give Crettyard its strong sporting identity, from athletics and Gaelic games to soccer and community events.
+
+Card 5 title: Events & What’s On
+
+Card 5 text: Keep up with local races, club fixtures, school events, seasonal activities and community happenings across the year.
+
+Card 6 title: Visit Crettyard
+
+Card 6 text: Plan a stop in Crettyard and use it as a base to explore heritage, nearby villages, local businesses and the wider Laois, Kilkenny and Carlow border area.
+
+Businesses heading: Local Businesses
+
+Businesses intro: Crettyard has a diverse rural economy, with practical local services at the junction and a wider network of businesses across the surrounding area. From farm supply and natural stone to wildflower production and digital services, local enterprise remains a major part of the area’s identity today.
+
+Feature 1 title: Design By Nature
+
+Feature 1 text: Based in Monavea, this specialist business has become known for native Irish wildflower seeds and biodiversity-focused growing.
+
+Feature 2 title: Crettyard Stone
+
+Feature 2 text: Crettyard Stone supplies natural building materials including sandstone, granite, paving and walling products.
+
+Feature 3 title: Tirlán FarmLife Crettyard
+
+Feature 3 text: The local branch at the Crettyard junction supports farming life with essential agricultural supplies and hardware.
+
+Feature 4 title: Crettyard Digital
+
+Feature 4 text: The area is also home to digital and web services that help local businesses compete online.
+
+Businesses CTA: Browse the business directory
+
+Community heading: Community Life
+
+Community text: Community life in Crettyard is supported by schools, childcare, parish connections, local volunteers and a remarkably strong sporting culture. Newtown National School, Mayo National School, local childcare provision, Crettyard GAA, Crettyard United and St. Abban’s Athletic Club all help make the area active, connected and family-focused.
+
+Events heading: What’s On
+
+Events text: Throughout the year, the Crettyard area hosts and supports a range of events linked to athletics, club life, schools, parish activities and seasonal gatherings. From open sports and local fixtures to jiving nights, school events and community celebrations, there is always something happening in and around the area.
+
+Visit heading: Visit Crettyard
+
+Visit text: Crettyard is a useful stop and a good base for exploring nearby places including Newtown, Doonane, Monavea, Mayo, Killabban, Castlecomer and the wider borderlands of Laois, Kilkenny and Carlow. Its mix of heritage, local character, village services and access to nearby destinations gives visitors a real sense of the area rather than just a pass-through view from the road.
+
+Map heading: Find Crettyard
+
+Map text: Crettyard sits at the junction of the N78 and R431, giving it direct road links and practical access to nearby towns including Kilkenny, Carlow and Athy. That location has long made it an important local meeting point and service centre for the surrounding rural area.
+
+Map CTA: View map and directions
+
+Updates heading: Latest Updates
+
+Updates intro: Follow local news, event announcements, new business additions, heritage stories and community updates from across the Crettyard area.
+
+Updates CTA: Read the latest news
+
+Final CTA heading: Be Part of the Story
+
+Final CTA text: This website is here to celebrate Crettyard’s past and present, and to help share its stories with residents, visitors, families and the wider diaspora. Explore the area, support local businesses, and help us build a stronger picture of Crettyard by sharing events, photos, memories and updates.
+
+SEO elements
+For on-page SEO, keep the homepage focused on one clear topic: Crettyard as a place to live, visit, remember and explore. That fits the project goal of putting Crettyard on the map through history, businesses, community life, schools, sport, events and nearby attractions.
+
+Suggested title tag: Crettyard, Co Laois – History, Community, Businesses & Visitor Guide
+
+Suggested meta description: Discover Crettyard in County Laois, from mining heritage and local businesses to schools, sport, events and nearby places to explore.
+
+Suggested OG title: Welcome to Crettyard
+
+Suggested OG description: Explore the history, community, businesses and visitor highlights of Crettyard, County Laois.
+
+Suggested image alt text examples: “Crettyard village approach in County Laois”, “Local sports grounds in Crettyard area”, “Crettyard heritage landscape on the Castlecomer Plateau”, “Business frontage in Crettyard”
