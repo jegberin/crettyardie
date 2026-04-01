@@ -46,6 +46,8 @@ const SCHOOLS: Org[] = [
     subtitle: 'Mayo National School',
     icon: <GraduationCap size={22} />,
     iconBg: 'bg-emerald-100 text-emerald-700',
+    logo: '/logos/mayons.jpg',
+    logoFit: 'contain',
     description:
       'Known locally as Mayo National School, Scoil Mhuire Muigheo serves the Mayo area of Crettyard with both an official school website and an active community Facebook presence.',
     location: 'Mayo, Crettyard, Co. Laois',
