@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import {
-  ArrowRight, ExternalLink, MapPin, GraduationCap, Heart,
+  ArrowRight, ExternalLink, MapPin, GraduationCap,
   Shield, Users, Activity, Landmark, Mountain, TreePine, Globe,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -51,20 +51,6 @@ const SCHOOLS: Org[] = [
       { label: 'Website', href: 'http://www.mayons.ie' },
       { label: 'Facebook', href: 'https://www.facebook.com/p/Mayo-National-School-100083211525048/' },
       { label: 'Google Maps', href: 'https://www.google.com/maps/search/?api=1&query=Scoil+Mhuire+Muigheo%2C+Mayo%2C+Crettyard%2C+Co.+Laois' },
-    ],
-  },
-  {
-    name: "St. Abban's Childcare",
-    subtitle: 'Early Years Service',
-    icon: <Heart size={22} />,
-    iconBg: 'bg-rose-100 text-rose-700',
-    description:
-      "Listed at The Parish Centre in Newtown, Crettyard, St. Abban's Childcare gives local families an important early-years option within the community, registered with both Laois County Childcare Committee and the Department of Education.",
-    location: 'The Parish Centre, Newtown, Crettyard, Co. Laois',
-    links: [
-      { label: 'Laois Childcare', href: 'https://www.laoischildcare.ie/directories/st-abbans-childcare/' },
-      { label: 'Gov.ie listing', href: 'https://www.gov.ie/en/department-of-education/early-years-services/st-abbans-childcare-the-parish-centre-crettyard-laois/' },
-      { label: 'Google Maps', href: 'https://www.google.com/maps/search/?api=1&query=St.+Abbans+Childcare%2C+The+Parish+Centre%2C+Newtown%2C+Crettyard%2C+Co.+Laois' },
     ],
   },
 ];
@@ -310,11 +296,11 @@ export default function CommunityPage() {
               <div className="w-10 h-10 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center">
                 <GraduationCap size={20} />
               </div>
-              <p className="font-bold text-primary tracking-[0.2em] uppercase text-xs">Education & Childcare</p>
+              <p className="font-bold text-primary tracking-[0.2em] uppercase text-xs">Education</p>
             </div>
-            <h2 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter mb-4">Schools &amp; Childcare</h2>
+            <h2 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter mb-4">Local Schools</h2>
             <p className="text-on-surface-variant text-lg leading-relaxed max-w-2xl">
-              Families in the Crettyard area are supported by two primary schools and a local childcare service that play an important part in everyday community life.
+              Families in the Crettyard area are supported by two local primary schools that play an important part in everyday community life.
             </p>
           </motion.div>
 
