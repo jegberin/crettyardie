@@ -6,3 +6,9 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Notice Board local dev
+dev.db
+dev.db-wal
+dev.db-shm
+uploads/

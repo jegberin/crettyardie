@@ -1,0 +1,13 @@
+name = "crettyardie"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = "dist"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "crettyardie-db"
+database_id = "6d498931-3903-4685-bfc7-c79504161f5f"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "crettyardie"

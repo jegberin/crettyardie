@@ -15,18 +15,61 @@ A community portal website for the Crettyard area in County Laois, Ireland. It s
 ```
 /
 ├── src/
-│   ├── main.tsx        # App entry point
-│   ├── App.tsx         # Main component with all UI sections
-│   └── index.css       # Global styles + Tailwind directives
-├── index.html          # HTML shell
-├── vite.config.ts      # Vite config (port 5000, allowedHosts: true)
+│   ├── context/AuthContext.tsx    # Auth state (JWT in localStorage)
+│   ├── components/
+│   │   ├── AuthModal.tsx          # Register / Login / ForgotPassword / Reset modals
+│   │   ├── NewPostModal.tsx       # Create announcement modal (multipart upload)
+│   │   ├── Navbar.tsx
+│   │   └── Footer.tsx
+│   ├── pages/
+│   │   ├── HomePage.tsx
+│   │   ├── HistoryPage.tsx
+│   │   ├── BusinessesPage.tsx
+│   │   ├── CommunityPage.tsx
+│   │   └── NoticeboardPage.tsx   # /noticeboard — public read, auth to post
+│   ├── main.tsx
+│   ├── App.tsx
+│   └── index.css
+├── server/                        # Express dev API server (port 8788)
+│   ├── index.ts
+│   ├── db.ts                      # better-sqlite3 (mirrors D1 schema)
+│   ├── lib/auth.ts                # PBKDF2 password hash + jose JWT
+│   ├── lib/email.ts               # Resend email helper
+│   └── routes/
+│       ├── auth.ts                # register, verify, login, forgot, reset
+│       └── posts.ts               # list, get, create (multipart), delete
+├── functions/                     # Cloudflare Pages Functions (production)
+│   ├── _lib/
+│   │   ├── types.ts               # Env interface (D1/R2/Resend/JWT bindings)
+│   │   ├── auth.ts                # Same helpers but CF Workers crypto
+│   │   └── email.ts               # Resend via fetch
+│   └── api/
+│       ├── auth/{register,verify,login,forgot-password,reset-password}.ts
+│       ├── posts/{index,\[id\]}.ts
+│       └── uploads/\[key\].ts     # R2 proxy (GET)
+├── schema.sql                     # D1/SQLite schema (users, email_tokens, posts, attachments)
+├── wrangler.toml                  # D1 + R2 bindings for CF Pages
+├── uploads/                       # Local file storage for dev (gitignored)
+├── dev.db                         # SQLite dev database (gitignored)
+├── index.html
+├── vite.config.ts                 # Proxy /api/* → localhost:8788
 ├── package.json
 └── tsconfig.json
 ```
 
 ## Development
-- Run: `npm run dev` — starts Vite dev server on port 5000
+- Run: `npm run dev` — starts **both** Vite (port 5000) **and** Express API server (port 8788) via concurrently
 - Build: `npm run build` — outputs to `dist/`
+- Vite proxies all `/api/*` requests to `localhost:8788`
+
+## Notice Board Feature
+- **Route**: `/noticeboard`
+- **Auth flow**: register (username + email + password) → email verification via Resend → login → JWT in localStorage
+- **Password hashing**: PBKDF2 via Web Crypto API (compatible with CF Workers)
+- **JWT**: signed with HS256 using `jose` (compatible with CF Workers)
+- **File attachments**: up to 5 MB, stored locally (dev) or in R2 `posts/{postId}/{filename}` (production)
+- **Attachment URLs**: `/api/uploads/:key` — Express static (dev) or R2 proxy CF Function (production)
+- **Production CF env vars required**: `JWT_SECRET`, `SITE_URL`, `RESEND_API_KEY`, D1 binding `DB`, R2 binding `R2`
 
 ## Deployment
 - Hosted on **Cloudflare Pages + Workers** via GitHub sync
