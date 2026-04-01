@@ -2,13 +2,9 @@ import React from 'react';
 import {
   History,
   Store,
-  School,
-  Trophy,
-  Calendar,
-  Map as MapIcon,
+  Users,
+  MessageSquare,
   ArrowRight,
-  CalendarDays,
-  Compass,
   MapPin,
   Navigation
 } from 'lucide-react';
@@ -40,13 +36,13 @@ const Hero = () => (
           </Link>
         </div>
         <div className="mt-10 flex gap-8 text-sm font-semibold text-secondary">
-          <Link to="/events" className="flex items-center gap-2 hover:text-primary transition-colors group">
-            <CalendarDays size={18} className="text-primary group-hover:scale-110 transition-transform" />
-            What's On
+          <Link to="/community" className="flex items-center gap-2 hover:text-primary transition-colors group">
+            <Users size={18} className="text-primary group-hover:scale-110 transition-transform" />
+            Community
           </Link>
-          <Link to="/visit" className="flex items-center gap-2 hover:text-primary transition-colors group">
-            <Compass size={18} className="text-primary group-hover:scale-110 transition-transform" />
-            Plan Your Visit
+          <Link to="/noticeboard" className="flex items-center gap-2 hover:text-primary transition-colors group">
+            <MessageSquare size={18} className="text-primary group-hover:scale-110 transition-transform" />
+            Notice Board
           </Link>
         </div>
       </motion.div>
@@ -94,12 +90,34 @@ const Intro = () => (
 
 const ExploreGrid = () => {
   const items = [
-    { title: 'History & Heritage', icon: History, desc: 'Discover the story of early settlement, parish life, coal mining, Newtown and Doonane, holy wells, churches, bridges and the wider heritage of the Crettyard area.', link: 'Read More', href: '/history-heritage' },
-    { title: 'Businesses & Services', icon: Store, desc: 'Find local shops, fuel, farm supplies, trades, engineering, stone, digital services, hospitality and other businesses serving Crettyard and the surrounding townlands.', link: 'Directory', href: '/businesses' },
-    { title: 'Schools & Childcare', icon: School, desc: 'Learn about the local schools and childcare services that support everyday family life in the area.', link: 'Education', href: '/community' },
-    { title: 'Sport & Clubs', icon: Trophy, desc: 'Explore the clubs and facilities that give Crettyard its strong sporting identity, from athletics and Gaelic games to soccer and community events.', link: 'Join a Club', href: '/community' },
-    { title: "Events & What's On", icon: Calendar, desc: 'Keep up with local races, club fixtures, school events, seasonal activities and community happenings across the year.', link: 'Calendar', href: '/events' },
-    { title: 'Visit Crettyard', icon: MapIcon, desc: 'Plan a stop in Crettyard and use it as a base to explore heritage, nearby villages, local businesses and the wider Laois, Kilkenny and Carlow border area.', link: 'Plan Trip', href: '/visit' },
+    {
+      title: 'History & Heritage',
+      icon: History,
+      desc: 'Discover the story of early settlement, parish life, coal mining, Newtown and Doonane, holy wells, churches, bridges and the wider heritage of the Crettyard area.',
+      link: 'Read More',
+      href: '/history-heritage',
+    },
+    {
+      title: 'Businesses & Services',
+      icon: Store,
+      desc: 'Find local shops, fuel, farm supplies, trades, engineering, stone, digital services, hospitality and other businesses serving Crettyard and the surrounding townlands.',
+      link: 'Directory',
+      href: '/businesses',
+    },
+    {
+      title: 'Community & Clubs',
+      icon: Users,
+      desc: 'Learn about the schools, childcare, sports clubs and community organisations that support everyday life in Crettyard — from GAA and soccer to athletics and parish life.',
+      link: 'Explore',
+      href: '/community',
+    },
+    {
+      title: 'Notice Board',
+      icon: MessageSquare,
+      desc: 'Read community announcements, local news and updates from Crettyard and the surrounding area. Log in to post your own announcements.',
+      link: 'View Board',
+      href: '/noticeboard',
+    },
   ];
 
   return (
@@ -112,7 +130,7 @@ const ExploreGrid = () => {
       >
         <h2 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-4">Explore the Area</h2>
       </motion.div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {items.map((item, idx) => (
           <motion.div
             key={item.title}
@@ -137,10 +155,30 @@ const ExploreGrid = () => {
 
 const FeaturedBusinesses = () => {
   const businesses = [
-    { name: 'Design By Nature', desc: 'Based in Monavea, this specialist business has become known for native Irish wildflower seeds and biodiversity-focused growing.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCEeQirM9xql3kf8ra2kwsDE2zOaV21-fYAzhRW8RA8KGG3TB4lwt1Imt31fg5l-s_Qoez0_2rpdCVCgsa5d5lWf4A2dVMQzaWoPNiNaYp_74pe200rx1jUMfFDj7okKb25eMKaDpJzPc4zUZ7f85jSvUJ4WT8mCrGlqCdl-Hzc6jH6U9TDEo4RjX_VbUiS0Aj1ixUFxWLJgffQU6hhA7b1s4fCTXL6vw65C_0-RJ_wOoSLJrEoJcPNJkd0CWpqk5kjNar6AAyZ1Cq_' },
-    { name: 'Crettyard Stone', desc: 'Crettyard Stone supplies natural building materials including sandstone, granite, paving and walling products.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDomtkaPHGu_j9Dpzzdf7m12M6uTeG6wQbP75UnJhjn0iryeQbGUhIi_GqhbSxf1B48iguaTjvJWueOMt5BUJDs_zZHUR4mI2yAhXpATFgzeXUAf5OZEsgfycz68fklfHLGk326aH_QluhkK3dJ5Ak6Wp2gmlkH2Ac1gcv36fzaDzjAY_wY8unAJv_YEtcbM0Wvn6b5cXtQyK3uNHkavCf10MBmStJ2BvbU5-2656okPYYi9JwqMcWCmXoEhA5WGhAwBnLoG4FSnYEB' },
-    { name: 'Tirlán FarmLife Crettyard', desc: 'The local branch at the Crettyard junction supports farming life with essential agricultural supplies and hardware.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDmAvjawbhmi7RpGEUbZtsxZweuzdy1IMP5HMWZXFuwavRPUKYHS8ue2CCt-YEMRbXARsDMfQLZ4IrYFhLS-AAWzZ5wtts0kTWFWitKTRibsXnJ24kGzTXiNPG2ll9AlezQEZseoFKYLov7vGwJXvlfNa82A7AuyJICkVu7G-ReKDQMAwPGRNXeg0AzipeyWX32v6FazS8iSOL_HrdC66BPEKz8c2XbbMNWw-PwgW1f5BkuSZ88J2FkG12eGHH_20dYHHSeins54cH1' },
-    { name: 'Crettyard Digital', desc: 'The area is also home to digital and web services that help local businesses compete online.', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAB9L8FEMHhsvhKdvlvaASuYxwNN41-q_MgGdF3B853ClZxqgGKzJuBOX0oz9HVJ92aI3zZ4DEbQpgMA1ywgbqmtPmbQiGqO_2JMVNQNbKXFXKnhkdHeqm-uMVn5YhMdURSu363NU-Vq_vPx5yst997ibW3ZHAYvr5rspWvCpYzbmEvZ8S9BPZOQP7MT4mXH5VsOf9LoURGHqLq5WaO7uvw_wEHy0BXSZKTI2b3Ick-tZd87ShGSGkBuTu7vX5y9yOIyaKn-U0O77nV' },
+    {
+      name: 'Inver Geneva Stores',
+      desc: 'Fuel, convenience shop, deli and car wash at the Crettyard junction on the N78. A landmark local service point serving residents and passing trade daily.',
+      logo: '/logos/inver.svg',
+      href: '/businesses',
+    },
+    {
+      name: 'Crettyard Digital',
+      desc: 'Web design and digital services for local businesses — websites, digital marketing and IT support for trades and retailers across the Laois area.',
+      logo: '/logos/crettyarddigital.png',
+      href: '/businesses',
+    },
+    {
+      name: 'Wilson Engineering',
+      desc: 'Agricultural and machinery engineering — home of the Super Move. Specialists in bespoke engineering for farm and industry based in the Crettyard area.',
+      logo: '/logos/wilson.png',
+      href: '/businesses',
+    },
+    {
+      name: 'Crettyard Stone',
+      desc: 'Natural building materials including sandstone, granite, paving and walling products for residential and commercial projects.',
+      logo: '/logos/crettyardstone.jpg',
+      href: '/businesses',
+    },
   ];
 
   return (
@@ -152,7 +190,7 @@ const FeaturedBusinesses = () => {
             <p className="text-on-surface-variant text-lg">Crettyard has a diverse rural economy, with practical local services at the junction and a wider network of businesses across the surrounding area. From farm supply and natural stone to wildflower production and digital services, local enterprise remains a major part of the area's identity today.</p>
           </div>
           <Link to="/businesses" className="px-8 py-3 rounded-full border-2 border-primary text-primary font-bold text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all whitespace-nowrap">
-            Browse the business directory
+            Browse the directory
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -163,14 +201,24 @@ const FeaturedBusinesses = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all"
+              className="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col"
             >
-              <div className="h-56 overflow-hidden">
-                <img className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" src={biz.img} alt={biz.name} referrerPolicy="no-referrer" />
+              <div className="h-40 flex items-center justify-center p-6 bg-white border-b border-outline-variant/10">
+                <img
+                  className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                  src={biz.logo}
+                  alt={biz.name}
+                />
               </div>
-              <div className="p-8">
-                <h4 className="font-bold text-xl mb-3">{biz.name}</h4>
-                <p className="text-sm text-on-surface-variant leading-relaxed">{biz.desc}</p>
+              <div className="p-6 flex flex-col flex-1">
+                <h4 className="font-bold text-lg mb-2">{biz.name}</h4>
+                <p className="text-sm text-on-surface-variant leading-relaxed flex-1">{biz.desc}</p>
+                <Link
+                  to={biz.href}
+                  className="mt-4 text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                >
+                  View profile <ArrowRight size={14} />
+                </Link>
               </div>
             </motion.div>
           ))}
@@ -180,7 +228,7 @@ const FeaturedBusinesses = () => {
   );
 };
 
-const CommunityEvents = () => (
+const CommunitySection = () => (
   <section className="py-24 overflow-hidden">
     <div className="max-w-screen-2xl mx-auto px-6 md:px-12">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
@@ -203,12 +251,15 @@ const CommunityEvents = () => (
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <h2 className="font-headline text-4xl md:text-5xl font-extrabold mb-8 tracking-tight">Community Life</h2>
             <p className="text-on-surface-variant text-lg md:text-xl leading-relaxed">Community life in Crettyard is supported by schools, childcare, parish connections, local volunteers and a remarkably strong sporting culture. Newtown National School, Mayo National School, local childcare provision, Crettyard GAA, Crettyard United and St. Abban's Athletic Club all help make the area active, connected and family-focused.</p>
+            <Link to="/community" className="mt-10 inline-block text-primary font-black uppercase text-sm tracking-[0.2em] underline underline-offset-[12px] decoration-2 decoration-primary/30 hover:decoration-primary transition-all">
+              Explore community
+            </Link>
           </motion.div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }}>
-            <h2 className="font-headline text-4xl md:text-5xl font-extrabold mb-8 tracking-tight">What's On</h2>
-            <p className="text-on-surface-variant text-lg md:text-xl leading-relaxed">Throughout the year, the Crettyard area hosts and supports a range of events linked to athletics, club life, schools, parish activities and seasonal gatherings. From open sports and local fixtures to jiving nights, school events and community celebrations, there is always something happening in and around the area.</p>
-            <Link to="/events" className="mt-10 inline-block text-primary font-black uppercase text-sm tracking-[0.2em] underline underline-offset-[12px] decoration-2 decoration-primary/30 hover:decoration-primary transition-all">
-              View full calendar
+            <h2 className="font-headline text-4xl md:text-5xl font-extrabold mb-8 tracking-tight">Notice Board</h2>
+            <p className="text-on-surface-variant text-lg md:text-xl leading-relaxed">Stay up to date with local announcements, community news and area updates on the Crettyard Notice Board. Anyone can read; create a free account to post your own announcements for the community.</p>
+            <Link to="/noticeboard" className="mt-10 inline-block text-primary font-black uppercase text-sm tracking-[0.2em] underline underline-offset-[12px] decoration-2 decoration-primary/30 hover:decoration-primary transition-all">
+              Read announcements
             </Link>
           </motion.div>
         </div>
@@ -225,9 +276,14 @@ const FindUs = () => (
         <p className="text-on-surface-variant text-lg leading-relaxed mb-10">
           Crettyard sits at the junction of the N78 and R431, giving it direct road links and practical access to nearby towns including Kilkenny, Carlow and Athy. That location has long made it an important local meeting point and service centre for the surrounding rural area.
         </p>
-        <button className="px-8 py-4 rounded-full signature-gradient text-on-primary font-bold text-sm uppercase tracking-widest flex items-center gap-3 shadow-xl shadow-primary/20 hover:scale-105 transition-transform">
+        <a
+          href="https://maps.google.com/?q=Crettyard,+Co.+Laois,+Ireland"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-8 py-4 rounded-full signature-gradient text-on-primary font-bold text-sm uppercase tracking-widest inline-flex items-center gap-3 shadow-xl shadow-primary/20 hover:scale-105 transition-transform"
+        >
           <Navigation size={20} /> View map and directions
-        </button>
+        </a>
       </div>
       <div className="lg:col-span-7 h-[450px] rounded-3xl overflow-hidden shadow-inner bg-surface-container-high relative">
         <div className="absolute inset-0 flex items-center justify-center">
@@ -253,45 +309,6 @@ const FindUs = () => (
   </section>
 );
 
-const LatestUpdates = () => {
-  const updates = [
-    { cat: 'Community News', date: 'Oct 12', title: 'Parish Hall Renovation Project Begins', desc: 'Exciting updates on the local community hall as phase one of the structural repairs gets underway this week...' },
-    { cat: 'Sport', date: 'Oct 10', title: 'Crettyard United Secure Historic Win', desc: 'A hard-fought match at the weekend sees the senior team advance to the next round of the cup competition...' },
-    { cat: 'History', date: 'Oct 05', title: 'Unearthing the Mining Archives', desc: 'A new digital collection of photographs from the old Deerpark Colliery has been donated to the local archive...' },
-  ];
-
-  return (
-    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-        <div>
-          <h2 className="font-headline text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Latest Updates</h2>
-          <p className="text-on-surface-variant text-lg max-w-xl">Follow local news, event announcements, new business additions, heritage stories and community updates from across the Crettyard area.</p>
-        </div>
-        <a href="#" className="px-8 py-3 rounded-full border-2 border-primary text-primary font-bold text-sm uppercase tracking-widest hover:bg-primary hover:text-white transition-all whitespace-nowrap">
-          Read the latest news
-        </a>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-        {updates.map((upd, idx) => (
-          <motion.div
-            key={upd.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.1 }}
-            className="group cursor-pointer"
-          >
-            <div className="h-1 w-12 bg-primary mb-8 transition-all group-hover:w-24"></div>
-            <p className="text-xs font-bold text-secondary uppercase tracking-widest mb-3">{upd.cat} • {upd.date}</p>
-            <h3 className="font-headline text-2xl font-bold mb-5 group-hover:text-primary transition-colors leading-tight">{upd.title}</h3>
-            <p className="text-on-surface-variant line-clamp-3 leading-relaxed">{upd.desc}</p>
-          </motion.div>
-        ))}
-      </div>
-    </section>
-  );
-};
-
 const CTA = () => (
   <section className="py-24 px-6 md:px-12">
     <motion.div
@@ -313,12 +330,12 @@ const CTA = () => (
           This website is here to celebrate Crettyard's past and present, and to help share its stories with residents, visitors, families and the wider diaspora. Explore the area, support local businesses, and help us build a stronger picture of Crettyard by sharing events, photos, memories and updates.
         </p>
         <div className="flex flex-wrap justify-center gap-6">
-          <button className="px-10 py-5 rounded-full bg-white text-primary font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-2xl">
-            Submit an Update
-          </button>
-          <button className="px-10 py-5 rounded-full border-2 border-white/30 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors">
+          <Link to="/noticeboard" className="px-10 py-5 rounded-full bg-white text-primary font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-2xl">
+            Post an Announcement
+          </Link>
+          <Link to="/businesses" className="px-10 py-5 rounded-full border-2 border-white/30 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors">
             Join the Directory
-          </button>
+          </Link>
         </div>
       </div>
     </motion.div>
@@ -332,9 +349,8 @@ export default function HomePage() {
       <Intro />
       <ExploreGrid />
       <FeaturedBusinesses />
-      <CommunityEvents />
+      <CommunitySection />
       <FindUs />
-      <LatestUpdates />
       <CTA />
     </main>
   );
