@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, ExternalLink, MapPin, Send, Globe } from 'lucide-react';
+import { ArrowRight, ExternalLink, MapPin, Globe, PlusCircle, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -419,48 +419,32 @@ export default function BusinessesPage() {
                 Business owners can submit opening hours, photos and a short description for a more complete listing. There is no charge to be included.
               </p>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-on-primary">
-              <h3 className="font-headline text-2xl font-bold mb-6">Submit a listing</h3>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-widest mb-2 opacity-80">Business name</label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-white/60 transition-colors text-sm"
-                    placeholder="Your business name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-widest mb-2 opacity-80">Contact email</label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-white/60 transition-colors text-sm"
-                    placeholder="your@email.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-widest mb-2 opacity-80">Website or social page</label>
-                  <input
-                    type="url"
-                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-white/60 transition-colors text-sm"
-                    placeholder="https://"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-bold uppercase tracking-widest mb-2 opacity-80">Brief description</label>
-                  <textarea
-                    rows={3}
-                    className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:border-white/60 transition-colors text-sm resize-none"
-                    placeholder="What does your business do?"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full px-6 py-4 rounded-xl bg-white text-primary font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform shadow-lg"
-                >
-                  <Send size={16} /> Submit listing
-                </button>
-              </form>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-on-primary flex flex-col justify-between gap-8">
+              <div>
+                <h3 className="font-headline text-2xl font-bold mb-5">What we'll need from you</h3>
+                <ul className="space-y-3">
+                  {[
+                    'Business name and category',
+                    'Short description of what you do',
+                    'Contact details and opening hours',
+                    'Website, social links or logo (optional)',
+                  ].map(item => (
+                    <li key={item} className="flex items-start gap-3 text-sm opacity-90">
+                      <CheckCircle size={16} className="mt-0.5 flex-shrink-0 opacity-80" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-5 text-sm opacity-70 leading-relaxed">
+                  It takes about two minutes. There is no charge to be listed in the directory.
+                </p>
+              </div>
+              <Link
+                to="/contact?category=add-business"
+                className="w-full px-6 py-4 rounded-xl bg-white text-primary font-bold text-sm uppercase tracking-widest flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform shadow-lg"
+              >
+                <PlusCircle size={16} /> Add my business
+              </Link>
             </div>
           </div>
         </motion.div>
