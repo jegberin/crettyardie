@@ -281,9 +281,12 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-rose-100 text-rose-800',
     description:
       'A local hair and beauty business in the area.',
+    logo: '/logos/holistichair.jpg',
+    logoFit: 'cover',
     initials: 'HHB',
-    links: [],
-    note: 'Web presence and current trading details need local confirmation.',
+    links: [
+      { label: 'Google Maps', href: 'https://www.google.ie/maps/place/Holistic+Hair+%26+Beauty/@52.845574,-7.1012737' },
+    ],
   },
 ];
 
