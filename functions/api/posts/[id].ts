@@ -23,6 +23,8 @@ export async function onRequestGet(ctx: Ctx): Promise<Response> {
   }
 }
 
+const ADMIN_EMAIL = 'info@crettyard.ie';
+
 export async function onRequestDelete(ctx: Ctx): Promise<Response> {
   const user = await requireAuth(ctx.request, ctx.env.JWT_SECRET);
   if (!user) return err('Authentication required', 401);
@@ -31,7 +33,9 @@ export async function onRequestDelete(ctx: Ctx): Promise<Response> {
     const { DB } = ctx.env;
     const post = await DB.prepare('SELECT user_id FROM posts WHERE id = ?').bind(id).first<{ user_id: string }>();
     if (!post) return err('Post not found', 404);
-    if (post.user_id !== user.userId) return err('You can only delete your own posts', 403);
+    const isOwner = post.user_id === user.userId;
+    const isAdmin = user.email === ADMIN_EMAIL;
+    if (!isOwner && !isAdmin) return err('You can only delete your own posts', 403);
     await DB.prepare('DELETE FROM posts WHERE id = ?').bind(id).run();
     return json({ message: 'Post deleted' });
   } catch (e) {

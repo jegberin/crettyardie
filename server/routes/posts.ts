@@ -143,6 +143,8 @@ postsRouter.post('/', async (req, res) => {
   }
 });
 
+const ADMIN_EMAIL = 'info@crettyard.ie';
+
 // DELETE /api/posts/:id
 postsRouter.delete('/:id', async (req, res) => {
   const user = await getAuthUser(req);
@@ -151,7 +153,9 @@ postsRouter.delete('/:id', async (req, res) => {
     const db = getDb();
     const post = db.prepare('SELECT user_id FROM posts WHERE id = ?').get(req.params.id) as { user_id: string } | undefined;
     if (!post) return res.status(404).json({ error: 'Post not found' });
-    if (post.user_id !== user.userId) return res.status(403).json({ error: 'You can only delete your own posts' });
+    const isOwner = post.user_id === user.userId;
+    const isAdmin = user.email === ADMIN_EMAIL;
+    if (!isOwner && !isAdmin) return res.status(403).json({ error: 'You can only delete your own posts' });
     db.prepare('DELETE FROM posts WHERE id = ?').run(req.params.id);
     return res.json({ message: 'Post deleted' });
   } catch (err) {

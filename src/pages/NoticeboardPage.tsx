@@ -167,11 +167,14 @@ function AttachmentBlock({ attachments }: { attachments: Attachment[] }) {
 
 // ─── PostCard ─────────────────────────────────────────────────────────────────
 
-function PostCard({ post, currentUsername, onDelete }: { post: Post; currentUsername?: string; onDelete: (id: string) => void }) {
+const ADMIN_EMAIL = 'info@crettyard.ie';
+
+function PostCard({ post, currentUsername, currentEmail, onDelete }: { post: Post; currentUsername?: string; currentEmail?: string; onDelete: (id: string) => void }) {
   const [expanded, setExpanded] = useState(false);
   const { authHeader } = useAuth();
   const [deleting, setDeleting] = useState(false);
   const isOwner = !!currentUsername && currentUsername === post.username;
+  const isAdmin = currentEmail === ADMIN_EMAIL;
   const SNIPPET_LENGTH = 280;
   const isLong = post.body.length > SNIPPET_LENGTH;
 
@@ -195,9 +198,17 @@ function PostCard({ post, currentUsername, onDelete }: { post: Post; currentUser
     >
       <div className="flex items-start justify-between gap-4 mb-4">
         <h3 className="font-headline text-xl font-extrabold tracking-tight text-on-surface leading-tight">{post.title}</h3>
-        {isOwner && (
-          <button onClick={handleDelete} disabled={deleting}
-            className="p-2 rounded-full hover:bg-red-50 text-on-surface-variant hover:text-red-600 transition-colors shrink-0 disabled:opacity-50">
+        {(isOwner || isAdmin) && (
+          <button
+            onClick={handleDelete}
+            disabled={deleting}
+            title={isAdmin && !isOwner ? 'Remove post (admin)' : 'Delete your post'}
+            className={`p-2 rounded-full transition-colors shrink-0 disabled:opacity-50 ${
+              isAdmin && !isOwner
+                ? 'hover:bg-red-100 text-red-400 hover:text-red-700'
+                : 'hover:bg-red-50 text-on-surface-variant hover:text-red-600'
+            }`}
+          >
             {deleting ? <Loader2 size={16} className="animate-spin" /> : <Trash2 size={16} />}
           </button>
         )}
@@ -385,6 +396,7 @@ export default function NoticeboardPage() {
                     key={post.id}
                     post={post}
                     currentUsername={user?.username}
+                    currentEmail={user?.email}
                     onDelete={handlePostDeleted}
                   />
                 ))}
