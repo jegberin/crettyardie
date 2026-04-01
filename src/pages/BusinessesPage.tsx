@@ -174,9 +174,10 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-red-100 text-red-800',
     description:
       'A local country pub near Newtown and Turra Hill, serving the Crettyard community as a social gathering point.',
+    logo: '/logos/behans.jpg',
+    logoFit: 'cover',
     initials: 'BP',
     links: [],
-    note: 'No website found — contact details to be confirmed locally.',
   },
   {
     name: 'Galtee Fuels',
