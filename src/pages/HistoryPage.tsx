@@ -491,7 +491,7 @@ export default function HistoryPage() {
             If you have local knowledge, family records, photographs or memories connected to Crettyard's history, we would love to hear from you. Help us build a fuller picture of this remarkable place.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-            <Link to="/contact" className="px-10 py-5 rounded-full bg-white text-primary font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-2xl">
+            <Link to="/contact?category=share-story" className="px-10 py-5 rounded-full bg-white text-primary font-bold text-sm uppercase tracking-widest hover:scale-105 transition-transform shadow-2xl">
               Share Your Story
             </Link>
             <Link to="/" className="px-10 py-5 rounded-full border-2 border-white/30 text-white font-bold text-sm uppercase tracking-widest hover:bg-white/10 transition-colors">
