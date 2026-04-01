@@ -4,6 +4,8 @@ export interface Env {
   RESEND_API_KEY: string;
   JWT_SECRET: string;
   SITE_URL: string;
+  TELEGRAM_BOT_TOKEN?: string;
+  TELEGRAM_CHAT_ID?: string;
 }
 
 export type Ctx = EventContext<Env, string, Record<string, unknown>>;

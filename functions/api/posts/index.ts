@@ -68,10 +68,25 @@ export async function onRequestPost(ctx: Ctx): Promise<Response> {
       WHERE p.id = ? GROUP BY p.id
     `).bind(postId).first<Record<string, unknown>>();
 
-    return json({
+    const response = json({
       ...created,
       attachments: (JSON.parse(created!.attachments as string) as Array<unknown>).filter(Boolean),
     }, 201);
+
+    const { TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID } = ctx.env;
+    if (TELEGRAM_BOT_TOKEN && TELEGRAM_CHAT_ID) {
+      const preview = body.length > 300 ? body.slice(0, 300) + '…' : body;
+      const text = `📌 New notice board post\n\n👤 ${user.username}\n📝 ${title}\n\n${preview}\n\n🔗 https://crettyard.ie/noticeboard`;
+      ctx.waitUntil(
+        fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text, parse_mode: 'HTML' }),
+        }).catch(e => console.error('[telegram]', e))
+      );
+    }
+
+    return response;
   } catch (e) {
     console.error('[posts/create]', e);
     return err('Failed to create post', 500);

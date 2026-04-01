@@ -133,10 +133,24 @@ postsRouter.post('/', async (req, res) => {
       WHERE p.id = ? GROUP BY p.id
     `).get(postId) as Record<string, unknown>;
 
-    return res.status(201).json({
+    const responseData = {
       ...created,
       attachments: (JSON.parse(created.attachments as string) as Array<unknown>).filter(Boolean),
-    });
+    };
+
+    const telegramToken = process.env.TELEGRAM_BOT_TOKEN;
+    const telegramChatId = process.env.TELEGRAM_CHAT_ID;
+    if (telegramToken && telegramChatId) {
+      const preview = body.length > 300 ? body.slice(0, 300) + '…' : body;
+      const text = `📌 New notice board post\n\n👤 ${user.username}\n📝 ${title}\n\n${preview}\n\n🔗 https://crettyard.ie/noticeboard`;
+      fetch(`https://api.telegram.org/bot${telegramToken}/sendMessage`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: telegramChatId, text }),
+      }).catch(e => console.error('[telegram]', e));
+    }
+
+    return res.status(201).json(responseData);
   } catch (err) {
     console.error('[posts/create]', err);
     return res.status(500).json({ error: 'Failed to create post' });
