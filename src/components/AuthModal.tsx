@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Eye, EyeOff, Loader2, CheckCircle, AlertCircle } from 'lucide-react';
+import { X, Eye, EyeOff, Loader2, CheckCircle, AlertCircle, LogOut, User } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 type Tab = 'login' | 'register' | 'forgot';
@@ -14,7 +14,7 @@ interface Props {
 }
 
 export default function AuthModal({ isOpen, onClose, initialTab = 'login', verifyToken, resetToken }: Props) {
-  const { login } = useAuth();
+  const { login, logout, user } = useAuth();
   const [tab, setTab] = useState<Tab>(resetToken ? 'login' : initialTab);
   const [showPwd, setShowPwd] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -151,6 +151,8 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'login', verif
   const inputCls = 'w-full px-4 py-3 rounded-xl border border-outline-variant/30 bg-surface-container-lowest focus:outline-none focus:ring-2 focus:ring-primary/30 text-on-surface text-sm transition-all';
   const labelCls = 'block text-xs font-semibold text-on-surface-variant uppercase tracking-widest mb-1.5';
 
+  const isLoggedIn = !!user && !resetToken;
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -173,10 +175,10 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'login', verif
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h2 className="font-headline text-2xl font-extrabold tracking-tighter text-primary">
-                    {resetToken ? 'Set New Password' : tab === 'login' ? 'Welcome back' : tab === 'register' ? 'Join Crettyard.ie' : 'Reset Password'}
+                    {isLoggedIn ? 'Your Account' : resetToken ? 'Set New Password' : tab === 'login' ? 'Welcome back' : tab === 'register' ? 'Join Crettyard.ie' : 'Reset Password'}
                   </h2>
                   <p className="text-on-surface-variant text-sm mt-1">
-                    {resetToken ? 'Choose a new password for your account' : tab === 'login' ? 'Log in to post on the notice board' : tab === 'register' ? 'Create an account to share announcements' : 'Enter your email and we\'ll send a reset link'}
+                    {isLoggedIn ? `Signed in as ${user.email}` : resetToken ? 'Choose a new password for your account' : tab === 'login' ? 'Log in to post on the notice board' : tab === 'register' ? 'Create an account to share announcements' : 'Enter your email and we\'ll send a reset link'}
                   </p>
                 </div>
                 <button onClick={onClose} className="p-2 rounded-full hover:bg-surface-container transition-colors text-on-surface-variant">
@@ -184,8 +186,8 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'login', verif
                 </button>
               </div>
 
-              {/* Tabs */}
-              {!resetToken && (
+              {/* Tabs — only shown when not logged in and not in reset flow */}
+              {!resetToken && !isLoggedIn && (
                 <div className="flex gap-1 bg-surface-container rounded-full p-1 mb-6">
                   {(['login', 'register'] as Tab[]).map(t => (
                     <button key={t} onClick={() => setTab(t)}
@@ -210,8 +212,30 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'login', verif
 
             {/* Forms */}
             <div className="px-8 pb-8">
+              {/* Logged-in state */}
+              {isLoggedIn && (
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4 p-4 bg-surface-container rounded-2xl">
+                    <div className="w-12 h-12 rounded-full signature-gradient flex items-center justify-center shrink-0">
+                      <User size={20} className="text-on-primary" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="font-bold text-on-surface truncate">@{user.username}</p>
+                      <p className="text-sm text-on-surface-variant truncate">{user.email}</p>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => { logout(); onClose(); }}
+                    className="w-full flex items-center justify-center gap-2 py-3 rounded-full border border-outline-variant/30 text-on-surface-variant text-sm font-semibold hover:bg-surface-container hover:text-on-surface transition-all"
+                  >
+                    <LogOut size={16} />
+                    Log out
+                  </button>
+                </div>
+              )}
+
               {/* Reset password (via link) */}
-              {resetToken && (
+              {!isLoggedIn && resetToken && (
                 <form onSubmit={handleResetPassword} className="space-y-4">
                   <div>
                     <label className={labelCls}>New Password</label>
@@ -233,7 +257,7 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'login', verif
               )}
 
               {/* Login */}
-              {!resetToken && tab === 'login' && (
+              {!isLoggedIn && !resetToken && tab === 'login' && (
                 <form onSubmit={handleLogin} className="space-y-4">
                   <div>
                     <label className={labelCls}>Email</label>
@@ -262,7 +286,7 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'login', verif
               )}
 
               {/* Register */}
-              {!resetToken && tab === 'register' && (
+              {!isLoggedIn && !resetToken && tab === 'register' && (
                 <form onSubmit={handleRegister} className="space-y-4">
                   <div>
                     <label className={labelCls}>Username</label>
@@ -296,7 +320,7 @@ export default function AuthModal({ isOpen, onClose, initialTab = 'login', verif
               )}
 
               {/* Forgot password */}
-              {!resetToken && tab === 'forgot' && (
+              {!isLoggedIn && !resetToken && tab === 'forgot' && (
                 <form onSubmit={handleForgot} className="space-y-4">
                   <div>
                     <label className={labelCls}>Email</label>

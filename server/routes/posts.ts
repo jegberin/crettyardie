@@ -107,12 +107,14 @@ postsRouter.post('/', async (req, res) => {
     const fileArr = files.file;
     if (fileArr && fileArr.length > 0) {
       const f = fileArr[0];
-      const storageKey = `${postId}_${f.originalFilename ?? 'upload'}`;
+      const originalName = f.originalFilename ?? 'upload';
+      const safeName = originalName.replace(/[^a-zA-Z0-9._-]/g, '_');
+      const storageKey = `${postId}_${safeName}`;
       const destPath = path.join(UPLOADS_DIR, storageKey);
       renameSync(f.filepath, destPath);
       db.prepare(
         'INSERT INTO attachments (id, post_id, storage_key, filename, content_type, size) VALUES (?, ?, ?, ?, ?, ?)'
-      ).run(randomId(), postId, storageKey, f.originalFilename ?? 'file', f.mimetype ?? 'application/octet-stream', f.size ?? 0);
+      ).run(randomId(), postId, storageKey, originalName, f.mimetype ?? 'application/octet-stream', f.size ?? 0);
     }
 
     const created = db.prepare(`
