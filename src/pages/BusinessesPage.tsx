@@ -398,7 +398,7 @@ export default function BusinessesPage() {
               src="https://www.google.com/maps/d/embed?mid=1_VP3c3y1gOZLY5MN9X5ywH5gtkpirXM&ehbc=2E312F"
               width="100%"
               height="100%"
-              style={{ border: 0 }}
+              style={{ border: 0, marginTop: '-52px', height: 'calc(100% + 52px)' }}
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
