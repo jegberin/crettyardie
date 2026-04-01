@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, ExternalLink, MapPin, Navigation, Send, Globe } from 'lucide-react';
+import { ArrowRight, ExternalLink, MapPin, Send, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -383,14 +383,6 @@ export default function BusinessesPage() {
             <p className="text-on-surface-variant text-base leading-relaxed mb-10">
               Click any marker to see the business name and location. Use the full-screen button to explore on Google Maps.
             </p>
-            <a
-              href="https://www.google.com/maps/d/viewer?mid=1_VP3c3y1gOZLY5MN9X5ywH5gtkpirXM"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-4 rounded-full signature-gradient text-on-primary font-bold text-sm uppercase tracking-widest inline-flex items-center gap-3 shadow-xl shadow-primary/20 hover:scale-105 transition-transform"
-            >
-              <Navigation size={20} /> Open full map
-            </a>
           </div>
           <div className="lg:col-span-7 h-[480px] rounded-3xl overflow-hidden shadow-2xl shadow-primary/10 relative border border-outline-variant/10">
             <iframe
