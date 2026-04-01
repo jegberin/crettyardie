@@ -30,6 +30,8 @@ const SCHOOLS: Org[] = [
     subtitle: 'Scoil Naomh Abban',
     icon: <GraduationCap size={22} />,
     iconBg: 'bg-emerald-100 text-emerald-700',
+    logo: '/logos/newtownns.jpg',
+    logoFit: 'contain',
     description:
       'A three-teacher mainstream primary school in Newtown, Crettyard, listed by the Department of Education and Youth. An important part of everyday family life in the local area.',
     location: 'Newtown, Crettyard, Co. Laois',
