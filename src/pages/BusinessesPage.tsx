@@ -150,9 +150,7 @@ const ALL_BUSINESSES: Business[] = [
     logo: '/logos/mayodoonane-cu.jpg',
     initials: 'MDCU',
     location: 'Doonane, Crettyard',
-    links: [
-      { label: 'Mayo News article', href: 'https://www.mayonews.ie/news/home/1420927/mayo-credit-union-to-expand-with-new-merger.html' },
-    ],
+    links: [],
   },
   {
     name: 'Clonbrock Heritage Centre',
@@ -212,8 +210,9 @@ const ALL_BUSINESSES: Business[] = [
     description:
       'Concrete flooring and construction contractor registered with a Crettyard address.',
     initials: 'MCF',
-    links: [],
-    note: 'No public website confirmed.',
+    links: [
+      { label: 'Google Maps', href: 'https://maps.app.goo.gl/7Jrqqjpo7wQCkQps6' },
+    ],
   },
   {
     name: 'Leinster Retrofit Ltd',
