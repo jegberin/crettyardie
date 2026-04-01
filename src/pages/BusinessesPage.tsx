@@ -199,6 +199,7 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-indigo-100 text-indigo-800',
     description:
       'Plant machinery and equipment business, listed with a Crettyard-area address at Fairymount.',
+    logo: '/logos/bluegroup.svg',
     initials: 'BE',
     links: [
       { label: 'Blue Group', href: 'https://www.blue-group.co.uk' },
