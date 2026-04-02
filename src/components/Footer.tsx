@@ -60,7 +60,7 @@ export const Footer = () => (
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors"
         >
-          <img src="https://digital.crettyard.ie/favicon.png" alt="" className="w-4 h-4 rounded-sm" aria-hidden="true" />
+          <img src="/logos/crettyarddigital.webp" alt="" className="w-4 h-4 rounded-sm object-contain" aria-hidden="true" />
           Web design by <span className="font-semibold">Crettyard Digital</span>
         </a>
       </div>
