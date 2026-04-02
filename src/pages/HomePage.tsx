@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
+import { getLinkIcon } from '../components/BrandLinkIcons';
 
 const Hero = () => (
   <section className="relative px-6 md:px-12 py-16 md:py-32 max-w-screen-2xl mx-auto overflow-hidden">
@@ -181,7 +182,7 @@ const SponsoredPill = () => (
   </div>
 );
 
-const SponsoredCard = ({ biz }: { biz: { name: string; desc: string; logo: string; href: string } }) => (
+const SponsoredCard = ({ biz }: { biz: { name: string; desc: string; logo: string; links: { label: string; href: string }[] } }) => (
   <div className="relative flex flex-col">
     <SponsoredPill />
     <div className="relative flex-1">
@@ -225,13 +226,22 @@ const SponsoredCard = ({ biz }: { biz: { name: string; desc: string; logo: strin
         <div className="p-6 flex flex-col flex-1">
           <h4 className="font-bold text-lg mb-2">{biz.name}</h4>
           <p className="text-sm text-on-surface-variant leading-relaxed flex-1">{biz.desc}</p>
-          <Link
-            to={biz.href}
-            className="mt-4 font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
-            style={{ color: '#b45309' }}
-          >
-            View profile <ArrowRight size={14} />
-          </Link>
+          {biz.links.length > 0 && (
+            <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-amber-100">
+              {biz.links.map((lk) => (
+                <a
+                  key={lk.href}
+                  href={lk.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 text-xs font-semibold text-amber-900 hover:bg-amber-200 transition-all"
+                >
+                  {getLinkIcon(lk.label, lk.href)}
+                  {lk.label}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -244,29 +254,42 @@ const FeaturedBusinesses = () => {
       name: 'Inver Geneva Stores',
       desc: 'Fuel, convenience shop, deli and car wash at the Crettyard junction on the N78. A landmark local service point serving residents and passing trade daily.',
       logo: '/logos/inver.svg',
-      href: '/businesses',
       sponsored: false,
+      links: [
+        { label: 'Website', href: 'https://inverenergy.ie/blog/station/inver-geneva-stores/' },
+        { label: 'Facebook', href: 'https://www.facebook.com/invergeneva' },
+      ],
     },
     {
       name: 'Crettyard Digital',
       desc: 'Web design and digital services for local businesses — websites, digital marketing and IT support for trades and retailers across the Laois area.',
       logo: '/logos/crettyarddigital.png',
-      href: '/businesses',
       sponsored: true,
+      links: [
+        { label: 'Website', href: 'https://digital.crettyard.ie' },
+        { label: 'Facebook', href: 'https://www.facebook.com/crettyarddigital' },
+        { label: 'Instagram', href: 'https://www.instagram.com/crettyarddigital' },
+      ],
     },
     {
       name: 'Wilson Engineering',
       desc: 'Agricultural and machinery engineering — home of the Super Move. Specialists in bespoke engineering for farm and industry based in the Crettyard area.',
       logo: '/logos/wilson.png',
-      href: '/businesses',
       sponsored: false,
+      links: [
+        { label: 'Website', href: 'https://www.wilsonengineering.ie/' },
+        { label: 'Facebook', href: 'https://www.facebook.com/p/Wilson-Engineering-100057660361297/' },
+      ],
     },
     {
       name: 'Crettyard Stone',
       desc: 'Natural building materials including sandstone, granite, paving and walling products for residential and commercial projects.',
       logo: '/logos/crettyardstone.jpg',
-      href: '/businesses',
       sponsored: false,
+      links: [
+        { label: 'Website', href: 'https://www.crettyardstone.ie/' },
+        { label: 'Facebook', href: 'https://www.facebook.com/crettyardstone' },
+      ],
     },
   ];
 
@@ -321,12 +344,22 @@ const FeaturedBusinesses = () => {
                 <div className="p-6 flex flex-col flex-1">
                   <h4 className="font-bold text-lg mb-2">{biz.name}</h4>
                   <p className="text-sm text-on-surface-variant leading-relaxed flex-1">{biz.desc}</p>
-                  <Link
-                    to={biz.href}
-                    className="mt-4 text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
-                  >
-                    View profile <ArrowRight size={14} />
-                  </Link>
+                  {biz.links.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-outline-variant/10">
+                      {biz.links.map((lk) => (
+                        <a
+                          key={lk.href}
+                          href={lk.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-xs font-semibold text-on-surface-variant hover:bg-primary hover:text-white transition-all"
+                        >
+                          {getLinkIcon(lk.label, lk.href)}
+                          {lk.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </motion.div>
             )
