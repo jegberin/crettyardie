@@ -215,6 +215,7 @@ const SponsoredCard = ({ biz }: { biz: { name: string; desc: string; logo: strin
             className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
             src={biz.logo}
             alt={biz.name}
+            loading="lazy"
           />
         </div>
         <div className="p-6 flex flex-col flex-1">
