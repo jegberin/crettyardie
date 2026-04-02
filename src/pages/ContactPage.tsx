@@ -301,6 +301,16 @@ const Field: React.FC<FieldProps> = ({ field, value, onChange, error }) => {
             </button>
           ))}
         </div>
+        {field.name === 'coverage' && (value === 'Serves the wider Crettyard area' || value === 'Both') && (
+          <div className="mt-3 flex items-start gap-2 rounded-2xl bg-amber-50 border border-amber-200 px-4 py-3">
+            <span className="text-amber-500 mt-0.5 shrink-0">ℹ</span>
+            <p className="text-xs text-amber-800 leading-relaxed">
+              <strong>Good news for Crettyard businesses —</strong> listings for businesses based in the Crettyard area are added free of charge.
+              Businesses located outside Crettyard that serve the area may be subject to a small administrative and listing fee.
+              We'll confirm this with you before anything is published.
+            </p>
+          </div>
+        )}
         {error && <p className="text-xs text-red-500 mt-1">{error}</p>}
       </div>
     );
