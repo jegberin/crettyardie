@@ -155,26 +155,19 @@ const ExploreGrid = () => {
 };
 
 const SponsoredPill = () => (
-  <div className="flex justify-center mb-3">
+  <div className="flex justify-center mt-3">
     <motion.div
-      animate={{ boxShadow: ['0 0 8px 2px #fbbf24aa', '0 0 22px 6px #f59e0bcc', '0 0 8px 2px #fbbf24aa'] }}
-      transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+      animate={{
+        y: [0, -6, 0],
+        boxShadow: ['0 0 8px 2px #fbbf24aa', '0 0 22px 6px #f59e0bcc', '0 0 8px 2px #fbbf24aa'],
+      }}
+      transition={{ duration: 2.6, repeat: Infinity, ease: 'easeInOut' }}
       style={{
         background: 'linear-gradient(90deg, #92400e 0%, #b45309 20%, #fbbf24 45%, #fde68a 55%, #d97706 80%, #92400e 100%)',
         backgroundSize: '200% 100%',
       }}
       className="flex items-center gap-1.5 px-4 py-1.5 rounded-full"
     >
-      <motion.div
-        animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-        transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
-        style={{
-          background: 'linear-gradient(90deg, #92400e 0%, #fbbf24 40%, #fde68a 55%, #d97706 100%)',
-          backgroundSize: '200% 100%',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
-        }}
-      />
       <Sparkles size={11} className="text-amber-900" strokeWidth={2.5} />
       <span className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-900">Sponsored</span>
       <Sparkles size={11} className="text-amber-900" strokeWidth={2.5} />
@@ -184,7 +177,6 @@ const SponsoredPill = () => (
 
 const SponsoredCard = ({ biz }: { biz: { name: string; desc: string; logo: string; links: { label: string; href: string }[] } }) => (
   <div className="relative flex flex-col">
-    <SponsoredPill />
     <div className="relative flex-1">
       {/* Deep pulsing aura behind card */}
       <motion.div
@@ -245,6 +237,7 @@ const SponsoredCard = ({ biz }: { biz: { name: string; desc: string; logo: strin
         </div>
       </div>
     </div>
+    <SponsoredPill />
   </div>
 );
 
