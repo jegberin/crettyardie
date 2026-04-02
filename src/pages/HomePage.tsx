@@ -6,7 +6,8 @@ import {
   MessageSquare,
   ArrowRight,
   MapPin,
-  Navigation
+  Navigation,
+  Sparkles,
 } from 'lucide-react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
@@ -152,6 +153,91 @@ const ExploreGrid = () => {
   );
 };
 
+const SponsoredPill = () => (
+  <div className="flex justify-center mb-3">
+    <motion.div
+      animate={{ boxShadow: ['0 0 8px 2px #fbbf24aa', '0 0 22px 6px #f59e0bcc', '0 0 8px 2px #fbbf24aa'] }}
+      transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+      style={{
+        background: 'linear-gradient(90deg, #92400e 0%, #b45309 20%, #fbbf24 45%, #fde68a 55%, #d97706 80%, #92400e 100%)',
+        backgroundSize: '200% 100%',
+      }}
+      className="flex items-center gap-1.5 px-4 py-1.5 rounded-full"
+    >
+      <motion.div
+        animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+        transition={{ duration: 2.5, repeat: Infinity, ease: 'linear' }}
+        style={{
+          background: 'linear-gradient(90deg, #92400e 0%, #fbbf24 40%, #fde68a 55%, #d97706 100%)',
+          backgroundSize: '200% 100%',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}
+      />
+      <Sparkles size={11} className="text-amber-900" strokeWidth={2.5} />
+      <span className="text-[10px] font-black uppercase tracking-[0.2em] text-amber-900">Sponsored</span>
+      <Sparkles size={11} className="text-amber-900" strokeWidth={2.5} />
+    </motion.div>
+  </div>
+);
+
+const SponsoredCard = ({ biz }: { biz: { name: string; desc: string; logo: string; href: string } }) => (
+  <div className="relative flex flex-col">
+    <SponsoredPill />
+    <div className="relative flex-1">
+      {/* Deep pulsing aura behind card */}
+      <motion.div
+        animate={{ opacity: [0.55, 0.9, 0.55], scale: [1, 1.04, 1] }}
+        transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
+        className="absolute -inset-3 rounded-3xl"
+        style={{
+          background: 'radial-gradient(ellipse at center, #fbbf24 0%, #f59e0b88 45%, transparent 75%)',
+          filter: 'blur(14px)',
+          zIndex: 0,
+        }}
+      />
+
+      {/* Rotating conic-gradient border ring */}
+      <div className="absolute -inset-[2px] rounded-3xl overflow-hidden" style={{ zIndex: 1 }}>
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
+          className="absolute"
+          style={{
+            width: '200%',
+            height: '200%',
+            top: '-50%',
+            left: '-50%',
+            background: 'conic-gradient(from 0deg, #92400e 0%, #fbbf24 20%, #fde68a 30%, #f59e0b 45%, #fff7ed 50%, #f59e0b 55%, #fde68a 70%, #fbbf24 80%, #92400e 100%)',
+          }}
+        />
+      </div>
+
+      {/* Card surface */}
+      <div className="relative bg-surface-container-lowest rounded-3xl overflow-hidden flex flex-col group" style={{ zIndex: 2 }}>
+        <div className="h-40 flex items-center justify-center p-6 bg-white border-b border-amber-100">
+          <img
+            className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+            src={biz.logo}
+            alt={biz.name}
+          />
+        </div>
+        <div className="p-6 flex flex-col flex-1">
+          <h4 className="font-bold text-lg mb-2">{biz.name}</h4>
+          <p className="text-sm text-on-surface-variant leading-relaxed flex-1">{biz.desc}</p>
+          <Link
+            to={biz.href}
+            className="mt-4 font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+            style={{ color: '#b45309' }}
+          >
+            View profile <ArrowRight size={14} />
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 const FeaturedBusinesses = () => {
   const businesses = [
     {
@@ -159,24 +245,28 @@ const FeaturedBusinesses = () => {
       desc: 'Fuel, convenience shop, deli and car wash at the Crettyard junction on the N78. A landmark local service point serving residents and passing trade daily.',
       logo: '/logos/inver.svg',
       href: '/businesses',
+      sponsored: false,
     },
     {
       name: 'Crettyard Digital',
       desc: 'Web design and digital services for local businesses — websites, digital marketing and IT support for trades and retailers across the Laois area.',
       logo: '/logos/crettyarddigital.png',
       href: '/businesses',
+      sponsored: true,
     },
     {
       name: 'Wilson Engineering',
       desc: 'Agricultural and machinery engineering — home of the Super Move. Specialists in bespoke engineering for farm and industry based in the Crettyard area.',
       logo: '/logos/wilson.png',
       href: '/businesses',
+      sponsored: false,
     },
     {
       name: 'Crettyard Stone',
       desc: 'Natural building materials including sandstone, granite, paving and walling products for residential and commercial projects.',
       logo: '/logos/crettyardstone.jpg',
       href: '/businesses',
+      sponsored: false,
     },
   ];
 
@@ -200,34 +290,46 @@ const FeaturedBusinesses = () => {
             </Link>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 items-start">
           {businesses.map((biz, idx) => (
-            <motion.div
-              key={biz.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-              className="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col"
-            >
-              <div className="h-40 flex items-center justify-center p-6 bg-white border-b border-outline-variant/10">
-                <img
-                  className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
-                  src={biz.logo}
-                  alt={biz.name}
-                />
-              </div>
-              <div className="p-6 flex flex-col flex-1">
-                <h4 className="font-bold text-lg mb-2">{biz.name}</h4>
-                <p className="text-sm text-on-surface-variant leading-relaxed flex-1">{biz.desc}</p>
-                <Link
-                  to={biz.href}
-                  className="mt-4 text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
-                >
-                  View profile <ArrowRight size={14} />
-                </Link>
-              </div>
-            </motion.div>
+            biz.sponsored ? (
+              <motion.div
+                key={biz.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+              >
+                <SponsoredCard biz={biz} />
+              </motion.div>
+            ) : (
+              <motion.div
+                key={biz.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all flex flex-col"
+              >
+                <div className="h-40 flex items-center justify-center p-6 bg-white border-b border-outline-variant/10">
+                  <img
+                    className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                    src={biz.logo}
+                    alt={biz.name}
+                  />
+                </div>
+                <div className="p-6 flex flex-col flex-1">
+                  <h4 className="font-bold text-lg mb-2">{biz.name}</h4>
+                  <p className="text-sm text-on-surface-variant leading-relaxed flex-1">{biz.desc}</p>
+                  <Link
+                    to={biz.href}
+                    className="mt-4 text-primary font-bold uppercase text-xs tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all"
+                  >
+                    View profile <ArrowRight size={14} />
+                  </Link>
+                </div>
+              </motion.div>
+            )
           ))}
         </div>
       </div>
