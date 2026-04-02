@@ -62,7 +62,7 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-stone-100 text-stone-700',
     description:
       'A specialist supplier of natural building stone including sandstone, granite, paving and walling products, serving builders, architects and homeowners across Leinster and beyond.',
-    logo: '/logos/crettyardstone.jpg',
+    logo: '/logos/crettyardstone.webp',
     initials: 'CS',
     location: 'Crettyard, Co. Laois',
     links: [
@@ -77,7 +77,7 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-orange-100 text-orange-800',
     description:
       'A long-established agricultural engineering firm on the Carlow Road in Crettyard, best known for the Super Move machinery range and engineering work for farming customers throughout the region.',
-    logo: '/logos/wilson.png',
+    logo: '/logos/wilson.webp',
     initials: 'WE',
     location: 'Carlow Road, Crettyard',
     links: [
@@ -91,7 +91,7 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-emerald-100 text-emerald-800',
     description:
       'Based in County Laois, Master My Garden with John Jones is a gardening education business, popular podcast and media project covering practical gardening for Irish conditions.',
-    logo: '/logos/mastermygarden.jpg',
+    logo: '/logos/mastermygarden.webp',
     initials: 'MG',
     links: [
       { label: 'Website', href: 'https://mastermygarden.com/' },
@@ -107,7 +107,7 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-yellow-100 text-yellow-800',
     description:
       "Established in 1990 by Sandro Cafolla in Monavea, Crettyard, Design By Nature is Ireland's leading specialist in native wildflower seed production and biodiversity-focused growing, supplying seeds for rewilding and meadow restoration.",
-    logo: '/logos/wildflowers.jpg',
+    logo: '/logos/wildflowers.webp',
     initials: 'DBN',
     location: 'Monavea, Crettyard',
     links: [
@@ -133,7 +133,7 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-sky-100 text-sky-800',
     description:
       'A local web design and digital services business providing website development, digital marketing and IT support for trades, retailers and small businesses in the Laois area.',
-    logo: '/logos/crettyarddigital.png',
+    logo: '/logos/crettyarddigital.webp',
     initials: 'CD',
     location: 'Crettyard, Co. Laois',
     links: [
@@ -148,7 +148,7 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-teal-100 text-teal-800',
     description:
       'Serving members in the Mayo and Doonane area of County Laois, providing savings, loans and financial services to the local rural community.',
-    logo: '/logos/mayodoonane-cu.jpg',
+    logo: '/logos/mayodoonane-cu.webp',
     initials: 'MDCU',
     location: 'Doonane, Crettyard',
     links: [
@@ -161,7 +161,7 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-amber-100 text-amber-800',
     description:
       'Listed as a local heritage attraction by Laois Tourism, preserving and sharing the story of the Clonbrock estate and its place in the wider local history of the Crettyard area.',
-    logo: '/logos/clonbrock.jpg',
+    logo: '/logos/clonbrock.webp',
     logoFit: 'cover',
     initials: 'CHC',
     location: 'Clonbrock, Crettyard',
@@ -175,7 +175,7 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-red-100 text-red-800',
     description:
       'A local country pub near Newtown and Turra Hill, serving the Crettyard community as a social gathering point.',
-    logo: '/logos/behans.jpg',
+    logo: '/logos/behans.webp',
     logoFit: 'cover',
     initials: 'BP',
     links: [
@@ -189,7 +189,7 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-blue-100 text-blue-800',
     description:
       'Solid fuel depot open to the public at Newtown Cross. Supplying coal, briquettes, wood pellets, gas (FloGas), firelogs, water softener salt and fireside accessories — Mon–Fri 9am–5pm, Sat 9am–1pm.',
-    logo: '/logos/galtee.jpg',
+    logo: '/logos/galtee.webp',
     logoFit: 'cover',
     initials: 'GF',
     links: [
@@ -225,7 +225,7 @@ const ALL_BUSINESSES: Business[] = [
     sectorColor: 'bg-rose-100 text-rose-800',
     description:
       'A local hair and beauty business in the area.',
-    logo: '/logos/holistichair.jpg',
+    logo: '/logos/holistichair.webp',
     logoFit: 'cover',
     initials: 'HHB',
     links: [
@@ -249,6 +249,7 @@ function BusinessLogo({ logo, logoFit = 'contain', initials, name }: { logo?: st
           src={logo}
           alt={`${name} logo`}
           className={imgClass}
+          loading="lazy"
           onError={() => setFailed(true)}
         />
       </div>

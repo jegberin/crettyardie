@@ -108,6 +108,13 @@ A community portal website for the Crettyard area in County Laois, Ireland. It s
 - Secrets: `R2_ACCESS_KEY`, `R2_SECRET_KEY`
 - Env vars: `R2_ACCOUNT_ID`, `R2_BUCKET`, `R2_S3_ENDPOINT`
 
+## Image Assets
+- All logos in `public/logos/` are WebP (converted from JPG/PNG, max 400px, quality 80). SVG logos (inver.svg, tirlan.svg, bluegroup.svg) stay as-is.
+- `public/images/` contains WebP versions of all page images. The hero `crettyard-signpost.webp` is preloaded in `index.html` with `fetchPriority="high"`.
+- Three images formerly on Google CDN are now self-hosted: `crettyard-community-sports.webp`, `crettyard-map-aerial.webp`, `crettyard-cta-bg.webp`.
+- `public/_headers` sets `Cache-Control: public, max-age=31536000, immutable` for `/logos/*`, `/images/*`, and `/assets/*` on Cloudflare Pages.
+- All below-fold images have `loading="lazy"`. The hero has `loading="eager"` + `fetchPriority="high"`.
+
 ## Development Guidelines
 - All form submissions → email via Resend API
 - All persistent data → Cloudflare D1 SQLite

@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 // Local images — real photographs of the Crettyard area
 import imgCrettyardJunction from '@assets/Crettyard,_County_Kilkenny_-_geograph.org.uk_-_1783304_1775041408617.jpg';
-import imgCoalMiningHistorical from '@assets/2ocqn930ubywvi8z0wl9dhefnm6z926$5wddflnjf0mkqqjwk0ftsksxmfre13_1775041408616.png';
 import imgChurchDoonane from '@assets/church-at-doonane_resize_1775041408616.webp';
 import imgNewtownFlemings from '@assets/newtown-8_resize_1775041408617.jpg';
 import imgMoscowChimneyStack from '@assets/moscow-possible-airshaft-and-other-items-8_resize_1775041408617.webp';
@@ -13,6 +12,8 @@ import imgMoscowAirshaft from '@assets/moscow-possible-airshaft-and-other-items-
 import imgDoonaneClonbrockFarm from '@assets/doonane-clonbrock-farm-1_resize_1775041408616.webp';
 import imgGenevaStores from '@assets/geneva-stores-crettyard-1_resize_1775041408615.jpg';
 import imgCloghRuins from '@assets/clogh-brewery-2_resize_1775041408616.webp';
+
+const imgCoalMiningHistorical = '/images/crettyard-coal-mining-history.webp';
 
 const sections = [
   { id: 'origins', label: 'Origins' },

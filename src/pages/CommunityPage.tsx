@@ -30,7 +30,7 @@ const SCHOOLS: Org[] = [
     subtitle: 'Scoil Naomh Abban',
     icon: <GraduationCap size={22} />,
     iconBg: 'bg-emerald-100 text-emerald-700',
-    logo: '/logos/newtownns.jpg',
+    logo: '/logos/newtownns.webp',
     logoFit: 'contain',
     description:
       'A three-teacher mainstream primary school in Newtown, Crettyard, listed by the Department of Education and Youth. An important part of everyday family life in the local area.',
@@ -46,7 +46,7 @@ const SCHOOLS: Org[] = [
     subtitle: 'Mayo National School',
     icon: <GraduationCap size={22} />,
     iconBg: 'bg-emerald-100 text-emerald-700',
-    logo: '/logos/mayons.jpg',
+    logo: '/logos/mayons.webp',
     logoFit: 'contain',
     description:
       'Known locally as Mayo National School, Scoil Mhuire Muigheo serves the Mayo area of Crettyard with both an official school website and an active community Facebook presence.',
@@ -65,7 +65,7 @@ const SPORTS: Org[] = [
     subtitle: 'GAA Club',
     icon: <Shield size={22} />,
     iconBg: 'bg-amber-100 text-amber-700',
-    logo: '/logos/crettyardclg.jpg',
+    logo: '/logos/crettyardclg.webp',
     logoFit: 'contain',
     description:
       'The local GAA club, based in Newtown, Crettyard, with an active online presence and a dedicated club website. Crettyard CLG brings together hurling and football for all ages across the wider community.',
@@ -81,7 +81,7 @@ const SPORTS: Org[] = [
     subtitle: "Ladies Gaelic Football Club",
     icon: <Users size={22} />,
     iconBg: 'bg-violet-100 text-violet-700',
-    logo: '/logos/crettyardladies.jpg',
+    logo: '/logos/crettyardladies.webp',
     logoFit: 'contain',
     description:
       'Crettyard Ladies GFC caters for players from U6s right through to adult level, providing an active and welcoming club for women and girls in the community. The club has a strong social media presence across both Facebook and Instagram.',
@@ -96,7 +96,7 @@ const SPORTS: Org[] = [
     subtitle: 'Athletics Club',
     icon: <Activity size={22} />,
     iconBg: 'bg-sky-100 text-sky-700',
-    logo: '/logos/stabbansac.jpg',
+    logo: '/logos/stabbansac.webp',
     logoFit: 'contain',
     description:
       "Based in Monavea, Crettyard, St. Abban's AC is a long-established athletics club with a strong emphasis on coaching, inclusion, and community participation. The club has produced athletes at national level and remains active across all age groups.",
@@ -112,7 +112,7 @@ const SPORTS: Org[] = [
     subtitle: 'Football Club',
     icon: <CircleDot size={22} />,
     iconBg: 'bg-green-100 text-green-700',
-    logo: '/logos/crettyard-utd.jpg',
+    logo: '/logos/crettyard-utd.webp',
     logoFit: 'cover',
     description:
       'Crettyard United AFC is the area\'s football club, actively posting match results and fixtures on social media. The club runs a weekly "Split the Pot" fundraiser to support facility improvements and welcomes involvement from the wider community.',
@@ -202,6 +202,7 @@ function OrgCard({ org, idx }: { org: Org; idx: number }) {
               src={org.logo}
               alt={`${org.name} logo`}
               className={`w-full h-full ${org.logoFit === 'cover' ? 'object-cover' : 'object-contain p-1'}`}
+              loading="lazy"
               onError={() => setLogoFailed(true)}
             />
           </div>

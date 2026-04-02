@@ -56,8 +56,10 @@ const Hero = () => (
       >
         <img
           className="absolute inset-0 w-full h-full object-cover"
-          src="/images/crettyard-signpost.jpg"
+          src="/images/crettyard-signpost.webp"
           alt="Crettyard / Crochta Ard signpost in the County Laois countryside"
+          fetchPriority="high"
+          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
       </motion.div>
@@ -256,7 +258,7 @@ const FeaturedBusinesses = () => {
     {
       name: 'Crettyard Digital',
       desc: 'Web design and digital services for local businesses — websites, digital marketing and IT support for trades and retailers across the Laois area.',
-      logo: '/logos/crettyarddigital.png',
+      logo: '/logos/crettyarddigital.webp',
       sponsored: true,
       links: [
         { label: 'Website', href: 'https://digital.crettyard.ie' },
@@ -267,7 +269,7 @@ const FeaturedBusinesses = () => {
     {
       name: 'Wilson Engineering',
       desc: 'Agricultural and machinery engineering — home of the Super Move. Specialists in bespoke engineering for farm and industry based in the Crettyard area.',
-      logo: '/logos/wilson.png',
+      logo: '/logos/wilson.webp',
       sponsored: false,
       links: [
         { label: 'Website', href: 'https://www.wilsonengineering.ie/' },
@@ -277,7 +279,7 @@ const FeaturedBusinesses = () => {
     {
       name: 'Crettyard Stone',
       desc: 'Natural building materials including sandstone, granite, paving and walling products for residential and commercial projects.',
-      logo: '/logos/crettyardstone.jpg',
+      logo: '/logos/crettyardstone.webp',
       sponsored: false,
       links: [
         { label: 'Website', href: 'https://www.crettyardstone.ie/' },
@@ -332,6 +334,7 @@ const FeaturedBusinesses = () => {
                     className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105"
                     src={biz.logo}
                     alt={biz.name}
+                    loading="lazy"
                   />
                 </div>
                 <div className="p-6 flex flex-col flex-1">
@@ -376,9 +379,9 @@ const CommunitySection = () => (
           <div className="relative rounded-3xl overflow-hidden shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-700">
             <img
               className="w-full h-[500px] md:h-[700px] object-cover"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMNXg9zTrydQ4lAjWvf70NckFZYNTgpVl04ao3ZhSD_MzPl9RXYV9lMowvwdlMXBh1m3hHGCv2Uabfsn6elk2VMfuq75m3NP8KnOmp9VQU9a9wn4GJn0-tbl1PB_smYKKOIbIHFFF_na-8kXx72vSTdmTxxzKD_iJh2TeVisGNvW1PiMdO113bOExNOt3q1hvmWLJPUDgO9pVfwPA0Gl4aPHOMrPlhvNCjMh-sMGkDbCkm1hAVZ0PfZ3-xro5UOw997RL8exldKc3U"
+              src="/images/crettyard-community-sports.webp"
               alt="Local sports grounds in Crettyard area"
-              referrerPolicy="no-referrer"
+              loading="lazy"
             />
           </div>
         </motion.div>
@@ -425,7 +428,7 @@ const FindUs = () => (
           <div
             className="w-full h-full grayscale opacity-40"
             style={{
-              backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuDm9hdEhq8emyM2AT4IMBq5MNB9jhh00VBXtZ0MN_2EnvzwpjlIRNTnKg2eVQHoATb1A-xkTbn3uZttAyWCq2PX0SEvz6gi8FJt3_OIVEjusv0uThoqVDB3hXZSsBANm_kydPGgO7aJabCg0zYFZVz3ay4iILhwLE_FNopBMXAqg0RMTAUnI2ymKfoZNRSpT0xqD3EWBBbEXz8fdxwZvJfz-do_-bDbWPhB5o1bKAJQAheIAE2QV46vOIOcl4o_v8UukIIeSosDFUAF')`,
+              backgroundImage: `url('/images/crettyard-map-aerial.webp')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center'
             }}
@@ -455,7 +458,7 @@ const CTA = () => (
       <div
         className="absolute inset-0 opacity-10 pointer-events-none"
         style={{
-          backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuB-lu09dTxVhx8T7tz9r1Hx3T9ZFv5frDLuX7syV2lYIbKnH0YHF63ZWxNkfD9Kda1H5rQpLMcF_cB00VmDuKPCHA3m4yHGyYzpCfwPSWRAiVQtvWWW3kY6E91QwA2Jf8-0vk2hEatxNlsn4Gq5x5iInP9EBuRjcvDa61RSs4jhdi-Hvm0OoSo8OyXnjwauvufqqPgxfxAcYZNfybHEqeHGbLspNMkVaRQc8C-tJ5lXEv8OV2HEGl68fa7HZ2oqRSTeNCJV0lgArSWG')`,
+          backgroundImage: `url('/images/crettyard-cta-bg.webp')`,
           backgroundSize: 'cover'
         }}
       ></div>
