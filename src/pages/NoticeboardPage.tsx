@@ -350,59 +350,138 @@ export default function NoticeboardPage() {
         </motion.div>
       </section>
 
-      {/* Posts */}
+      {/* Posts + Sidebar */}
       <section className="px-6 md:px-12 pb-24">
-        <div className="max-w-3xl mx-auto">
-          {loading && (
-            <div className="flex flex-col items-center justify-center py-24 gap-4 text-on-surface-variant">
-              <Loader2 size={32} className="animate-spin text-primary" />
-              <p>Loading announcements…</p>
-            </div>
-          )}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
 
-          {error && !loading && (
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-              className="flex items-center gap-3 px-6 py-5 rounded-2xl bg-red-50 border border-red-200 text-red-800">
-              <AlertCircle size={20} className="shrink-0" />
-              <div>
-                <p className="font-semibold">{error}</p>
-                <button onClick={loadPosts} className="text-sm underline mt-1">Try again</button>
-              </div>
-            </motion.div>
-          )}
-
-          {!loading && !error && posts.length === 0 && (
-            <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
-              className="text-center py-24">
-              <div className="w-16 h-16 rounded-3xl bg-surface-container mx-auto mb-6 flex items-center justify-center">
-                <MessageSquare size={28} className="text-on-surface-variant" />
-              </div>
-              <h3 className="font-headline text-2xl font-bold text-on-surface mb-2">No announcements yet</h3>
-              <p className="text-on-surface-variant text-sm">Be the first to post something for the community!</p>
-              {!user && (
-                <button onClick={() => openAuth('register')}
-                  className="mt-6 px-6 py-3 rounded-full signature-gradient text-on-primary font-bold text-sm uppercase tracking-wider shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
-                  Get started
-                </button>
+            {/* ── Posts feed ─────────────────────────────────────────── */}
+            <div className="lg:col-span-2">
+              {loading && (
+                <div className="flex flex-col items-center justify-center py-24 gap-4 text-on-surface-variant">
+                  <Loader2 size={32} className="animate-spin text-primary" />
+                  <p>Loading announcements…</p>
+                </div>
               )}
-            </motion.div>
-          )}
 
-          {!loading && !error && posts.length > 0 && (
-            <AnimatePresence>
-              <div className="space-y-6">
-                {posts.map(post => (
-                  <PostCard
-                    key={post.id}
-                    post={post}
-                    currentUsername={user?.username}
-                    currentEmail={user?.email}
-                    onDelete={handlePostDeleted}
-                  />
-                ))}
-              </div>
-            </AnimatePresence>
-          )}
+              {error && !loading && (
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
+                  className="flex items-center gap-3 px-6 py-5 rounded-2xl bg-red-50 border border-red-200 text-red-800">
+                  <AlertCircle size={20} className="shrink-0" />
+                  <div>
+                    <p className="font-semibold">{error}</p>
+                    <button onClick={loadPosts} className="text-sm underline mt-1">Try again</button>
+                  </div>
+                </motion.div>
+              )}
+
+              {!loading && !error && posts.length === 0 && (
+                <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
+                  className="text-center py-24">
+                  <div className="w-16 h-16 rounded-3xl bg-surface-container mx-auto mb-6 flex items-center justify-center">
+                    <MessageSquare size={28} className="text-on-surface-variant" />
+                  </div>
+                  <h3 className="font-headline text-2xl font-bold text-on-surface mb-2">No announcements yet</h3>
+                  <p className="text-on-surface-variant text-sm">Be the first to post something for the community!</p>
+                  {!user && (
+                    <button onClick={() => openAuth('register')}
+                      className="mt-6 px-6 py-3 rounded-full signature-gradient text-on-primary font-bold text-sm uppercase tracking-wider shadow-lg shadow-primary/20 hover:scale-105 transition-transform">
+                      Get started
+                    </button>
+                  )}
+                </motion.div>
+              )}
+
+              {!loading && !error && posts.length > 0 && (
+                <AnimatePresence>
+                  <div className="space-y-6">
+                    {posts.map(post => (
+                      <PostCard
+                        key={post.id}
+                        post={post}
+                        currentUsername={user?.username}
+                        currentEmail={user?.email}
+                        onDelete={handlePostDeleted}
+                      />
+                    ))}
+                  </div>
+                </AnimatePresence>
+              )}
+            </div>
+
+            {/* ── Sidebar ────────────────────────────────────────────── */}
+            <aside className="lg:col-span-1">
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="bg-surface-container-lowest rounded-3xl border border-outline-variant/10 p-7 space-y-6 sticky top-28"
+              >
+                {/* Welcome */}
+                <div>
+                  <h2 className="font-headline text-lg font-extrabold text-on-surface mb-3 leading-snug">
+                    Welcome to Our Community Notice Board! 👋
+                  </h2>
+                  <p className="text-sm text-on-surface-variant leading-relaxed">
+                    This board belongs to all of us — a dedicated space to connect, share, and stay informed about what is happening right here in our community. Whether you are organising a get-together, sharing an important update, or celebrating a milestone, we encourage you to use this space.
+                  </p>
+                </div>
+
+                <div className="border-t border-outline-variant/10" />
+
+                {/* What to Post */}
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[0.18em] text-primary mb-4 flex items-center gap-2">
+                    <span>📌</span> What to Post
+                  </p>
+                  <ul className="space-y-3">
+                    {[
+                      { heading: 'Upcoming Events', detail: 'Parties, fundraisers, local markets or club meetings.' },
+                      { heading: 'Local News', detail: 'Important neighbourhood updates, alerts or shared initiatives.' },
+                      { heading: 'Announcements', detail: 'Welcoming new neighbours, celebrating achievements or community shout-outs.' },
+                      { heading: 'Services & Support', detail: 'Local recommendations, babysitting, pet walking or volunteer opportunities.' },
+                      { heading: 'Lost & Found', detail: 'Help reunite neighbours with their misplaced items or pets.' },
+                    ].map(item => (
+                      <li key={item.heading} className="flex gap-2.5 text-sm">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                        <span>
+                          <span className="font-semibold text-on-surface">{item.heading}:</span>{' '}
+                          <span className="text-on-surface-variant">{item.detail}</span>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="border-t border-outline-variant/10" />
+
+                {/* Guidelines */}
+                <div>
+                  <p className="text-xs font-black uppercase tracking-[0.18em] text-primary mb-4 flex items-center gap-2">
+                    <span>📝</span> Quick Guidelines
+                  </p>
+                  <ul className="space-y-3">
+                    {[
+                      { heading: 'Keep it Neighbourly', detail: 'Ensure all content is respectful, friendly and appropriate for all ages.' },
+                      { heading: 'Tidy Up', detail: 'Please remove your post once your event has passed or the information is no longer needed.' },
+                    ].map(item => (
+                      <li key={item.heading} className="flex gap-2.5 text-sm">
+                        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                        <span>
+                          <span className="font-semibold text-on-surface">{item.heading}:</span>{' '}
+                          <span className="text-on-surface-variant">{item.detail}</span>
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-5 text-xs text-on-surface-variant/70 italic leading-relaxed">
+                    Grab a pin and share your updates — let's keep our community connected!
+                  </p>
+                </div>
+              </motion.div>
+            </aside>
+
+          </div>
         </div>
       </section>
 
