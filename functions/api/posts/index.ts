@@ -41,7 +41,7 @@ export async function onRequestPost(ctx: Ctx): Promise<Response> {
     await DB.prepare('INSERT INTO posts (id, user_id, username, title, body) VALUES (?, ?, ?, ?, ?)')
       .bind(postId, user.userId, user.username, title, body).run();
 
-    const ALLOWED_MIME_TYPES = new Set(['image/jpeg', 'image/png', 'application/pdf']);
+    const ALLOWED_MIME_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'application/pdf']);
 
     const file = formData.get('file') as File | null;
     if (file && file.size > 0) {

@@ -27,8 +27,8 @@ interface Props {
 }
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
-const ALLOWED_TYPES = new Set(['image/jpeg', 'image/png', 'application/pdf']);
-const ALLOWED_LABEL = 'JPG, PNG or PDF';
+const ALLOWED_TYPES = new Set(['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'application/pdf']);
+const ALLOWED_LABEL = 'JPG, PNG, WebP, GIF or PDF';
 
 export default function NewPostModal({ isOpen, onClose, onCreated }: Props) {
   const { authHeader } = useAuth();
@@ -154,7 +154,7 @@ export default function NewPostModal({ isOpen, onClose, onCreated }: Props) {
               {/* File attachment */}
               <div>
                 <label className="block text-xs font-semibold text-on-surface-variant uppercase tracking-widest mb-1.5">
-                  Attachment <span className="normal-case font-normal">(optional · JPG, PNG or PDF · max 5 MB)</span>
+                  Attachment <span className="normal-case font-normal">(optional · JPG, PNG, WebP, GIF or PDF · max 5 MB)</span>
                 </label>
                 {file ? (
                   <div className="flex items-center gap-3 px-4 py-3 rounded-xl border border-primary/20 bg-primary/5">
@@ -173,7 +173,7 @@ export default function NewPostModal({ isOpen, onClose, onCreated }: Props) {
                   </button>
                 )}
                 <input ref={fileRef} type="file" className="hidden" onChange={handleFile}
-                  accept="image/jpeg,image/png,application/pdf,.jpg,.jpeg,.png,.pdf" />
+                  accept="image/jpeg,image/png,image/webp,image/gif,application/pdf,.jpg,.jpeg,.png,.webp,.gif,.pdf" />
               </div>
 
               <button type="submit" disabled={loading}

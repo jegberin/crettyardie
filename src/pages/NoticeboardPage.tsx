@@ -49,7 +49,7 @@ function formatBytes(n: number): string {
 }
 
 function isImage(a: Attachment) {
-  return a.content_type === 'image/jpeg' || a.content_type === 'image/png';
+  return a.content_type.startsWith('image/');
 }
 
 function isPdf(a: Attachment) {
