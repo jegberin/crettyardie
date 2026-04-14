@@ -291,21 +291,23 @@ function FacebookFeedCard({ feed, idx }: { feed: typeof FB_FEEDS[0]; idx: number
         <span className="font-headline font-bold text-on-surface text-base leading-tight">{feed.name}</span>
       </div>
 
-      {/* Measure container then render iframe at exact pixel width */}
-      <div ref={containerRef} className="w-full bg-[#f0f2f5]" style={{ minHeight: 500 }}>
-        <iframe
-          key={iframeWidth}
-          src={fbEmbedUrl(feed.fbPage, iframeWidth)}
-          width={iframeWidth}
-          height={500}
-          style={{ border: 'none', overflow: 'hidden', display: 'block', width: '100%' }}
-          scrolling="no"
-          frameBorder={0}
-          allowFullScreen
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
-          title={`${feed.name} Facebook feed`}
-          loading="lazy"
-        />
+      {/* Measure container, then render iframe at exact pixel width and centre it */}
+      <div ref={containerRef} className="w-full">
+        <div className="flex justify-center bg-white" style={{ minHeight: 500 }}>
+          <iframe
+            key={iframeWidth}
+            src={fbEmbedUrl(feed.fbPage, iframeWidth)}
+            width={iframeWidth}
+            height={500}
+            style={{ border: 'none', overflow: 'hidden', display: 'block', flexShrink: 0 }}
+            scrolling="no"
+            frameBorder={0}
+            allowFullScreen
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+            title={`${feed.name} Facebook feed`}
+            loading="lazy"
+          />
+        </div>
       </div>
     </motion.div>
   );
