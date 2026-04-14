@@ -239,6 +239,85 @@ function PostCard({ post, currentUsername, currentEmail, onDelete }: { post: Pos
   );
 }
 
+// ─── Facebook Feeds ───────────────────────────────────────────────────────────
+
+const FB_FEEDS: { name: string; logo: string; fbPage: string }[] = [
+  { name: 'Inver Geneva Stores',  logo: '/logos/inver.svg',              fbPage: 'InverGenevaStoresCrettyard' },
+  { name: 'Crettyard Stone',      logo: '/logos/crettyardstone.webp',    fbPage: 'crettyardstone' },
+  { name: 'Wilson Engineering',   logo: '/logos/wilson.webp',            fbPage: 'p/Wilson-Engineering-100057660361297/' },
+  { name: 'Master My Garden',     logo: '/logos/mastermygarden.webp',    fbPage: 'MasterMyGarden' },
+  { name: 'Crettyard Digital',    logo: '/logos/crettyarddigital.webp',  fbPage: 'crettyarddigital' },
+  { name: 'Crettyard Coal Yard',  logo: '/logos/galtee.webp',            fbPage: 'p/Crettyard-Coal-Yard-100054259100584/' },
+];
+
+function fbEmbedUrl(page: string): string {
+  const href = encodeURIComponent(`https://www.facebook.com/${page}`);
+  return `https://www.facebook.com/plugins/page.php?href=${href}&tabs=timeline&width=500&height=500&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=754139259232092`;
+}
+
+function FacebookFeedsSection() {
+  return (
+    <section className="py-20 px-6 md:px-12 bg-surface-container-low">
+      <div className="max-w-6xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-12"
+        >
+          <p className="font-bold text-primary tracking-[0.2em] uppercase text-xs mb-3">Stay Connected</p>
+          <h2 className="font-headline text-4xl font-extrabold tracking-tight mb-3">Local Facebook Pages</h2>
+          <p className="text-on-surface-variant text-base max-w-xl">
+            Latest updates from Crettyard businesses — follow them directly on Facebook to stay in the loop.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {FB_FEEDS.map((feed, idx) => (
+            <motion.div
+              key={feed.name}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: (idx % 2) * 0.08 }}
+              className="bg-surface-container-lowest rounded-3xl overflow-hidden border border-outline-variant/10 shadow-sm"
+            >
+              {/* Card header */}
+              <div className="flex items-center gap-3 px-5 py-4 border-b border-outline-variant/10">
+                <div className="w-9 h-9 rounded-xl bg-white flex items-center justify-center overflow-hidden shadow-sm border border-outline-variant/10 shrink-0">
+                  <img
+                    src={feed.logo}
+                    alt={feed.name}
+                    className="w-full h-full object-contain p-0.5"
+                    loading="lazy"
+                  />
+                </div>
+                <span className="font-headline font-bold text-on-surface text-base leading-tight">{feed.name}</span>
+              </div>
+
+              {/* Facebook iframe */}
+              <div className="flex justify-center items-start bg-[#f0f2f5] min-h-[500px]">
+                <iframe
+                  src={fbEmbedUrl(feed.fbPage)}
+                  width="500"
+                  height="500"
+                  style={{ border: 'none', overflow: 'hidden', display: 'block', width: '100%' }}
+                  scrolling="no"
+                  frameBorder={0}
+                  allowFullScreen
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  title={`${feed.name} Facebook feed`}
+                  loading="lazy"
+                />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function NoticeboardPage() {
@@ -484,6 +563,9 @@ export default function NoticeboardPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Facebook Feeds ──────────────────────────────────────────────────── */}
+      <FacebookFeedsSection />
 
       {/* Floating action button (mobile) */}
       {user && (
