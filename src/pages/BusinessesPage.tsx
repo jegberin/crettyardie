@@ -137,7 +137,7 @@ const ALL_BUSINESSES: Business[] = [
     initials: 'CD',
     location: 'Crettyard, Co. Laois',
     links: [
-      { label: 'Website', href: 'https://digital.crettyard.ie' },
+      { label: 'Website', href: 'https://crettyarddigital.ie' },
       { label: 'Facebook', href: 'https://www.facebook.com/crettyarddigital' },
       { label: 'Instagram', href: 'https://www.instagram.com/crettyarddigital' },
     ],

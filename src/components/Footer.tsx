@@ -55,7 +55,7 @@ export const Footer = () => (
           © 2026 Crettyard.ie. History, community and local life.
         </p>
         <a
-          href="https://digital.crettyard.ie"
+          href="https://crettyarddigital.ie"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-2 text-sm text-on-surface-variant hover:text-primary transition-colors"
