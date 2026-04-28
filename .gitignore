@@ -11,4 +11,4 @@ coverage/
 dev.db
 dev.db-wal
 dev.db-shm
-uploads/
+/uploads/
